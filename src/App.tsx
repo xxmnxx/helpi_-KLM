@@ -26,6 +26,7 @@ function App() {
   }
   return (
     <div className="App">
+      Morgan, Leah, Kate
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
