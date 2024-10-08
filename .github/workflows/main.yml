@@ -33,11 +33,26 @@ jobs:
                   file: package.json
                   field: homepage
                   value: ${{ steps.get-repo-values.outputs.url }}
+            
+            - name: Create Redirects and Links
+              id: create_redirects
+              run: |
+                  mkdir -p dist
+                  echo "<html><head>\
+                  <meta http-equiv='refresh' content='0; URL=${{github.server_url}}/${{github.repository}}' />\
+                  </head><body>Redirecting to repository</body></html>" > ./dist/repo.html
+
+                  mkdir -p docs
+                  cp README.md docs/index.md
+                  echo "# Quick Links" > docs/quick-links.md
+                  echo "* [Repository](../repo.html)" >> docs/quick-links.md
+                  echo "<html><head>\
+                  <meta http-equiv='refresh' content='0; URL=docs/quick-links' />\
+                  </head><body>Redirecting to quick links page</body></html>" > ./dist/quick.html
             - run: npm ci
             - run: npm run test -- --coverage |& tee ./public/test_report.txt
             - run: echo "<html><head><meta http-equiv='refresh' content='0; URL=${{github.server_url}}/${{github.repository}}' /></head><body>Redirecting to repository</body></html>" > ./public/github.html
             - run: npm run build --if-present
-
             - name: Deploy
               run: |
                   git config --global user.name ${user_name}
