@@ -26,7 +26,13 @@ function App() {
   }
   return (
     <div className="App">
-      Morgan Nutto, Leah Marcelli, Kate Geiszler
+      <header className = "App-Header" style={{fontFamily: 'Comic Sans', fontSize: '50ptx', color: 'black'}}> 
+        Career Quiz 
+        <div style={{ border: "10px black", padding: "8px" }}>
+        By: Morgan Nutto, Leah Marcelli, Kate Geiszler
+            </div>
+        </header> 
+      <hr style = {{height: '5px', backgroundColor: 'black', border: 'none'}} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
