@@ -24,7 +24,7 @@ function App() {
     setKey(event.target.value);
   }
   
-  }
+
   return (
     <div className="App">
       <header className = "App-Header" style={{fontFamily: 'Comic Sans', fontSize: '50ptx', color: 'black'}}> 
