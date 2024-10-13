@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -27,27 +27,42 @@ function App() {
 
   return (
     <div className="App">
-      <header className = "App-Header"> 
+      <header className = "App-Header" style= {{paddingTop: '20px'}}> 
+        <h1> Career Quiz </h1>
         <div>
         By: Morgan Nutto, Leah Marcelli, Kate Geiszler
         </div>
-            
-        </header> 
+      </header> 
+      <div>
+
+
+      </div>
+      <div>
+      <Container style= {{marginTop: '20px', width: '1000px', height: '500px'}}>
+        <Container style={{ border: '1px solid black', padding: '30px', width: '1000px', height: '400px'}}>
+          <h2> Choose the quiz you want to take!</h2>
+          <Row>
+            <Col style= {{border: '1px solid black', margin: "10px", padding: '10px', height: '200px'}}>
+              <h3> Basic Quiz </h3>
+              <p>This brief, 3-minute quiz provides insights into broad career fields rather than specific job titles. Designed to help you explore general areas of interest and potential career paths
+              </p>
+              <Button>Start Basic Quiz</Button>
+            </Col>
+            <Col style= {{border: '1px solid black', margin: "10px", padding: '10px'}}>
+              <h3> Detailed Quiz </h3>
+              <p>Column 2 content goes here.</p>
+              <Button>Start Detailed Quiz</Button>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
       
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+
+
+      </div>
+    
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
