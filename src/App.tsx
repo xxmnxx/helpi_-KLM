@@ -27,18 +27,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className = "App-Header" style={{fontFamily: 'Comic Sans', fontSize: '50ptx', color: 'black'}}> 
-        Career Quiz 
-        <div style={{ border: "10px black", padding: "8px" }}>
+      <header className = "App-Header"> 
+        <div>
         By: Morgan Nutto, Leah Marcelli, Kate Geiszler
-            </div>
+        </div>
             
         </header> 
-
-      <hr style = {{height: '5px', backgroundColor: 'black', border: 'none'}} />
-
+      
       <header className="App-header">
-      <Button onClick={goHome}>Home</Button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
