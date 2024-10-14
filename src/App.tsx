@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import logo from './logo.svg';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import BasicQuiz from './BasicQuiz';
@@ -31,10 +30,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-Header" style={{ paddingTop: '20px' }}>
-          <h1>Career Quiz</h1>
-          <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
-        </header>
 
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -42,18 +37,6 @@ function App() {
           <Route path="/DetailedQuiz" element={<DetailedQuiz/>} />
         </Routes>
 
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>Edit <code>src/App.tsx</code> and save to reload.</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
 
         <Form>
           <Form.Label>API Key:</Form.Label>
@@ -80,6 +63,10 @@ function HomePage() {
 
   return (
     <Container style={{ marginTop: '20px', width: '1000px', height: '500px' }}>
+      <header className="App-Header" style={{ paddingTop: '20px' }}>
+          <h1>Career Quiz</h1>
+          <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
+        </header>
       <Container style={{ border: '1px solid black', padding: '30px', width: '1000px', height: '400px' }}>
         <h2>Choose the quiz you want to take!</h2>
         <Row>
