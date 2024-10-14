@@ -40,7 +40,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/BasicQuiz" element={<BasicQuiz />} />
           <Route path="/DetailedQuiz" element={<DetailedQuiz/>} />
-          {/* You can add more routes here as needed */}
         </Routes>
 
         <header className="App-header">
@@ -67,9 +66,9 @@ function App() {
   );
 }
 
-// HomePage component - handles the quiz selection
+// HomePage component
 function HomePage() {
-  const navigate = useNavigate(); // Hook to handle navigation
+  const navigate = useNavigate(); 
 
   const navigateToDetailedQuiz = () => {
     navigate('/DetailedQuiz');
