@@ -1,6 +1,6 @@
 //import React, { useState } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const BasicQuiz:React.FC=()=>{
     const navigate = useNavigate();
