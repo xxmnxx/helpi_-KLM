@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f855e6bc.css",
-    "main.js": "/static/js/main.2391f963.js",
-    "static/js/453.bad6c33a.chunk.js": "/static/js/453.bad6c33a.chunk.js",
-    "index.html": "/index.html",
-    "main.f855e6bc.css.map": "/static/css/main.f855e6bc.css.map",
-    "main.2391f963.js.map": "/static/js/main.2391f963.js.map",
-    "453.bad6c33a.chunk.js.map": "/static/js/453.bad6c33a.chunk.js.map"
+    "main.css": "/helpi_-KLM/static/css/main.f855e6bc.css",
+    "main.js": "/helpi_-KLM/static/js/main.4624e150.js",
+    "static/js/453.bad6c33a.chunk.js": "/helpi_-KLM/static/js/453.bad6c33a.chunk.js",
+    "index.html": "/helpi_-KLM/index.html",
+    "main.f855e6bc.css.map": "/helpi_-KLM/static/css/main.f855e6bc.css.map",
+    "main.4624e150.js.map": "/helpi_-KLM/static/js/main.4624e150.js.map",
+    "453.bad6c33a.chunk.js.map": "/helpi_-KLM/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.2391f963.js"
+    "static/js/main.4624e150.js"
   ]
 }
