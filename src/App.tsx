@@ -70,7 +70,7 @@ function HomePage() {
       <Container style={{ border: '1px solid black', padding: '30px', width: '1000px', height: '400px' }}>
         <h2>Choose the quiz you want to take!</h2>
         <Row>
-          <Col style={{ border: '1px solid black', margin: '10px', padding: '10px', height: '200px' }}>
+          <Col style={{ border: '1px solid black', margin: '10px', padding: '30px', height: '300px' }}>
             <h3>Basic Quiz</h3>
             <p>
               This brief, 3-minute quiz provides insights into broad career fields rather than specific job titles. 
