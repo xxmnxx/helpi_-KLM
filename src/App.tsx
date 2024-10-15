@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { HashRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { Button, Form} from 'react-bootstrap';
+import { HashRouter as Router, Route, Routes} from 'react-router-dom';
 import BasicQuiz from './BasicQuiz';
 import DetailedQuiz from './DetailedQuiz';
 import HomePage from './home';
