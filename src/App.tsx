@@ -61,6 +61,7 @@ function HomePage() {
     navigate('/BasicQuiz');
   };
 
+
   return (
     <Container style={{ marginTop: '30px', width: '1000px', height: '500px', marginBottom: '200px'}}>
       <header className="App-Header" style={{ padding: '20px' }}>
