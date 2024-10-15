@@ -21,24 +21,24 @@ const BasicQuiz:React.FC=()=>{
                 Which of these subjects did you enjoy the most in school?
                 
             <Row>
-                <Col style={{ margin: '10px', padding: '30px', height: '150px' }}>
+                <Col style={{ margin: '10px', padding: '30px' }}>
                 <Button variant="primary" onClick={() => handleOptionClick('Math/Science')}>
               Math/Science
             </Button>
                 </Col>
-          <Col style={{  margin: '10px', padding: '10px' }}>
+          <Col style={{  margin: '10px', padding: '30px' }}>
           <Button variant="primary" onClick={() => handleOptionClick('Arts/Literature')}>
               Arts/Literature
             </Button>
           </Col>
         </Row>
         <Row>
-                <Col style={{  margin: '10px', padding: '30px', height: '150px' }}>
+                <Col style={{  margin: '10px', padding: '30px' }}>
                 <Button variant="primary" onClick={() => handleOptionClick('Social Studies')}>
               Social Studies
             </Button>
                 </Col>
-          <Col style={{margin: '10px', padding: '10px' }}>
+          <Col style={{margin: '10px', padding: '30px' }}>
           <Button variant="primary" onClick={() => handleOptionClick('Physical Education')}>
               Physical Education
             </Button>
