@@ -50,7 +50,9 @@ const BasicQuiz:React.FC=()=>{
 
 export default BasicQuiz;
 
-{/* <Form> Radio Buttons
+// eslint-disable-next-line no-lone-blocks
+{/* <Form> 
+  Radio Buttons
                     <Form.Group>
                         <Row>
                             <Col>
