@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (70 ms)
+  ✕ renders learn react link (69 ms)
 
   ● renders learn react link
 
@@ -40,11 +40,11 @@ FAIL src/App.test.tsx
         [36m>[39m
           [36m<div[39m
             [33mclass[39m=[32m"container"[39m
-            [33mstyle[39m=[32m"margin-top: 20px; width: 1000px; height: 500px;"[39m
+            [33mstyle[39m=[32m"margin-top: 30px; width: 1000px; height: 500px; margin-bottom: 200px;"[39m
           [36m>[39m
             [36m<header[39m
               [33mclass[39m=[32m"App-Header"[39m
-              [33mstyle[39m=[32m"padding-top: 20px;"[39m
+              [33mstyle[39m=[32m"padding: 20px;"[39m
             [36m>[39m
               [36m<h1>[39m
                 [0mCareer Quiz[0m
@@ -65,13 +65,13 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"col"[39m
-                  [33mstyle[39m=[32m"border: 1px solid black; margin: 10px; padding: 10px; height: 200px;"[39m
+                  [33mstyle[39m=[32m"border: 1px solid black; margin: 10px; padding: 10px; height: 300px;"[39m
                 [36m>[39m
                   [36m<h3>[39m
                     [0mBasic Quiz[0m
                   [36m</h3>[39m
                   [36m<p>[39m
-                    [0mThis brief, 3-minute quiz provides insights into broad career fields rather than specific job titles. Designed to help you explore general areas of interest and potential career paths.[0m
+                    [0mThis quiz provides a quick and straightforward assessment, featuring general questions designed to identify broad career fields that match your interests and strengths. It’s ideal for those looking for a brief overview to help guide their career exploration.[0m
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
@@ -82,13 +82,13 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"col"[39m
-                  [33mstyle[39m=[32m"border: 1px solid black; margin: 10px; padding: 10px;"[39m
+                  [33mstyle[39m=[32m"border: 1px solid black; margin: 10px; padding: 10px; height: 300px;"[39m
                 [36m>[39m
                   [36m<h3>[39m
                     [0mDetailed Quiz[0m
                   [36m</h3>[39m
                   [36m<p>[39m
-                    [0mThis quiz offers a more in-depth exploration compared to our basic quiz, featuring targeted questions designed to identify specific career paths that align with your strengths and interests. It's ideal for those who are committed to investing extra time to gain deeper insights into their ideal career trajectory.[0m
+                    [0mThis quiz offers a more in-depth exploration, featuring targeted questions designed to identify specific career paths that align with your strengths and interests. It's ideal for those who are committed to investing extra time to gain deeper insights into their ideal career trajectory.[0m
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
@@ -149,14 +149,14 @@ File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 All files           |    38.7 |    16.66 |      20 |    38.7 |                   
  App.tsx            |    62.5 |       50 |   33.33 |    62.5 | 13,21-27,57,61    
  BasicQuiz.tsx      |      50 |      100 |       0 |      50 | 4                 
- DetailedQuiz.tsx   |      50 |      100 |       0 |      50 | 6                 
+ DetailedQuiz.tsx   |      50 |      100 |       0 |      50 | 9                 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.713 s
+Time:        2.755 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
