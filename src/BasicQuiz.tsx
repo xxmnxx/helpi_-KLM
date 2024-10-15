@@ -19,6 +19,7 @@ const BasicQuiz:React.FC=()=>{
         </div><Container style={{ marginTop: '20px', border: '1px solid black', width: '1000px', height: '500px' }}>
                 <h2>Question 1</h2>
                 Which of these subjects did you enjoy the most in school?
+                
             <Row>
                 <Col style={{ margin: '10px', padding: '30px', height: '150px' }}>
                 <Button variant="primary" onClick={() => handleOptionClick('Math/Science')}>
@@ -48,3 +49,40 @@ const BasicQuiz:React.FC=()=>{
 };
 
 export default BasicQuiz;
+
+{/* <Form> Radio Buttons
+                    <Form.Group>
+                        <Row>
+                            <Col>
+                                <Form.Check 
+                                    type="radio"
+                                    id="option1"
+                                    label="Math/Science"
+                                    name="quizOptions"
+                                    inline
+                                />
+                                <Form.Check 
+                                    type="radio"
+                                    id="option2"
+                                    label="Arts/Literature"
+                                    name="quizOptions"
+                                    inline
+                                />
+                                <Form.Check 
+                                    type="radio"
+                                    id="option3"
+                                    label="Social Studies"
+                                    name="quizOptions"
+                                    inline
+                                />
+                                <Form.Check 
+                                    type="radio"
+                                    id="option4"
+                                    label="Physical Education"
+                                    name="quizOptions"
+                                    inline
+                                />
+                            </Col>
+                        </Row>
+                    </Form.Group>
+                </Form> */}

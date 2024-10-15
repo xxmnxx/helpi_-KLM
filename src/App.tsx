@@ -61,6 +61,7 @@ function HomePage() {
     navigate('/BasicQuiz');
   };
 
+
   return (
     <Container style={{ marginTop: '20px', width: '1000px', height: '500px' }}>
       <header className="App-Header" style={{ paddingTop: '20px' }}>
@@ -75,6 +76,7 @@ function HomePage() {
             <p>
               This brief, 3-minute quiz provides insights into broad career fields rather than specific job titles. 
               Designed to help you explore general areas of interest and potential career paths.
+
             </p>
             <Button onClick={navigateToBasicQuiz}>Start Basic Quiz</Button>
           </Col>
