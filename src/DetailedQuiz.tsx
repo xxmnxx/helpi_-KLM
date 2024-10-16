@@ -24,24 +24,24 @@ const DetailedQuiz:React.FC=()=>{
                 
             <Row>
                 <Col style={{ margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('Math/Science')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+                <Button variant="primary" onClick={() => handleOptionClick('Independently')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
                 Independently
             </Button>
                 </Col>
           <Col style={{  margin: '10px', padding: '30px' }} >
-          <Button variant="primary" onClick={() => handleOptionClick('Arts/Literature')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+          <Button variant="primary" onClick={() => handleOptionClick('In a team')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
               In a team
             </Button>
           </Col>
         </Row>
         <Row>
                 <Col style={{  margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('Social Studies')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+                <Button variant="primary" onClick={() => handleOptionClick('With a mentor/ supervisor')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
               With a mentor/ supervisor
             </Button>
                 </Col>
           <Col style={{margin: '10px', padding: '30px' }}>
-          <Button variant="primary" onClick={() => handleOptionClick('Physical Education')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+          <Button variant="primary" onClick={() => handleOptionClick('Leading the project')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
               Leading the project
             </Button>
           </Col>
