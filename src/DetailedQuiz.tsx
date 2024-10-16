@@ -1,15 +1,18 @@
-//import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
 
 const DetailedQuiz:React.FC=()=>{
+    const [selectedOption, setSelectedOption] = useState<string | null>(null); 
+
     const navigate = useNavigate();
     const goToHome = () => {
         navigate('/');
       };
       const handleOptionClick = (option: string) => {
+            setSelectedOption(option)
       };
     return(
         <><div>
@@ -24,24 +27,24 @@ const DetailedQuiz:React.FC=()=>{
                 
             <Row>
                 <Col style={{ margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('Independently')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+                <Button variant="primary" onClick={() => handleOptionClick('Independently')} style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Independently' ? '#99ccff' : '#007BFF'}}>
                 Independently
             </Button>
                 </Col>
           <Col style={{  margin: '10px', padding: '30px' }} >
-          <Button variant="primary" onClick={() => handleOptionClick('In a team')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+          <Button variant="primary" onClick={() => handleOptionClick('In a team')} style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'In a team' ? '#99ccff' : '#007BFF'}}>
               In a team
             </Button>
           </Col>
         </Row>
         <Row>
                 <Col style={{  margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('With a mentor/ supervisor')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+                <Button variant="primary" onClick={() => handleOptionClick('With a mentor/ supervisor')} style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'With a mentor/ supervisor' ? '#99ccff' : '#007BFF'}}>
               With a mentor/ supervisor
             </Button>
                 </Col>
           <Col style={{margin: '10px', padding: '30px' }}>
-          <Button variant="primary" onClick={() => handleOptionClick('Leading the project')} style ={{width: '200px', height: '100px', borderRadius: '30px'}}>
+          <Button variant="primary" onClick={() => handleOptionClick('Leading the project')} style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Leading the project' ? '#99ccff' : '#007BFF'}}>
               Leading the project
             </Button>
           </Col>
