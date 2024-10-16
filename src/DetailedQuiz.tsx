@@ -12,7 +12,8 @@ const DetailedQuiz:React.FC=()=>{
         navigate('/');
       };
       const handleOptionClick = (option: string) => {
-            setSelectedOption(option)
+        setSelectedOption(option)
+
       };
     return(
         <><div>
@@ -21,13 +22,13 @@ const DetailedQuiz:React.FC=()=>{
           </Button>
             <h1>Detailed Career Quiz</h1>
             <p>Welcome to the Detailed Career Quiz!</p>
-            
-        </div><Container style={{ marginTop: '20px', border: '1px solid black', width: '1000px', height: '500px' }}>
+        </div>
+        <Container style={{ marginTop: '20px', border: '1px solid black', width: '1000px', height: '500px' }}>
                 <h2>How do you prefer to work on projects?</h2>
                 
             <Row>
                 <Col style={{ margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('Independently')} style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Independently' ? '#99ccff' : '#007BFF'}}>
+                <Button variant="primary" onClick={() => handleOptionClick('Independently')} style ={{width: '200px', height: '100px', borderRadius: '30px', backgroundColor: selectedOption === 'Independently' ? '#99ccff' : '#007BFF'}}>
                 Independently
             </Button>
                 </Col>
