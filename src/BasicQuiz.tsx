@@ -1,18 +1,47 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, ProgressBar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+
+const questions: { question: string, options: string[] }[] = [
+  {
+      question: "Which of these subjects did you enjoy the most in school?",
+      options: ["Math/Science", "Arts/Literature", "Social Studies", "Physical Education"]
+  },
+  {
+      question: "",
+      options: []
+  },
+  // Add more questions 
+];
+
+
 
 const BasicQuiz:React.FC=()=>{
     const [selectedOption, setSelectedOption] = useState<string | null>(null); 
-
+    const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
+    const [quizComplete, setQuizComplete] = useState<boolean>(false);
+    const [visible, setVisibility] = useState<boolean>(false);
     const navigate = useNavigate();
+    
     const goToHome = () => {
         navigate('/');
-      };
-      const handleOptionClick = (option: string) => {
-        setSelectedOption(option)
+    };
 
-      };
+    const handleOptionClick = (option: string) => {
+        setSelectedOption(option)
+    };
+
+    const handleNextQuestion = () => {
+      if (currentQuestionIndex < questions.length -1){
+        setCurrentIndex(currentQuestionIndex +1);
+        setSelectedOption(null);
+      } else {
+        setQuizComplete(true);
+        setVisibility(true);
+      }
+    };
+
+    const progress = currentQuestionIndex / questions.length * 100;
     return(
         <><div>
             <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'}}>
@@ -20,84 +49,53 @@ const BasicQuiz:React.FC=()=>{
           </Button>
             <h1>Basic Career Quiz</h1>
             <p>Welcome to the Basic Career Quiz!</p>
-            
-        </div><Container style={{ marginTop: '20px', border: '1px solid black', width: '1000px', height: '500px' }}>
-                <h2>Which of these subjects did you enjoy the most in school?</h2>
-                
-            <Row>
-                <Col style={{ margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('Math/Science')}style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Math/Science' ? '#99ccff' : '#007BFF'}}>
-              Math/Science
-            </Button>
-                </Col>
-          <Col style={{  margin: '10px', padding: '30px' }}>
-          <Button variant="primary" onClick={() => handleOptionClick('Arts/Literature')}style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Arts/Literature' ? '#99ccff' : '#007BFF'}}>
-              Arts/Literature
-            </Button>
-          </Col>
-        </Row>
+        </div>
+
+        <div style={{width: '50%', margin: '0 auto'}}>
+        <ProgressBar now={progress} label={`${Math.round(progress)}%`}/>
+
+        </div>
+        
+        <Container style={{ marginTop: '50px', border: '1px solid black', width: '1000px', height: '500px', paddingTop: '50px'}}>
+        <h2>{questions[currentQuestionIndex].question}</h2>
         <Row>
-                <Col style={{  margin: '10px', padding: '30px' }}>
-                <Button variant="primary" onClick={() => handleOptionClick('Social Studies')}style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Social Studies' ? '#99ccff' : '#007BFF'}}>
-              Social Studies
-            </Button>
+            {questions[currentQuestionIndex].options.map((option: string) => (
+                <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
+                    <Button
+                        variant="primary"
+                        onClick={() => handleOptionClick(option)}
+                        style={{
+                            width: '150px', height: '75px', borderRadius: '30px',
+                            backgroundColor: selectedOption === option ? '#99ccff' : '#007BFF'
+                        }}>
+                        {option}
+                    </Button>
                 </Col>
-          <Col style={{margin: '10px', padding: '30px' }}>
-          <Button variant="primary" onClick={() => handleOptionClick('Physical Education')}style ={{width: '200px', height: '100px', borderRadius: '30px',backgroundColor: selectedOption === 'Physical Education' ? '#99ccff' : '#007BFF'}}>
-              Physical Education
-            </Button>
-          </Col>
+            ))}
         </Row>
         </Container>
         <div>
-        <Button onClick={goToHome} variant="primary" style ={{position: 'absolute', right: '270px', bottom: '170px', width: '150px', height: '50'}}>
-            Next Question
+
+        {visible && quizComplete && selectedOption && (
+          <Button 
+            variant="primary" 
+            style={{position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px'}}>
+            View Results
           </Button>
+
+        )}    
+        
+        <Button 
+        onClick={handleNextQuestion} 
+        variant="primary" 
+        disabled={!selectedOption || quizComplete}
+        style ={{position: 'absolute', right: '300px', bottom: '80px', width: '150px', height: '50', marginTop: '50px'}}>
+          Next Question
+        </Button>
         </div>
-        
-        
         </>
-        
     );
 };
 
 export default BasicQuiz;
 
-// eslint-disable-next-line no-lone-blocks
-{/* <Form> 
-  Radio Buttons
-                    <Form.Group>
-                        <Row>
-                            <Col>
-                                <Form.Check 
-                                    type="radio"
-                                    id="option1"
-                                    label="Math/Science"
-                                    name="quizOptions"
-                                    inline
-                                />
-                                <Form.Check 
-                                    type="radio"
-                                    id="option2"
-                                    label="Arts/Literature"
-                                    name="quizOptions"
-                                    inline
-                                />
-                                <Form.Check 
-                                    type="radio"
-                                    id="option3"
-                                    label="Social Studies"
-                                    name="quizOptions"
-                                    inline
-                                />
-                                <Form.Check 
-                                    type="radio"
-                                    id="option4"
-                                    label="Physical Education"
-                                    name="quizOptions"
-                                    inline
-                                />
-                            </Col>
-                        </Row>
-                    </Form.Group>
-                </Form> */}
