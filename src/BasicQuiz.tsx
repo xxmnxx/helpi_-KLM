@@ -8,9 +8,48 @@ const questions: { question: string, options: string[] }[] = [
       options: ["Math/Science", "Arts/Literature", "Social Studies", "Physical Education"]
   },
   {
-      question: "",
-      options: []
+      question: "What work environment would you prefer?",
+      options: ["Outdoors", "Office", "Remote", "Lab"]
   },
+  
+{
+  question: "Which would you enjoy most?",
+  options: ["Traveling the world", "Public speaking", 
+    "Helping others in need", "Developing a new invention"]
+},
+{
+  question: "Do you consider yourself a creative person?",
+  options: ["Yes", "Sometimes", "No"]
+},
+{
+  question: "How do you handle stress in the workplace?",
+  options: ["I thrive under pressure", "I prefer a calm environment", 
+    "I can handle stressin waves", "I need to take breaks"]
+},
+{
+  question: "What type of work schedule do you prefer?",
+  options: ["A 9-5 routine with weekends off", "Flexible hours that allow me to work when I want",
+    "Shift work that includes evenings weekends", "A mix of schedules work and independent projects"]
+},
+{
+  question: "Which of these industries do you find most appealing?",
+  options: ["Technology and IT", "Heathecare and Wellness",
+     "Arts and Creative Industries", "Education and Training"]
+},
+{
+  question: "What level of education are you aiming to achieve? ",
+  options: ["High School Diploma", "Bachelor's Degree", "Master's Degree", "PhD"]
+},
+{
+  question: "Which career field do you prefer? ",
+  options: ["STEM & Heathcare", "Business and Public Servies",
+     "Creative and Communication", "Trades, Hospitality and Recreation"]
+},
+{
+  question: "How physically demanding do you prefer your job to be?",
+  options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
+},
+
   // Add more questions 
 ];
 
