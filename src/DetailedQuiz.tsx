@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const questions: { question: string, options: string[] }[] = [
   {
       question: "How do you prefer to work on projects?",
-      options: ["Independantly", "In a team", "With a supervisor/mentor", "Leading the project"]
+      options: ["Independently", "In a team", "With a supervisor/mentor", "Leading the project"]
   },
   {
       question: "",
