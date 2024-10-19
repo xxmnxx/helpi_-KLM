@@ -66,6 +66,10 @@ const BasicQuiz:React.FC=()=>{
         navigate('/');
     };
 
+    const goToResults = () => {
+      navigate('/Results');
+    };
+
     const handleOptionClick = (option: string) => {
         setSelectedOption(option)
     };
@@ -79,6 +83,11 @@ const BasicQuiz:React.FC=()=>{
         setVisibility(true);
       }
     };
+
+    const handlePrevQuestion = () => {
+      setCurrentIndex(currentQuestionIndex -1);
+      setSelectedOption(null);
+    }
 
     const progress = currentQuestionIndex / questions.length * 100;
     return(
@@ -104,7 +113,7 @@ const BasicQuiz:React.FC=()=>{
                         variant="primary"
                         onClick={() => handleOptionClick(option)}
                         style={{
-                            width: '150px', height: '75px', borderRadius: '30px',
+                            width: '160px', height: '85px', borderRadius: '30px',
                             backgroundColor: selectedOption === option ? '#99ccff' : '#007BFF'
                         }}>
                         {option}
@@ -116,11 +125,12 @@ const BasicQuiz:React.FC=()=>{
         <div>
 
         {visible && quizComplete && selectedOption && (
-          <Button 
-            variant="primary" 
-            style={{position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px'}}>
-            View Results
-          </Button>
+          <><div>You have completed the Basic quiz!</div><Button
+          onClick={goToResults}
+              variant="primary"
+              style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px' }}>
+              View Results
+            </Button></>
 
         )}    
         
@@ -128,9 +138,16 @@ const BasicQuiz:React.FC=()=>{
         onClick={handleNextQuestion} 
         variant="primary" 
         disabled={!selectedOption || quizComplete}
-        style ={{position: 'absolute', right: '300px', bottom: '80px', width: '150px', height: '50', marginTop: '50px'}}>
+        style ={{position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
           Next Question
         </Button>
+        <Button 
+  onClick={handlePrevQuestion} 
+  variant="primary" 
+  disabled={currentQuestionIndex === 0}
+  style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+    Previous Question
+  </Button>
         </div>
         </>
     );
