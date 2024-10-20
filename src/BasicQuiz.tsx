@@ -24,7 +24,7 @@ const questions: { question: string, options: string[] }[] = [
 {
   question: "How do you handle stress in the workplace?",
   options: ["I thrive under pressure", "I prefer a calm environment", 
-    "I can handle stressin waves", "I need to take breaks"]
+    "I can handle stress in waves"]
 },
 {
   question: "What type of work schedule do you prefer?",
