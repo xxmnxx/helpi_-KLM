@@ -117,6 +117,8 @@ const DetailedQuiz:React.FC=()=>{
       const handlePrevQuestion = () => {
         setCurrentIndex(currentQuestionIndex -1);
         setSelectedOption(null);
+        setQuizComplete(false);
+        setVisibility(false);
       }
 
     const progress = currentQuestionIndex / questions.length * 100;
