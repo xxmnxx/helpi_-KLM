@@ -87,6 +87,8 @@ const BasicQuiz:React.FC=()=>{
     const handlePrevQuestion = () => {
       setCurrentIndex(currentQuestionIndex -1);
       setSelectedOption(null);
+      setQuizComplete(false);
+      setVisibility(false);
     }
 
     const progress = currentQuestionIndex / questions.length * 100;
@@ -126,7 +128,7 @@ const BasicQuiz:React.FC=()=>{
 
         {visible && quizComplete && selectedOption && (
           <><div>You have completed the Basic quiz!</div><Button
-          onClick={goToResults}
+              onClick={goToResults}
               variant="primary"
               style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px' }}>
               View Results
@@ -142,12 +144,12 @@ const BasicQuiz:React.FC=()=>{
           Next Question
         </Button>
         <Button 
-  onClick={handlePrevQuestion} 
-  variant="primary" 
-  disabled={currentQuestionIndex === 0}
-  style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
-    Previous Question
-  </Button>
+      onClick={handlePrevQuestion} 
+      variant="primary" 
+      disabled={currentQuestionIndex === 0}
+      style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+      Previous Question
+      </Button>
         </div>
         </>
     );
