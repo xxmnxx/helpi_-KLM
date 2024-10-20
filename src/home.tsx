@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
