@@ -160,7 +160,7 @@ All files           |   16.09 |     3.84 |    7.69 |   16.09 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.942 s
+Time:        2.865 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
