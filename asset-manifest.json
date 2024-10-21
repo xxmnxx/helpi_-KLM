@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/helpi_-KLM/static/css/main.f855e6bc.css",
-    "main.js": "/helpi_-KLM/static/js/main.56bf3a28.js",
+    "main.js": "/helpi_-KLM/static/js/main.5fc3647f.js",
     "static/js/453.bad6c33a.chunk.js": "/helpi_-KLM/static/js/453.bad6c33a.chunk.js",
     "index.html": "/helpi_-KLM/index.html",
     "main.f855e6bc.css.map": "/helpi_-KLM/static/css/main.f855e6bc.css.map",
-    "main.56bf3a28.js.map": "/helpi_-KLM/static/js/main.56bf3a28.js.map",
+    "main.5fc3647f.js.map": "/helpi_-KLM/static/js/main.5fc3647f.js.map",
     "453.bad6c33a.chunk.js.map": "/helpi_-KLM/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.56bf3a28.js"
+    "static/js/main.5fc3647f.js"
   ]
 }

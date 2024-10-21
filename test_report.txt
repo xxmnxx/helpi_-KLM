@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (91 ms)
+  ✕ renders learn react link (95 ms)
 
   ● renders learn react link
 
@@ -39,12 +39,12 @@ FAIL src/App.test.tsx
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
           [36m<div[39m
-            [33mclass[39m=[32m"container"[39m
-            [33mstyle[39m=[32m"margin-top: 30px; width: 1000px; height: 500px; margin-bottom: 200px;"[39m
+            [33mclass[39m=[32m"container-fluid"[39m
+            [33mstyle[39m=[32m"width: 100vw; height: 100vh; margin: 0px; padding: 0px; background-color: rgb(255, 238, 204);"[39m
           [36m>[39m
             [36m<header[39m
               [33mclass[39m=[32m"App-Header"[39m
-              [33mstyle[39m=[32m"padding: 20px;"[39m
+              [33mstyle[39m=[32m"padding: 20px; font-family: Zapfino;"[39m
             [36m>[39m
               [36m<h1>[39m
                 [0mCareer Quiz[0m
@@ -55,7 +55,7 @@ FAIL src/App.test.tsx
             [36m</header>[39m
             [36m<div[39m
               [33mclass[39m=[32m"container"[39m
-              [33mstyle[39m=[32m"border: 1px solid black; padding: 30px; width: 1000px; height: 400px;"[39m
+              [33mstyle[39m=[32m"border: 4px solid #772e25; padding: 30px; width: 1000px; height: 500px; background-color: rgb(200, 214, 175); font-family: Modern No. 20;"[39m
             [36m>[39m
               [36m<h2>[39m
                 [0mChoose the quiz you want to take![0m
@@ -65,7 +65,7 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"col"[39m
-                  [33mstyle[39m=[32m"border: 1px solid black; margin: 10px; padding: 10px; height: 300px;"[39m
+                  [33mstyle[39m=[32m"border: 4px solid #772e25; margin: 10px; padding: 10px; height: 300px; background-color: rgb(255, 238, 204); font-family: Modern No. 20;"[39m
                 [36m>[39m
                   [36m<h3>[39m
                     [0mBasic Quiz[0m
@@ -75,6 +75,7 @@ FAIL src/App.test.tsx
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mstyle[39m=[32m"background-color: rgb(5, 50, 37); border-color: #053225; color: rgb(255, 255, 255); font-family: Modern No. 20;"[39m
                     [33mtype[39m=[32m"button"[39m
                   [36m>[39m
                     [0mStart Basic Quiz[0m
@@ -82,7 +83,7 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"col"[39m
-                  [33mstyle[39m=[32m"border: 1px solid black; margin: 10px; padding: 10px; height: 300px;"[39m
+                  [33mstyle[39m=[32m"border: 4px solid #772e25; margin: 10px; padding: 10px; height: 300px; background-color: rgb(255, 238, 204); font-family: Modern No. 20;"[39m
                 [36m>[39m
                   [36m<h3>[39m
                     [0mDetailed Quiz[0m
@@ -92,6 +93,7 @@ FAIL src/App.test.tsx
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mstyle[39m=[32m"background-color: rgb(5, 50, 37); border-color: #053225; color: rgb(255, 255, 255); font-family: Modern No. 20;"[39m
                     [33mtype[39m=[32m"button"[39m
                   [36m>[39m
                     [0mStart Detailed Quiz[0m
@@ -158,7 +160,7 @@ All files           |   16.09 |     3.84 |    7.69 |   16.09 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.956 s
+Time:        2.942 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
