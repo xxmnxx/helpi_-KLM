@@ -93,20 +93,21 @@ const BasicQuiz:React.FC=()=>{
 
     const progress = currentQuestionIndex / questions.length * 100;
     return(
-        <><div>
-            <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'}}>
+      <Container fluid style={{backgroundColor:'#C8D6AF'}}>
+        <div>
+            <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225', borderColor: '#053225',}}>
             Go to Home
           </Button>
-            <h1>Basic Career Quiz</h1>
+            <h1>Basic Career Quiz</h1> 
             <p>Welcome to the Basic Career Quiz!</p>
         </div>
 
-        <div style={{width: '50%', margin: '0 auto'}}>
+        <div style={{width: '50%', margin: '0 auto',}}>
         <ProgressBar now={progress} label={`${Math.round(progress)}%`}/>
 
         </div>
         
-        <Container style={{ marginTop: '50px', border: '1px solid black', width: '1000px', height: '500px', paddingTop: '50px'}}>
+        <Container style={{ marginTop: '50px', border: '1px solid black', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
         <h2>{questions[currentQuestionIndex].question}</h2>
         <Row>
             {questions[currentQuestionIndex].options.map((option: string) => (
@@ -116,7 +117,7 @@ const BasicQuiz:React.FC=()=>{
                         onClick={() => handleOptionClick(option)}
                         style={{
                             width: '160px', height: '85px', borderRadius: '30px',
-                            backgroundColor: selectedOption === option ? '#99ccff' : '#007BFF'
+                            backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
                         }}>
                         {option}
                     </Button>
@@ -130,7 +131,7 @@ const BasicQuiz:React.FC=()=>{
           <><div>You have completed the Basic quiz!</div><Button
               onClick={goToResults}
               variant="primary"
-              style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px' }}>
+              style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px',backgroundColor: '#053225'}}>
               View Results
             </Button></>
 
@@ -151,7 +152,7 @@ const BasicQuiz:React.FC=()=>{
       Previous Question
       </Button>
         </div>
-        </>
+        </Container>
     );
 };
 
