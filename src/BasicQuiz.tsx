@@ -59,6 +59,7 @@ const BasicQuiz:React.FC=()=>{
     const [selectedOption, setSelectedOption] = useState<string | null>(null); 
     const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
     const [quizComplete, setQuizComplete] = useState<boolean>(false);
+    const [answers, setAnswers] = useState<{ question: string, options: string[], selectedAnswer:string}[]>([]);
     const [visible, setVisibility] = useState<boolean>(false);
     const navigate = useNavigate();
     
@@ -67,7 +68,7 @@ const BasicQuiz:React.FC=()=>{
     };
 
     const goToResults = () => {
-      navigate('/Results');
+      navigate('/Results', {state: {answers}});
     };
 
     const handleOptionClick = (option: string) => {
@@ -75,12 +76,27 @@ const BasicQuiz:React.FC=()=>{
     };
 
     const handleNextQuestion = () => {
-      if (currentQuestionIndex < questions.length -1){
-        setCurrentIndex(currentQuestionIndex +1);
-        setSelectedOption(null);
-      } else {
-        setQuizComplete(true);
-        setVisibility(true);
+      if (selectedOption !== null) {
+        const currentQuestion = questions[currentQuestionIndex];
+        
+        // Update the answers with the selected answer
+        setAnswers(prevAnswers => [
+          ...prevAnswers,
+          {
+            question: currentQuestion.question,
+            options: currentQuestion.options,
+            selectedAnswer: selectedOption
+          }
+        ]);
+  
+        // Move to the next question or complete the quiz
+        if (currentQuestionIndex < questions.length - 1) {
+          setCurrentIndex(currentQuestionIndex + 1);
+          setSelectedOption(null);
+        } else {
+          setQuizComplete(true);
+          setVisibility(true);
+        }
       }
     };
 
@@ -90,8 +106,9 @@ const BasicQuiz:React.FC=()=>{
       setQuizComplete(false);
       setVisibility(false);
     }
-
+    //progress bar tracks question index
     const progress = currentQuestionIndex / questions.length * 100;
+
     return(
       <Container fluid style={{backgroundColor:'#C8D6AF'}}>
         <div>
@@ -104,26 +121,26 @@ const BasicQuiz:React.FC=()=>{
 
         <div style={{width: '50%', margin: '0 auto',}}>
         <ProgressBar now={progress} label={`${Math.round(progress)}%`}/>
-
         </div>
         
         <Container style={{ marginTop: '50px', border: '1px solid black', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
-        <h2>{questions[currentQuestionIndex].question}</h2>
-        <Row>
-            {questions[currentQuestionIndex].options.map((option: string) => (
-                <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
-                    <Button
-                        variant="primary"
-                        onClick={() => handleOptionClick(option)}
-                        style={{
-                            width: '160px', height: '85px', borderRadius: '30px',
-                            backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
-                        }}>
-                        {option}
-                    </Button>
-                </Col>
-            ))}
-        </Row>
+        {/* displays question at current index*/}         
+          <h2>{questions[currentQuestionIndex].question}</h2>
+          <Row> {/* maps every option of the current question index to buttons */}
+              {questions[currentQuestionIndex].options.map((option: string) => (
+                  <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
+                      <Button
+                          variant="primary"
+                          onClick={() => handleOptionClick(option)}
+                          style={{
+                              width: '160px', height: '85px', borderRadius: '30px',
+                              backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
+                          }}>
+                          {option}
+                      </Button>
+                  </Col>
+              ))}
+          </Row>
         </Container>
         <div>
 
@@ -138,18 +155,19 @@ const BasicQuiz:React.FC=()=>{
         )}    
         
         <Button 
-        onClick={handleNextQuestion} 
-        variant="primary" 
-        disabled={!selectedOption || quizComplete}
-        style ={{position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+          onClick={handleNextQuestion} 
+          variant="primary" 
+          disabled={!selectedOption || quizComplete}
+          style ={{position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
           Next Question
         </Button>
+
         <Button 
-      onClick={handlePrevQuestion} 
-      variant="primary" 
-      disabled={currentQuestionIndex === 0}
-      style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
-      Previous Question
+          onClick={handlePrevQuestion} 
+          variant="primary" 
+          disabled={currentQuestionIndex === 0}
+          style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+          Previous Question
       </Button>
         </div>
         </Container>
