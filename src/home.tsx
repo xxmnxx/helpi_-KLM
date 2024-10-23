@@ -25,7 +25,8 @@ function HomePage() {
         <Container style={{ border: '4px solid #772e25', padding: '30px', width: '1000px', height: '500px', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
           <h2>Choose the quiz you want to take!</h2>
           <Row>
-            <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', height: '300px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+            <Col className ="custom-box">
+
               <h3>Basic Quiz</h3>
               <p>
               This quiz provides a quick and straightforward assessment, 
@@ -33,9 +34,11 @@ function HomePage() {
                It’s ideal for those looking for a brief overview to help guide their career exploration.
               </p>
               <Button onClick={navigateToBasicQuiz}style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff', fontFamily: 'Modern No. 20' }}>Start Basic Quiz</Button>
+              
+
             </Col>
-            <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', height: '300px', backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
-              <h3>Detailed Quiz</h3>
+            <Col className ="custom-box">              
+            <h3>Detailed Quiz</h3>
               <p>This quiz offers a more in-depth exploration, 
                 featuring targeted questions designed to identify specific career paths that align with your strengths and interests.
                  It's ideal for those who are committed to investing extra time to gain deeper insights into their ideal career trajectory.

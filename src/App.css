@@ -35,5 +35,23 @@
   to {
     transform: rotate(360deg);
   }
+  
 }
+.custom-box {
+  padding: 10px;
+  height: 300px;
+  background-color: #FFECCC; 
+  border: 4px solid  #772e25  ; 
+  clip-path: polygon(5% 0%, 100% 0%, 100% 95%, 95% 100%, 0% 100%, 0% 5%);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.custom-box p {
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
 
