@@ -124,20 +124,21 @@ const DetailedQuiz:React.FC=()=>{
     const progress = currentQuestionIndex / questions.length * 100;
 
     return(
-      <><div>
-      <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'}}>
+      <Container fluid style={{backgroundColor:'#C8D6AF'}}>
+      <div>
+      <Button onClick={goToHome} variant="primary"style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'}}>
       Go to Home
     </Button>
       <h1>Detailed Career Quiz</h1>
       <p>Welcome to the Detailed Career Quiz!</p>
   </div>
 
-  <div style={{width: '50%', margin: '0 auto'}}>
+  <div style={{border: '3px solid #772e25',backgroundColor: '#053225', borderColor: '#053225',width: '50%', margin: '0 auto'}}>
   <ProgressBar now={progress} label={`${Math.round(progress)}%`}/>
 
   </div>
   
-  <Container style={{ marginTop: '50px', border: '1px solid black', width: '1000px', height: '500px', paddingTop: '50px'}}>
+  <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
   <h2>{questions[currentQuestionIndex].question}</h2>
   <Row>
       {questions[currentQuestionIndex].options.map((option: string) => (
@@ -147,7 +148,7 @@ const DetailedQuiz:React.FC=()=>{
                   onClick={() => handleOptionClick(option)}
                   style={{
                       width: '160px', height: '85px', borderRadius: '30px',
-                      backgroundColor: selectedOption === option ? '#99ccff' : '#007BFF'
+                      backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
                   }}>
                   {option}
               </Button>
@@ -161,7 +162,7 @@ const DetailedQuiz:React.FC=()=>{
     <><div>You have completed the detailed quiz!</div><Button
     onClick={goToResults}
         variant="primary"
-        style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px' }}>
+        style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px' , backgroundColor: '#053225', borderColor: '#053225'}}>
         View Results
       </Button></>
 
@@ -171,18 +172,18 @@ const DetailedQuiz:React.FC=()=>{
   onClick={handleNextQuestion} 
   variant="primary" 
   disabled={!selectedOption || quizComplete}
-  style ={{position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+  style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
     Next Question
   </Button>
   <Button 
   onClick={handlePrevQuestion} 
   variant="primary" 
   disabled={currentQuestionIndex === 0}
-  style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+  style ={{backgroundColor: '#053225', borderColor: '#053225',position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
     Previous Question
   </Button>
-  </div>
-  </>   
+  </div> 
+  </Container>
     );
 };
 
