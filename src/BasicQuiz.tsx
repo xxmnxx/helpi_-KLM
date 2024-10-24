@@ -119,11 +119,18 @@ const BasicQuiz:React.FC=()=>{
             <p>Welcome to the Basic Career Quiz!</p>
         </div>
 
-        <div style={{width: '50%', margin: '0 auto',}}>
-        <ProgressBar now={progress} label={`${Math.round(progress)}%`}/>
-        </div>
+        <div style={{border: '3px solid #772e25', width: '50%', margin: '0 auto'}}>
+        <ProgressBar 
+          now={progress} 
+          label={`${Math.round(progress)}%`} 
+          style={{ backgroundColor: '#FFECCC', height: '30px' }}  // Set the height if needed
+          striped 
+          variant="custom"  // Use Bootstrap custom variant
+        />
+      </div>
         
-        <Container style={{ marginTop: '50px', border: '1px solid black', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
+        <Container style={{ marginTop: '50px', border: '5px solid #772e25',  width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC', borderColor: '#772e25'
+ }}>
         {/* displays question at current index*/}         
           <h2>{questions[currentQuestionIndex].question}</h2>
           <Row> {/* maps every option of the current question index to buttons */}
@@ -158,7 +165,7 @@ const BasicQuiz:React.FC=()=>{
           onClick={handleNextQuestion} 
           variant="primary" 
           disabled={!selectedOption || quizComplete}
-          style ={{position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+          style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
           Next Question
         </Button>
 
@@ -166,7 +173,7 @@ const BasicQuiz:React.FC=()=>{
           onClick={handlePrevQuestion} 
           variant="primary" 
           disabled={currentQuestionIndex === 0}
-          style ={{position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+          style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
           Previous Question
       </Button>
         </div>
