@@ -134,8 +134,13 @@ const DetailedQuiz:React.FC=()=>{
   </div>
 
   <div style={{border: '3px solid #772e25',backgroundColor: '#053225', borderColor: '#053225',width: '50%', margin: '0 auto'}}>
-  <ProgressBar now={progress} label={`${Math.round(progress)}%`}/>
-
+  <ProgressBar 
+          now={progress} 
+          label={`${Math.round(progress)}%`} 
+          style={{ backgroundColor: '#FFECCC', height: '30px' }}  // Set the height if needed
+          striped 
+          variant="custom"  // Use Bootstrap custom variant
+        />
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
@@ -147,7 +152,7 @@ const DetailedQuiz:React.FC=()=>{
                   variant="primary"
                   onClick={() => handleOptionClick(option)}
                   style={{
-                      width: '160px', height: '85px', borderRadius: '30px',
+                      width: '160px', height: '105px', borderRadius: '30px',
                       backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
                   }}>
                   {option}
