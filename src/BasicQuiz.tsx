@@ -59,7 +59,7 @@ const BasicQuiz:React.FC=()=>{
     const [selectedOption, setSelectedOption] = useState<string | null>(null); 
     const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
     const [quizComplete, setQuizComplete] = useState<boolean>(false);
-    const [answers, setAnswers] = useState<{ question: string, options: string[], selectedAnswer:string}[]>([]);
+    const [answers, setAnswers] = useState<{ question: string, selectedAnswer:string}[]>([]);
     const [visible, setVisibility] = useState<boolean>(false);
     const navigate = useNavigate();
     
@@ -67,9 +67,6 @@ const BasicQuiz:React.FC=()=>{
         navigate('/');
     };
 
-    const goToResults = () => {
-      navigate('/Results', {state: {answers}});
-    };
 
     const handleOptionClick = (option: string) => {
         setSelectedOption(option)
@@ -84,7 +81,6 @@ const BasicQuiz:React.FC=()=>{
           ...prevAnswers,
           {
             question: currentQuestion.question,
-            options: currentQuestion.options,
             selectedAnswer: selectedOption
           }
         ]);
@@ -96,6 +92,8 @@ const BasicQuiz:React.FC=()=>{
         } else {
           setQuizComplete(true);
           setVisibility(true);
+          localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
+
         }
       }
     };
@@ -105,12 +103,17 @@ const BasicQuiz:React.FC=()=>{
       setSelectedOption(null);
       setQuizComplete(false);
       setVisibility(false);
-    }
+    };
+
+    const goToResults = () => {
+      navigate('/Results', {state: {answers}});
+    };
+
     //progress bar tracks question index
-    const progress = currentQuestionIndex / questions.length * 100;
+    const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
 
     return(
-      <Container fluid style={{backgroundColor:'#C8D6AF'}}>
+      <Container fluid style={{backgroundColor:'#C8D6AF', paddingBottom: '50px'}}>
         <div>
             <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225', borderColor: '#053225',}}>
             Go to Home
@@ -129,6 +132,7 @@ const BasicQuiz:React.FC=()=>{
         />
       </div>
         
+
         <Container style={{ marginTop: '50px', border: '5px solid #772e25',  width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC', borderColor: '#772e25'
  }}>
         {/* displays question at current index*/}         

@@ -121,7 +121,7 @@ const DetailedQuiz:React.FC=()=>{
         setVisibility(false);
       }
 
-    const progress = currentQuestionIndex / questions.length * 100;
+    const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
 
     return(
       <Container fluid style={{backgroundColor:'#C8D6AF'}}>
