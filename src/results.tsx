@@ -39,6 +39,7 @@ const ResultPage: React.FC = () => {
         // Initialize OpenAI API
         const openai = new OpenAI({
           apiKey: JSON.parse(apiKey),
+          dangerouslyAllowBrowser: true
 
         });
 
