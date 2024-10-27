@@ -72,8 +72,6 @@ const BasicQuiz:React.FC=()=>{
    };
 
 
-
-
    const handleOptionClick = (option: string) => {
        setSelectedOption(option)
    };
@@ -136,21 +134,29 @@ const BasicQuiz:React.FC=()=>{
 
        <div style={{border: '3px solid #772e25', width: '50%', margin: '0 auto'}}>
        <ProgressBar
-         now={progress}
-         label={`${Math.round(progress)}%`}
-         style={{ backgroundColor: '#FFECCC', height: '30px' }}  // Set the height if needed
-         striped
-         variant="custom"  // Use Bootstrap custom variant
-       />
+        now={progress}
+        label={`${Math.round(progress)}%`}
+        style={{
+          backgroundColor: '#FFECCC', // Background for entire progress bar container
+          height: '30px',
+        }}
+      >
+        <div style={{
+            width: `${progress}%`,
+            backgroundColor: '#053225', // Custom color for the progress
+            height: '100%',
+          }}
+        />
+      </ProgressBar>
      </div>
       
 
 
        <Container style={{ marginTop: '50px', border: '5px solid #772e25',  width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC', borderColor: '#772e25'
 }}>
-       {/* displays question at current index*/}        
+               
          <h2>{questions[currentQuestionIndex].question}</h2>
-         <Row> {/* maps every option of the current question index to buttons */}
+         <Row> 
              {questions[currentQuestionIndex].options.map((option: string) => (
                  <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
                      <Button

@@ -85,10 +85,12 @@ const questions: { question: string, options: string[] }[] = [
 
 
 
+
 const DetailedQuiz:React.FC=()=>{
     const [selectedOption, setSelectedOption] = useState<string | null>(null); 
     const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
     const [quizComplete, setQuizComplete] = useState<boolean>(false);
+    const [answers, setAnswers] = useState<{ question: string, selectedAnswer:string}[]>([]);
     const [visible, setVisibility] = useState<boolean>(false);
     const navigate = useNavigate();
 
@@ -96,21 +98,34 @@ const DetailedQuiz:React.FC=()=>{
         navigate('/');
       };
 
-      const goToResults = () => {
-        navigate('/Results');
-      };
-
+      
       const handleOptionClick = (option: string) => {
         setSelectedOption(option)
       };
 
       const handleNextQuestion = () => {
-        if (currentQuestionIndex < questions.length -1){
-          setCurrentIndex(currentQuestionIndex +1);
-          setSelectedOption(null);
-        } else {
-          setQuizComplete(true);
-          setVisibility(true);
+        if (selectedOption !== null) {
+          const currentQuestion = questions[currentQuestionIndex];
+         
+          // Update the answers with the selected answer
+          setAnswers(prevAnswers => [
+            ...prevAnswers,
+            {
+              question: currentQuestion.question,
+              selectedAnswer: selectedOption
+            }
+          ]);
+           // Move to the next question or complete the quiz
+          if (currentQuestionIndex < questions.length - 1) {
+            setCurrentIndex(currentQuestionIndex + 1);
+            setSelectedOption(null);
+          } else {
+            setQuizComplete(true);
+            setVisibility(true);
+            localStorage.setItem('detailedQuizAnswers', JSON.stringify(answers));
+   
+   
+          }
         }
       };
 
@@ -120,6 +135,11 @@ const DetailedQuiz:React.FC=()=>{
         setQuizComplete(false);
         setVisibility(false);
       }
+
+      const goToResults = () => {
+        navigate('/Results');
+      };
+
 
     const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
 
@@ -134,13 +154,21 @@ const DetailedQuiz:React.FC=()=>{
   </div>
 
   <div style={{border: '3px solid #772e25',backgroundColor: '#053225', borderColor: '#053225',width: '50%', margin: '0 auto'}}>
-  <ProgressBar 
-          now={progress} 
-          label={`${Math.round(progress)}%`} 
-          style={{ backgroundColor: '#FFECCC', height: '30px' }}  // Set the height if needed
-          striped 
-          variant="custom"  // Use Bootstrap custom variant
+  <ProgressBar
+        now={progress}
+        label={`${Math.round(progress)}%`}
+        style={{
+          backgroundColor: '#FFECCC', // Background for entire progress bar container
+          height: '30px',
+        }}
+      >
+        <div style={{
+            width: `${progress}%`,
+            backgroundColor: '#053225', // Custom color for the progress
+            height: '100%',
+          }}
         />
+      </ProgressBar>
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>

@@ -23,10 +23,8 @@ function App() {
 
  // sets the local storage item to the API key the user input
  function handleSubmit() {
-   console.log("API Key submitted:", key); // Log the submitted key
    localStorage.setItem(saveKeyData, JSON.stringify(key));
    setKey(key);
-   console.log("API Key stored in localStorage:", localStorage.getItem(saveKeyData));
    window.location.reload(); // when making a mistake and changing the key again, reload the whole site
  }
 //comment
