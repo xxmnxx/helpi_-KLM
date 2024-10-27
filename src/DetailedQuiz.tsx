@@ -153,7 +153,7 @@ const DetailedQuiz:React.FC=()=>{
       <p>Welcome to the Detailed Career Quiz!</p>
   </div>
 
-  <div style={{border: '3px solid #772e25',backgroundColor: '#053225', borderColor: '#053225',width: '50%', margin: '0 auto'}}>
+  <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
   <ProgressBar
         now={progress}
         label={`${Math.round(progress)}%`}
