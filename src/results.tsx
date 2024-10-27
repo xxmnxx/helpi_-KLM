@@ -53,7 +53,7 @@ const ResultPage: React.FC = () => {
             },
             {
               "role": "user",
-              "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers, if its from the Basic quiz, give me 3 broad career fields that fit best with my given answers to each question with a one sentence description for each field. also provide just 2 example careers for each field with justification for choosing them based on my answers.`
+              "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers, give me 3 broad career fields that fit best with my given answers to each question with a one sentence description for each field. also provide just 2 example careers for each field with justification for choosing them based on my answers.`
             }
           ]
         });
