@@ -1,4 +1,4 @@
-import { Container,Button } from 'react-bootstrap';
+import { Container,Button, Row,Col } from 'react-bootstrap';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
@@ -6,7 +6,7 @@ import { useState,useEffect } from 'react';
 
 const ResultPage: React.FC = () => {
   const navigate = useNavigate(); 
-  const [aiResponse, setAiResponse] = useState<string | null>(null); // State to store OpenAI response
+  const [aiResponse, setAiResponse] = useState<string[] | null>(null); // State to store OpenAI response
   const [loading, setLoading] = useState<boolean>(true); // Loading state
 
   // Navigate to home
@@ -66,14 +66,16 @@ const ResultPage: React.FC = () => {
           ]
         });
 
-        // Extract the assistant's response and update the state
-        setAiResponse(completion.choices[0].message.content);
-      } catch (error) {
-        console.error("Error fetching results or contacting OpenAI:", error);
-        setAiResponse("There was an error generating your career suggestions. Please try again later.");
-      } finally {
-        setLoading(false); // Set loading to false after the request completes
-      }
+      // Extract the assistant's response and update the state
+      const responseArray = completion.choices[0].message.content?.split(/\d\.\s+/).filter(Boolean);
+      setAiResponse(responseArray || []);
+    } catch (error) {
+      console.error("Error fetching results or contacting OpenAI:", error);
+      setAiResponse([]);
+    } finally {
+      setLoading(false); // Set loading to false after the request complete
+    }
+    
     };
 
     fetchQuizResults();
@@ -86,18 +88,34 @@ const ResultPage: React.FC = () => {
         <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
       </header>
 
+
       <Container style={{ border: '1px solid black', padding: '30px', width: '1000px', height: '400px' }}>
         <h2> Congrats! You finished the Quiz</h2>
+
 
         {/* Display the AI response or a loading message */}
         {loading ? (
           <p>Loading your personalized career suggestions...</p>
         ) : (
+
+
           <div>
             <h3>Your Suggested Career Paths:</h3>
-            <p>{aiResponse}</p>
+            {aiResponse ? (
+              <Row>
+              {aiResponse.map((response, index: number) => (
+                  <Col  key={index} style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '400px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+            <h4>Career Field #{1 + index}:</h4>
+            <p>{response}</p>
+          </Col>
+              ))}
+              </Row>
+            ) : (
+              <p>"There was an error generating your career suggestions. Please try again later."</p>
+            )}
           </div>
         )}
+
 
         <Button onClick={goToHome} variant="primary" style={{
           position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'
