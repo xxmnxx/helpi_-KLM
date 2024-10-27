@@ -19,10 +19,18 @@ const ResultPage: React.FC = () => {
     const fetchQuizResults = async () => {
       try {
         // Fetch stored answers from localStorage
-        const storedAnswers = localStorage.getItem('basicQuizAnswers');
+        const storedAnswersBasic = localStorage.getItem('basicQuizAnswers');
+        const storedAnswersDetailed = localStorage.getItem('detailedQuizAnswers');
         
         // Parse the stored answers
-        let userAnswers = storedAnswers ? JSON.parse(storedAnswers) : [];
+        let userAnswers;
+        if (storedAnswersDetailed) {
+            userAnswers = JSON.parse(storedAnswersDetailed);
+        } else if (storedAnswersBasic) {
+            userAnswers = JSON.parse(storedAnswersBasic);
+        } else {
+            userAnswers = [];
+        }
 
         // Format answers into a readable message for OpenAI
         let formattedAnswers = userAnswers.map((answer: { question: string; selectedAnswer: string }) => 
