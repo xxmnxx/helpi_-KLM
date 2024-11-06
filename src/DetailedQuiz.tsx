@@ -205,14 +205,14 @@ const DetailedQuiz:React.FC=()=>{
   onClick={handleNextQuestion} 
   variant="primary" 
   disabled={!selectedOption || quizComplete}
-  style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+  style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
     Next Question
   </Button>
   <Button 
   onClick={handlePrevQuestion} 
   variant="primary" 
   disabled={currentQuestionIndex === 0}
-  style ={{backgroundColor: '#053225', borderColor: '#053225',position: 'absolute', left: '300px', bottom: '80px', width: '200px', height: '50', marginTop: '50px'}}>
+  style ={{backgroundColor: '#053225', borderColor: '#053225',position: 'absolute', left: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
     Previous Question
   </Button>
   </div> 
