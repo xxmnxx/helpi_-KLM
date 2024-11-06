@@ -82,15 +82,13 @@ const ResultPage: React.FC = () => {
   }, []); // Empty dependency array means this will only run once, when the component mounts
 
   return (
-    <Container style={{ marginTop: '30px', width: '1000px', height: '500px', marginBottom: '200px' }}>
-      <header className="App-Header" style={{ padding: '20px' }}>
-        <h1>Career Quiz Results</h1>
-        <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
+    <Container fluid style={{ margin: 0, width: '100%', height: '100%', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
+      <header className="App-Header" style={{ padding: '20px'}}>
+        <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>Career Quiz Results</h1>
+        <div style={{ fontSize: '25px', fontWeight: 'bold' }}>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
       </header>
 
-
-      <Container style={{ border: '1px solid black', padding: '30px', width: '1000px', height: '400px' }}>
-        <h2> Congrats! You finished the Quiz</h2>
+        <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}> Congrats! You finished the Quiz</h2>
 
 
         {/* Display the AI response or a loading message */}
@@ -118,12 +116,11 @@ const ResultPage: React.FC = () => {
 
 
         <Button onClick={goToHome} variant="primary" style={{
-          position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'
+          position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225'
         }}>
           Go to Home
         </Button>
       </Container>
-    </Container>
   );
 };
 
