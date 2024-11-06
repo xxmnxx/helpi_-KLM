@@ -18,8 +18,8 @@ function HomePage() {
   
     return (
       <Container fluid style={{ width: '100vw', height: '100vh', margin: '0', padding: '0', backgroundColor: '#FFEECC' }}>
-        <header className="App-Header" style={{ padding: '20px' , fontFamily: 'Zapfino'}}>
-            <h1>Career Quiz</h1>
+        <header className="App-Header" style={{ padding: '20px' , fontFamily: 'Palatino',fontSize: '30px', fontWeight: 'bold'}}>
+            <h1 style={{fontSize: '70px', fontWeight: 'bold'}}>Career Quiz</h1>
             <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
           </header>
         <Container style={{ border: '4px solid #772e25', padding: '30px', width: '1000px', height: '500px', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
