@@ -57,11 +57,11 @@ const ResultPage: React.FC = () => {
           messages: [
             {
               "role": "system",
-              "content": "You are a career coach providing personalized career advice based on answers to either a basic career quiz or a detailed career quiz.If you recieve a set of 10 answers, its from the basic quiz. If you recieve 25 answers, its from the detailed Quiz."
+              "content": "You are a career coach providing personalized career advice based on answers to either a basic career quiz or a detailed career quiz.If you recieve a set of 10 answers, its from the basic quiz, and you should give 3 broad career fields with an example of a job within each career field along with a short description and justification for each. If you recieve 25 answers, its from the detailed Quiz and you should provide 6 careers that fit best with the given answers and a short description and justification for each."
             },
             {
               "role": "user",
-              "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers, give me 3 broad career fields that fit best with my given answers to each question with a one sentence description for each field. also provide just 2 example careers for each field with justification for choosing them based on my answers.`
+              "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers,if theres only 10 answers, give me basic quiz results as defined. If theres 25 answers, give me detailed quiz results as defined.`
             }
           ]
         });
