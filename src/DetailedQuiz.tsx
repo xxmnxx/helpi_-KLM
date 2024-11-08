@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const questions: { question: string, options: string[] }[] = [
   {
-      question: "How do you prefer to work on projects?",
+      question : "How do you prefer to work on projects?",
       options: ["Independently", "In a team", "With a supervisor/mentor", "Leading the project"]
   },
   {
@@ -149,8 +149,8 @@ const DetailedQuiz:React.FC=()=>{
       <Button onClick={goToHome} variant="primary"style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'}}>
       Go to Home
     </Button>
-      <h1>Detailed Career Quiz</h1>
-      <p>Welcome to the Detailed Career Quiz!</p>
+      <h1 style={{fontFamily: 'Palatino',fontWeight: 'bold'}}>Detailed Career Quiz</h1>
+      <p style={{fontFamily: 'Palatino'}}>Welcome to the Detailed Career Quiz!</p>
   </div>
 
   <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
@@ -172,7 +172,7 @@ const DetailedQuiz:React.FC=()=>{
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
-  <h2>{questions[currentQuestionIndex].question}</h2>
+  <h2 style={{fontFamily: 'Palatino'}}>{questions[currentQuestionIndex].question}</h2>
   <Row>
       {questions[currentQuestionIndex].options.map((option: string) => (
           <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
