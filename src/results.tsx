@@ -84,11 +84,10 @@ const ResultPage: React.FC = () => {
   return (
     <Container fluid style={{ margin: 0, width: '100%', height: '100%', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
       <header className="App-Header" style={{ padding: '20px'}}>
-        <h1 style={{ fontSize: '30px', fontWeight: 'bold' }}>Career Quiz Results</h1>
-        <div style={{ fontSize: '25px', fontWeight: 'bold' }}>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
+        <h1 style={{ fontSize: '40px', fontWeight: 'bold', fontFamily: 'Palatino' }}>Career Quiz Results</h1>
       </header>
 
-        <h2 style={{ fontSize: '30px', fontWeight: 'bold' }}> Congrats! You finished the Quiz</h2>
+        <h2 style={{ fontSize: '30px',fontFamily: 'Palatino' }}> Congrats! You finished the Quiz</h2>
 
 
         {/* Display the AI response or a loading message */}
@@ -98,7 +97,7 @@ const ResultPage: React.FC = () => {
 
 
           <div>
-            <h3>Your Suggested Career Paths:</h3>
+            <h3 style={{ fontSize: '25px', fontFamily: 'Palatino' }}>Your Suggested Career Paths:</h3>
             {aiResponse ? (
               <Row>
               {aiResponse.map((response, index: number) => (

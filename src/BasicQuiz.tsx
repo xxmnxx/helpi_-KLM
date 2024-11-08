@@ -119,7 +119,7 @@ const BasicQuiz:React.FC=()=>{
             <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225', borderColor: '#053225',}}>
             Go to Home
           </Button>
-            <h1>Basic Career Quiz</h1> 
+            <h1 style={{fontFamily: 'Palatino',fontWeight: 'bold'}}>Basic Career Quiz</h1> 
             <p>Welcome to the Basic Career Quiz!</p>
         </div>
 
@@ -145,7 +145,7 @@ const BasicQuiz:React.FC=()=>{
         <Container style={{ marginTop: '50px', border: '5px solid #772e25',  width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC', borderColor: '#772e25'
  }}>
         {/* displays question at current index*/}         
-          <h2>{questions[currentQuestionIndex].question}</h2>
+          <h2 style={{fontFamily: 'Palatino'}} >{questions[currentQuestionIndex].question}</h2>
           <Row> {/* maps every option of the current question index to buttons */}
               {questions[currentQuestionIndex].options.map((option: string) => (
                   <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
