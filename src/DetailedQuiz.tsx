@@ -153,22 +153,30 @@ const DetailedQuiz:React.FC=()=>{
       <p style={{fontFamily: 'Palatino'}}>Welcome to the Detailed Career Quiz!</p>
   </div>
 
-  <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
-  <ProgressBar
+  <div style={{width: '50%', margin: '0 auto'}}>
+        <ProgressBar
         now={progress}
         label={`${Math.round(progress)}%`}
-        style={{
-          backgroundColor: '#FFECCC', // Background for entire progress bar container
-          height: '30px',
-        }}
+        style={{ 
+          width: '100%', 
+          border: '3px solid #772e25', 
+          borderRadius: '7px', 
+          backgroundColor: '#FFECCC', 
+          height: '30px' }}
       >
         <div style={{
             width: `${progress}%`,
-            backgroundColor: '#053225', // Custom color for the progress
+            backgroundColor: '#053225', // Dark color for the filled portion
             height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 'bold',
+            transition: 'width 0.5s ease',
           }}
         />
       </ProgressBar>
+      {`${Math.round(progress)}%`}
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
