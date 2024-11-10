@@ -114,7 +114,7 @@ const BasicQuiz:React.FC=()=>{
     const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
 
     return(
-      <Container fluid style={{backgroundColor:'#C8D6AF', paddingBottom: '50px'}}>
+      <Container fluid style={{backgroundColor:'#C8D6AF', paddingBottom: '50px', minHeight: '100vh',}}>
         <div>
             <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225', borderColor: '#053225',}}>
             Go to Home

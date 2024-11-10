@@ -150,7 +150,7 @@ const ResultPage: React.FC = () => {
   }, []); // Empty dependency array means this will only run once, when the component mounts
 
   return (
-    <Container fluid style={{ margin: 0, width: '100%', height: '100%', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
+    <Container fluid style={{ margin: 0, width: '100%', minHeight: '100vh', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
       <header className="App-Header" style={{ padding: '20px'}}>
         <h1 style={{ fontSize: '40px', fontWeight: 'bold', fontFamily: 'Palatino' }}>Career Quiz Results</h1>
       </header>
