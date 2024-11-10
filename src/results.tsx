@@ -150,7 +150,7 @@ const ResultPage: React.FC = () => {
   }, []); // Empty dependency array means this will only run once, when the component mounts
 
   return (
-    <Container fluid style={{ margin: 0, width: '100%', height: '100%', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
+    <Container fluid style={{ margin: 0, width: '100%', minHeight: '100vh', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
       <header className="App-Header" style={{ padding: '20px'}}>
         <h1 style={{ fontSize: '40px', fontWeight: 'bold', fontFamily: 'Palatino' }}>Career Quiz Results</h1>
       </header>
@@ -169,7 +169,7 @@ const ResultPage: React.FC = () => {
             {careerResults ? (
               <Container style={{width: '1000px'}}>
               <Row>
-                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
               <h3>Career Field #1</h3>
               <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                 <h4>={careerResults.careerfield1}=</h4>{careerResults.careerfield1}
@@ -182,7 +182,7 @@ const ResultPage: React.FC = () => {
                         <li>{careerResults.career1_3}</li>
                     </ul>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <h3>Career Field #2</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                     <h4>={careerResults.careerfield2}=</h4>
@@ -195,7 +195,7 @@ const ResultPage: React.FC = () => {
                         <li>{careerResults.career2_3}</li>
                     </ul>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <h3>Career Field #3</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                       <h4>={careerResults.careerfield3}=</h4>
