@@ -171,10 +171,12 @@ const ResultPage: React.FC = () => {
               <Row>
                 <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
               <h3>Career Field #1</h3>
-              <div>{careerResults.careerfield1}</div>
-              {careerResults.reasoning1}
+              <div style={{textAlign: 'center', paddingBottom: '10%'}}>
+                <h4>={careerResults.careerfield1}=</h4>{careerResults.careerfield1}
+                {careerResults.reasoning1}
+              </div>
                     <ul>
-                      Suggested Careers:
+                      <h4>Suggested Careers:</h4>
                         <li>{careerResults.career1_1}</li>
                         <li>{careerResults.career1_2}</li>
                         <li>{careerResults.career1_3}</li>
@@ -182,10 +184,12 @@ const ResultPage: React.FC = () => {
                     </Col>
                     <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <h3>Career Field #2</h3>
-                    <div>{careerResults.careerfield2}</div>
+                    <div style={{textAlign: 'center', paddingBottom: '10%'}}>
+                    <h4>={careerResults.careerfield2}=</h4>
                     {careerResults.reasoning2}
+                    </div>
                     <ul>
-                    Suggested Careers:
+                    <h4>Suggested Careers:</h4>
                         <li>{careerResults.career2_1}</li>
                         <li>{careerResults.career2_2}</li>
                         <li>{careerResults.career2_3}</li>
@@ -193,10 +197,13 @@ const ResultPage: React.FC = () => {
                     </Col>
                     <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <h3>Career Field #3</h3>
-                    <div>{careerResults.careerfield3}:</div>
-                    {careerResults.reasoning3}
+                    <div style={{textAlign: 'center', paddingBottom: '10%'}}>
+                      <h4>={careerResults.careerfield3}=</h4>
+                      {careerResults.reasoning3}
+                    </div>
                     <ul>
-                    Suggested Careers within the career field:
+                    <h4>Suggested Careers:</h4>
+
                         <li>{careerResults.career3_1}</li>
                         <li>{careerResults.career3_2}</li>
                         <li>{careerResults.career3_3}</li>
