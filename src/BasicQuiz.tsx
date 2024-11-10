@@ -123,30 +123,22 @@ const BasicQuiz:React.FC=()=>{
             <p>Welcome to the Basic Career Quiz!</p>
         </div>
 
-        <div style={{width: '50%', margin: '0 auto'}}>
+        <div style={{border: '3px solid #772e25', width: '50%', margin: '0 auto'}}>
         <ProgressBar
         now={progress}
         label={`${Math.round(progress)}%`}
-        style={{ 
-          width: '100%', 
-          border: '3px solid #772e25', 
-          borderRadius: '7px', 
-          backgroundColor: '#FFECCC', 
-          height: '30px' }}
+        style={{
+          backgroundColor: '#FFECCC', // Background for entire progress bar container
+          height: '30px',
+        }}
       >
         <div style={{
             width: `${progress}%`,
-            backgroundColor: '#053225', // Dark color for the filled portion
+            backgroundColor: '#053225', // Custom color for the progress
             height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            transition: 'width 0.5s ease',
           }}
         />
       </ProgressBar>
-      {`${Math.round(progress)}%`}
   </div>
   
 
@@ -161,7 +153,7 @@ const BasicQuiz:React.FC=()=>{
                           variant="primary"
                           onClick={() => handleOptionClick(option)}
                           style={{
-                              width: '160px', height: '110px', borderRadius: '30px',
+                              width: '160px', height: '85px', borderRadius: '30px',
                               backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
                           }}>
                           {option}
