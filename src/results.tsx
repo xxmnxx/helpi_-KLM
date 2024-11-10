@@ -1,4 +1,4 @@
-import { Container,Button, Row,Col } from 'react-bootstrap';
+import { Container,Button, Row, Col } from 'react-bootstrap';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
@@ -6,8 +6,27 @@ import { useState,useEffect } from 'react';
 
 const ResultPage: React.FC = () => {
   const navigate = useNavigate(); 
-  const [aiResponse, setAiResponse] = useState<string[] | null>(null); // State to store OpenAI response
+  //const [aiResponse, setAiResponse] = useState<string | null>(null); // State to store OpenAI response
   const [loading, setLoading] = useState<boolean>(true); // Loading state
+  const [careerResults, setCareerResults] = useState<{
+    careerfield1: string;
+    reasoning1: string;
+    career1_1: string;
+    career1_2: string;
+    career1_3: string;
+
+    careerfield2: string;
+    reasoning2: string
+    career2_1: string;
+    career2_2: string;
+    career2_3: string;
+
+    careerfield3: string;
+    reasoning3: string;
+    career3_1: string;
+    career3_2: string;
+    career3_3: string;
+} | null>(null);
 
   // Navigate to home
   const goToHome = () => {
@@ -53,27 +72,76 @@ const ResultPage: React.FC = () => {
 
         // Send the user's answers to OpenAI and get a completion response
         const completion = await openai.chat.completions.create({
-          model: "gpt-4",
+          model: "gpt-4o-2024-08-06",
           messages: [
-            {
-              "role": "system",
-              "content": "You are a career coach providing personalized career advice based on answers to either a basic career quiz or a detailed career quiz.If you recieve a set of 10 answers, its from the basic quiz, and you should give 3 broad career fields with an example of a job within each career field along with a short description and justification for each. If you recieve 25 answers, its from the detailed Quiz and you should provide 6 careers that fit best with the given answers and a short description and justification for each."
-            },
-            {
-              "role": "user",
-              "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers,if theres only 10 answers, give me basic quiz results as defined. If theres 25 answers, give me detailed quiz results as defined.`
-            }
-          ]
-        });
-
+              { role: "system", content: "Provide career fields and example careers in JSON format, following the structure provided." },
+              { role: "user",               "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers,if theres only 10 answers, give me basic quiz results as defined. If theres 25 answers, give me detailed quiz results as defined.`}
+          ],
+          response_format: {
+              type: "json_schema",
+              json_schema: {
+                  name: "career_schema",
+                  schema: {
+                      type: "object",
+                      properties: {
+                          careerfield1: { type: "string", description: "Name of the first career field" },
+                          reasoning1: {type: "string", description: "Reasoning for the career fied chosen"},
+                          career1_1: { type: "string", description: "First example career in career field 1" },
+                          career1_2: { type: "string", description: "Second example career in career field 1" },
+                          career1_3: { type: "string", description: "Third example career in career field 1" },
+  
+                          careerfield2: { type: "string", description: "Name of the second career field" },
+                          reasoning2: {type: "string", description: "Reasoning for the career fied chosen"},
+                          career2_1: { type: "string", description: "First example career in career field 2" },
+                          career2_2: { type: "string", description: "Second example career in career field 2" },
+                          career2_3: { type: "string", description: "Third example career in career field 2" },
+  
+                          careerfield3: { type: "string", description: "Name of the third career field" },
+                          reasoning3: {type: "string", description: "Reasoning for the career fied chosen"},
+                          career3_1: { type: "string", description: "First example career in career field 3" },
+                          career3_2: { type: "string", description: "Second example career in career field 3" },
+                          career3_3: { type: "string", description: "Third example career in career field 3" }
+                      },
+                      required: [
+                          "careerfield1", "reasoning1", "career1_1", "career1_2", "career1_3",
+                          "careerfield2", "reasoning2", "career2_1", "career2_2", "career2_3",
+                          "careerfield3", "reasoning3", "career3_1", "career3_2", "career3_3"
+                      ]
+                  }
+              }
+          }
+      });
       // Extract the assistant's response and update the state
-      const responseArray = completion.choices[0].message.content?.split(/\d\.\s+/).filter(Boolean);
-      setAiResponse(responseArray || []);
+      const response = completion.choices[0].message.content;
+      if (response) {
+        const parsedResponse = JSON.parse(response);
+        
+        // Ensure parsedResponse matches the shape of `careerResults`
+        setCareerResults({
+          careerfield1: parsedResponse.careerfield1,
+          reasoning1: parsedResponse.reasoning1,
+          career1_1: parsedResponse.career1_1,
+          career1_2: parsedResponse.career1_2,
+          career1_3: parsedResponse.career1_3,
+          careerfield2: parsedResponse.careerfield2,
+          reasoning2: parsedResponse.reasoning2,
+          career2_1: parsedResponse.career2_1,
+          career2_2: parsedResponse.career2_2,
+          career2_3: parsedResponse.career2_3,
+          careerfield3: parsedResponse.careerfield3,
+          reasoning3: parsedResponse.reasoning3,
+          career3_1: parsedResponse.career3_1,
+          career3_2: parsedResponse.career3_2,
+          career3_3: parsedResponse.career3_3,
+        });
+      } else {
+        setCareerResults(null);
+      }
     } catch (error) {
       console.error("Error fetching results or contacting OpenAI:", error);
-      setAiResponse([]);
+      setCareerResults(null);
     } finally {
-      setLoading(false); // Set loading to false after the request complete
+      setLoading(false);
     }
     
     };
@@ -98,14 +166,41 @@ const ResultPage: React.FC = () => {
 
           <div>
             <h3 style={{ fontSize: '25px', fontFamily: 'Palatino' }}>Your Suggested Career Paths:</h3>
-            {aiResponse ? (
+            {careerResults ? (
               <Row>
-              {aiResponse.map((response, index: number) => (
-                  <Col  key={index} style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '400px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
-            <h4>Career Field #{1 + index}:</h4>
-            <p>{response}</p>
-          </Col>
-              ))}
+                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+              <h3>Career Field #1</h3>
+              <div>{careerResults.careerfield1}</div>
+              {careerResults.reasoning1}
+                    <ul>
+                      Suggested Careers:
+                        <li>{careerResults.career1_1}</li>
+                        <li>{careerResults.career1_2}</li>
+                        <li>{careerResults.career1_3}</li>
+                    </ul>
+                    </Col>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <h3>Career Field #2</h3>
+                    <div>{careerResults.careerfield2}</div>
+                    {careerResults.reasoning2}
+                    <ul>
+                    Suggested Careers:
+                        <li>{careerResults.career2_1}</li>
+                        <li>{careerResults.career2_2}</li>
+                        <li>{careerResults.career2_3}</li>
+                    </ul>
+                    </Col>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <h3>Career Field #3</h3>
+                    <div>{careerResults.careerfield3}:</div>
+                    {careerResults.reasoning3}
+                    <ul>
+                    Suggested Careers:
+                        <li>{careerResults.career3_1}</li>
+                        <li>{careerResults.career3_2}</li>
+                        <li>{careerResults.career3_3}</li>
+                    </ul>
+                    </Col>
               </Row>
             ) : (
               <p>"There was an error generating your career suggestions. Please try again later."</p>
