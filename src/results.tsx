@@ -32,7 +32,7 @@ const ResultPage: React.FC = () => {
   const goToHome = () => {
     navigate('/');
   };
-
+//comment
   // Fetch answers from localStorage and send them to OpenAI
   useEffect(() => {
     const fetchQuizResults = async () => {
