@@ -5,6 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 const questions: { question: string, options: string[] }[] = [
   {
+    question : "What time do you like to work?",
+    options: ["Morning", "Afternoon", "Night Time"]
+  },
+  {
+    question : "I like to work by...",
+    options: ["Talking", "Typing", "Writing"]
+},
+  {
       question : "How do you prefer to work on projects?",
       options: ["Independently", "In a team", "With a supervisor/mentor", "Leading the project"]
   },
@@ -60,6 +68,10 @@ const questions: { question: string, options: string[] }[] = [
       "Shift work that includes evenings weekends", "A mix of schedules work and independent projects"]
   },
   {
+    question: "What sort of work life speaks to your soul ",
+    options: ["Competitive and high-pressure", "Independent and self-directed", "Collaborative and team-oriented", "Structured and organized"]
+  },
+  {
     question: "Which of these industries do you find most appealing?",
     options: ["Technology and IT", "Heathecare and Wellness",
        "Arts and Creative Industries", "Education and Training"]
@@ -68,14 +80,19 @@ const questions: { question: string, options: string[] }[] = [
     question: "What level of education are you aiming to achieve? ",
     options: ["High School Diploma", "Bachelor's Degree", "Master's Degree", "PhD"]
   },
+  
+  {
+    question: "How physically demanding do you prefer your job to be?",
+    options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
+  },
+  {
+    question: "How much do you agree with the statement: I am extroverted and enthusiastic.",
+    options: ["Agree", "Neutral", "Disagree"]
+  },
   {
     question: "Which career field do you prefer? ",
     options: ["STEM & Heathcare", "Business and Public Servies",
        "Creative and Communication", "Trades, Hospitality and Recreation"]
-  },
-  {
-    question: "How physically demanding do you prefer your job to be?",
-    options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
   },
   
 
