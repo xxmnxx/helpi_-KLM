@@ -164,7 +164,7 @@ const BasicQuiz:React.FC=()=>{
                           variant="primary"
                           onClick={() => handleOptionClick(option)}
                           style={{
-                              width: '160px', height: '85px', borderRadius: '30px',
+                              width: '160px', height: '105px', borderRadius: '30px',
                               backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
                           }}>
                           {option}
