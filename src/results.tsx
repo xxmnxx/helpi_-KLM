@@ -169,7 +169,7 @@ const ResultPage: React.FC = () => {
             {careerResults ? (
               <Container style={{width: '1000px'}}>
               <Row>
-                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
               <h3>Career Field #1</h3>
               <div>{careerResults.careerfield1}</div>
               {careerResults.reasoning1}
@@ -180,7 +180,7 @@ const ResultPage: React.FC = () => {
                         <li>{careerResults.career1_3}</li>
                     </ul>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <h3>Career Field #2</h3>
                     <div>{careerResults.careerfield2}</div>
                     {careerResults.reasoning2}
@@ -191,7 +191,7 @@ const ResultPage: React.FC = () => {
                         <li>{careerResults.career2_3}</li>
                     </ul>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '400px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <h3>Career Field #3</h3>
                     <div>{careerResults.careerfield3}:</div>
                     {careerResults.reasoning3}
