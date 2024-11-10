@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Container, ProgressBar, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-
+//comment
 const questions: { question: string, options: string[] }[] = [
   {
       question : "How do you prefer to work on projects?",
@@ -141,8 +141,8 @@ const DetailedQuiz:React.FC=()=>{
       };
 
 
-    const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
-
+      const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
+ 
     return(
       <Container fluid style={{backgroundColor:'#C8D6AF', minHeight: '100vh'}}>
       <div>
@@ -152,6 +152,7 @@ const DetailedQuiz:React.FC=()=>{
       <h1 style={{fontFamily: 'Palatino',fontWeight: 'bold'}}>Detailed Career Quiz</h1>
       <p style={{fontFamily: 'Palatino'}}>Welcome to the Detailed Career Quiz!</p>
   </div>
+
 
   <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
   <ProgressBar
