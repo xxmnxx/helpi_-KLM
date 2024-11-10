@@ -75,7 +75,7 @@ const ResultPage: React.FC = () => {
           model: "gpt-4o-2024-08-06",
           messages: [
               { role: "system", content: "Provide career fields and example careers in JSON format, following the structure provided." },
-              { role: "user",               "content": `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers,if theres only 10 answers, give me basic quiz results as defined. If theres 25 answers, give me detailed quiz results as defined.`}
+              { role: "user",  content: `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers,if theres only 10 answers, give me basic quiz results as defined. If theres 25 answers, give me detailed quiz results as defined.`}
           ],
           response_format: {
               type: "json_schema",
@@ -85,19 +85,19 @@ const ResultPage: React.FC = () => {
                       type: "object",
                       properties: {
                           careerfield1: { type: "string", description: "Name of the first career field" },
-                          reasoning1: {type: "string", description: "In depth reasoning for the career field chosen"},
+                          reasoning1: {type: "string", description: "In depth (4-5 sentences) reasoning for the career field chosen"},
                           career1_1: { type: "string", description: "First example career in career field 1" },
                           career1_2: { type: "string", description: "Second example career in career field 1" },
                           career1_3: { type: "string", description: "Third example career in career field 1" },
   
                           careerfield2: { type: "string", description: "Name of the second career field" },
-                          reasoning2: {type: "string", description: "In depth reasoning for the career field chosen"},
+                          reasoning2: {type: "string", description: "In depth  (4-5 sentences) reasoning for the career field chosen"},
                           career2_1: { type: "string", description: "First example career in career field 2" },
                           career2_2: { type: "string", description: "Second example career in career field 2" },
                           career2_3: { type: "string", description: "Third example career in career field 2" },
   
                           careerfield3: { type: "string", description: "Name of the third career field" },
-                          reasoning3: {type: "string", description: "In depth reasoning for the career field chosen"},
+                          reasoning3: {type: "string", description: "In depth  (4-5 sentences) reasoning for the career field chosen"},
                           career3_1: { type: "string", description: "First example career in career field 3" },
                           career3_2: { type: "string", description: "Second example career in career field 3" },
                           career3_3: { type: "string", description: "Third example career in career field 3" }
@@ -169,45 +169,57 @@ const ResultPage: React.FC = () => {
             {careerResults ? (
               <Container style={{width: '1000px'}}>
               <Row>
-                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+              <Row style ={{height: '200px'}}>
               <h3>Career Field #1</h3>
               <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                 <h4>={careerResults.careerfield1}=</h4>
                 {careerResults.reasoning1}
               </div>
-                    <ul>
+              </Row>
+              <Row style ={{height: '200px', paddingTop: '250px'}} >
+                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside' }}>
                       <h4>Suggested Careers:</h4>
                         <li>{careerResults.career1_1}</li>
                         <li>{careerResults.career1_2}</li>
                         <li>{careerResults.career1_3}</li>
                     </ul>
+                    </Row>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Row style ={{height: '200px'}}>
                     <h3>Career Field #2</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                     <h4>={careerResults.careerfield2}=</h4>
                     {careerResults.reasoning2}
                     </div>
-                    <ul>
+                    </Row>
+                    <Row style ={{height: '200px', paddingTop: '250px'}}>
+                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
                         <li>{careerResults.career2_1}</li>
                         <li>{careerResults.career2_2}</li>
                         <li>{careerResults.career2_3}</li>
                     </ul>
+                    </Row>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Row style ={{height: '200px'}}>
                     <h3>Career Field #3</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                       <h4>={careerResults.careerfield3}=</h4>
                       {careerResults.reasoning3}
                     </div>
-                    <ul>
+                    </Row>
+                    <Row style ={{height: '200px', paddingTop: '250px'}}>
+                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
 
                         <li>{careerResults.career3_1}</li>
                         <li>{careerResults.career3_2}</li>
                         <li>{careerResults.career3_3}</li>
                     </ul>
+                    </Row>
                     </Col>
               </Row>
               </Container>
