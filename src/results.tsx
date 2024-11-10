@@ -85,19 +85,19 @@ const ResultPage: React.FC = () => {
                       type: "object",
                       properties: {
                           careerfield1: { type: "string", description: "Name of the first career field" },
-                          reasoning1: {type: "string", description: "Reasoning for the career fied chosen"},
+                          reasoning1: {type: "string", description: "In depth reasoning for the career field chosen"},
                           career1_1: { type: "string", description: "First example career in career field 1" },
                           career1_2: { type: "string", description: "Second example career in career field 1" },
                           career1_3: { type: "string", description: "Third example career in career field 1" },
   
                           careerfield2: { type: "string", description: "Name of the second career field" },
-                          reasoning2: {type: "string", description: "Reasoning for the career fied chosen"},
+                          reasoning2: {type: "string", description: "In depth reasoning for the career field chosen"},
                           career2_1: { type: "string", description: "First example career in career field 2" },
                           career2_2: { type: "string", description: "Second example career in career field 2" },
                           career2_3: { type: "string", description: "Third example career in career field 2" },
   
                           careerfield3: { type: "string", description: "Name of the third career field" },
-                          reasoning3: {type: "string", description: "Reasoning for the career fied chosen"},
+                          reasoning3: {type: "string", description: "In depth reasoning for the career field chosen"},
                           career3_1: { type: "string", description: "First example career in career field 3" },
                           career3_2: { type: "string", description: "Second example career in career field 3" },
                           career3_3: { type: "string", description: "Third example career in career field 3" }
@@ -167,6 +167,7 @@ const ResultPage: React.FC = () => {
           <div>
             <h3 style={{ fontSize: '25px', fontFamily: 'Palatino' }}>Your Suggested Career Paths:</h3>
             {careerResults ? (
+              <Container style={{width: '1000px'}}>
               <Row>
                 <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
               <h3>Career Field #1</h3>
@@ -195,13 +196,14 @@ const ResultPage: React.FC = () => {
                     <div>{careerResults.careerfield3}:</div>
                     {careerResults.reasoning3}
                     <ul>
-                    Suggested Careers:
+                    Suggested Careers within the career field:
                         <li>{careerResults.career3_1}</li>
                         <li>{careerResults.career3_2}</li>
                         <li>{careerResults.career3_3}</li>
                     </ul>
                     </Col>
               </Row>
+              </Container>
             ) : (
               <p>"There was an error generating your career suggestions. Please try again later."</p>
             )}
