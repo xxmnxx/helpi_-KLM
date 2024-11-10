@@ -172,7 +172,7 @@ const ResultPage: React.FC = () => {
                 <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '500px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
               <h3>Career Field #1</h3>
               <div style={{textAlign: 'center', paddingBottom: '10%'}}>
-                <h4>={careerResults.careerfield1}=</h4>{careerResults.careerfield1}
+                <h4>={careerResults.careerfield1}=</h4>
                 {careerResults.reasoning1}
               </div>
                     <ul>
