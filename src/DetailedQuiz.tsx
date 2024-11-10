@@ -5,6 +5,18 @@ import { useNavigate } from 'react-router-dom';
 //comment
 const questions: { question: string, options: string[] }[] = [
   {
+    question : "What time do you like to work?",
+    options: ["Morning", "Afternoon", "Night Time"]
+  },
+  {
+    question : "I like to work by...",
+    options: ["Talking", "Typing", "Writing"]
+},
+{
+  question: "What sort of work life speaks to your soul ",
+  options: ["Competitive and high-pressure", "Independent and self-directed", "Collaborative and team-oriented", "Structured and organized"]
+},
+  {
       question : "How do you prefer to work on projects?",
       options: ["Independently", "In a team", "With a supervisor/mentor", "Leading the project"]
   },
@@ -72,6 +84,10 @@ const questions: { question: string, options: string[] }[] = [
     question: "Which career field do you prefer? ",
     options: ["STEM & Heathcare", "Business and Public Servies",
        "Creative and Communication", "Trades, Hospitality and Recreation"]
+  },
+  {
+    question: "How much do you agree with the statement: I am extroverted and enthusiastic.",
+    options: ["Agree", "Neutral", "Disagree"]
   },
   {
     question: "How physically demanding do you prefer your job to be?",
@@ -152,24 +168,30 @@ const DetailedQuiz:React.FC=()=>{
       <h1 style={{fontFamily: 'Palatino',fontWeight: 'bold'}}>Detailed Career Quiz</h1>
       <p style={{fontFamily: 'Palatino'}}>Welcome to the Detailed Career Quiz!</p>
   </div>
-
-
-  <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
-  <ProgressBar
+  <div style={{ width: '50%', margin: '0 auto'}}>
+        <ProgressBar
         now={progress}
         label={`${Math.round(progress)}%`}
-        style={{
-          backgroundColor: '#FFECCC', // Background for entire progress bar container
-          height: '30px',
-        }}
+        style={{ 
+          width: '100%', 
+          border: '3px solid #772e25', 
+          borderRadius: '7px', 
+          backgroundColor: '#FFECCC', 
+          height: '30px' }}
       >
         <div style={{
             width: `${progress}%`,
-            backgroundColor: '#053225', // Custom color for the progress
+            backgroundColor: '#053225', // Dark color for the filled portion
             height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 'bold',
+            transition: 'width 0.5s ease',
           }}
         />
       </ProgressBar>
+      {`${Math.round(progress)}%`}
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
