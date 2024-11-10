@@ -97,7 +97,7 @@ const BasicQuiz:React.FC=()=>{
         }
       }
     };
-
+//comment
     const handlePrevQuestion = () => {
       
       setCurrentIndex(currentQuestionIndex -1);
