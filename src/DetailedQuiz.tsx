@@ -144,7 +144,7 @@ const DetailedQuiz:React.FC=()=>{
       const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
  
     return(
-      <Container fluid style={{backgroundColor:'#C8D6AF'}}>
+      <Container fluid style={{backgroundColor:'#C8D6AF', minHeight: '100vh'}}>
       <div>
       <Button onClick={goToHome} variant="primary"style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50'}}>
       Go to Home
@@ -153,30 +153,23 @@ const DetailedQuiz:React.FC=()=>{
       <p style={{fontFamily: 'Palatino'}}>Welcome to the Detailed Career Quiz!</p>
   </div>
 
-  <div style={{width: '50%', margin: '0 auto'}}>
+
+  <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
   <ProgressBar
         now={progress}
         label={`${Math.round(progress)}%`}
-        style={{ 
-          width: '100%', 
-          border: '3px solid #772e25', 
-          borderRadius: '7px', 
-          backgroundColor: '#FFECCC', 
-          height: '30px' }}
+        style={{
+          backgroundColor: '#FFECCC', // Background for entire progress bar container
+          height: '30px',
+        }}
       >
         <div style={{
             width: `${progress}%`,
-            backgroundColor: '#053225', // Dark color for the filled portion
+            backgroundColor: '#053225', // Custom color for the progress
             height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            transition: 'width 0.5s ease',
           }}
         />
       </ProgressBar>
-      {`${Math.round(progress)}%`}
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
