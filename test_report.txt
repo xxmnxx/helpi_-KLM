@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (74 ms)
+  ✕ renders learn react link (71 ms)
 
   ● renders learn react link
 
@@ -57,7 +57,7 @@ FAIL src/App.test.tsx
             [36m</header>[39m
             [36m<div[39m
               [33mclass[39m=[32m"container"[39m
-              [33mstyle[39m=[32m"border: 4px solid #772e25; padding: 30px; width: 1200px; height: 500px; background-color: rgb(200, 214, 175); font-family: Modern No. 20;"[39m
+              [33mstyle[39m=[32m"border: 4px solid #772e25; padding: 30px; width: 75%; height: 70%; background-color: rgb(200, 214, 175); font-family: Modern No. 20;"[39m
             [36m>[39m
               [36m<h2[39m
                 [33mstyle[39m=[32m"font-family: Palatino;"[39m
@@ -105,7 +105,7 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
               [36m<p[39m
-                [33mstyle[39m=[32m"font-family: Palatino; font-weight: bold;"[39m
+                [33mstyle[39m=[32m"font-family: Palatino; font-weight: bold; padding: 10px;"[39m
               [36m>[39m
                 [0mPlease insert your API Key below![0m
               [36m</p>[39m
@@ -113,7 +113,7 @@ FAIL src/App.test.tsx
                 [33mclass[39m=[32m""[39m
               [36m>[39m
                 [36m<div[39m
-                  [33mstyle[39m=[32m"display: flex; align-items: center; gap: 10px;"[39m
+                  [33mstyle[39m=[32m"display: flex; align-items: center; gap: 10px; padding: 10px;"[39m
                 [36m>[39m
                   [36m<input[39m
                     [33mclass[39m=[32m"form-control"[39m
@@ -169,7 +169,7 @@ All files           |    12.4 |     2.17 |    6.45 |   12.59 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.088 s
+Time:        3.18 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
