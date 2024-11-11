@@ -35,10 +35,6 @@ const questions: { question: string, options: string[] }[] = [
   options: ["A 9-5 routine with weekends off", "Flexible hours that allow me to work when I want",
     "Shift work that includes evenings weekends", "A mix of schedules work and independent projects"]
 },
-//   question: "Which of these industries do you find most appealing?",
-//   options: ["Technology and IT", "Heathecare and Wellness",
-//      "Arts and Creative Industries", "Education and Training"]
-// },
 {
   question: "What level of education are you aiming to achieve? ",
   options: ["High School Diploma", "Bachelor's Degree", "Master's Degree", "PhD"]
@@ -53,7 +49,6 @@ const questions: { question: string, options: string[] }[] = [
   options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
 },
 
-  // Add more questions 
 ];
 
 
