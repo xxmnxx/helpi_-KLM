@@ -33,7 +33,7 @@ function HomePage() {
             <h1 style={{fontSize: '70px', fontWeight: 'bold'}}>Career Quiz</h1>
             <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
           </header>
-        <Container style={{ border: '4px solid #772e25', padding: '30px', width: '1200px', height: '500px', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
+        <Container style={{ border: '4px solid #772e25', padding: '30px', width: '75%', height: '70%', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
           <h2 style={{fontFamily: 'Palatino'}}>Choose the quiz you want to take!</h2>
           <Row>
             <Col className ="custom-box">
@@ -45,7 +45,7 @@ function HomePage() {
                It’s ideal for those looking for a brief overview to help guide their career exploration.
               </p>
               <Button onClick={navigateToBasicQuiz}
-              style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff', fontFamily: 'Modern No. 20' }}
+              style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff', fontFamily: 'Modern No. 20', }}
               disabled={!key}
               >Start Basic Quiz</Button>
               
@@ -63,9 +63,9 @@ function HomePage() {
               >Start Detailed Quiz</Button>
             </Col>
           </Row>
-          <p style={{fontFamily: 'Palatino', fontWeight: 'bold'}}>Please insert your API Key below!</p>
+          <p style={{fontFamily: 'Palatino', fontWeight: 'bold', padding:'10px'}}>Please insert your API Key below!</p>
           <Form>
-          <Form.Group style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <Form.Group style={{ display: 'flex', alignItems: 'center', gap: '10px', padding:'10px' }}>
          {/* <Form.Label>API Key:</Form.Label> */}
          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey} />
          <br />
