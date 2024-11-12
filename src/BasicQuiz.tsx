@@ -51,8 +51,6 @@ const questions: { question: string, options: string[] }[] = [
 
 ];
 
-
-
 const BasicQuiz:React.FC=()=>{
     const [selectedOption, setSelectedOption] = useState<string | null>(null); 
     const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
@@ -68,7 +66,28 @@ const BasicQuiz:React.FC=()=>{
 
     const handleOptionClick = (option: string) => {
         setSelectedOption(option)
+
+        if (currentQuestionIndex === questions.length -1) {
+          const currentQuestion = questions[currentQuestionIndex];
+          
+          // Update the answers with the selected answer
+          setAnswers(prevAnswers => [
+            ...prevAnswers,
+            {
+              question: currentQuestion.question,
+              selectedAnswer: option
+            }
+          ]);
+    
+          setQuizComplete(true);
+          setVisibility(true);
+          localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
+  
+          }
+        
     };
+
+    
 
     const handleNextQuestion = () => {
       if (selectedOption !== null) {
@@ -94,6 +113,7 @@ const BasicQuiz:React.FC=()=>{
 
         }
       }
+      
     };
 //comment
     const handlePrevQuestion = () => {
@@ -105,6 +125,7 @@ const BasicQuiz:React.FC=()=>{
     };
 
     const goToResults = () => {
+      
       navigate('/Results', {state: {answers}});
     };
 
@@ -171,10 +192,10 @@ const BasicQuiz:React.FC=()=>{
         <div>
 
         {visible && quizComplete && selectedOption && (
-          <><div>You have completed the Basic quiz!</div><Button
+          <><div></div><Button
               onClick={goToResults}
               variant="primary"
-              style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px',backgroundColor: '#053225'}}>
+              style={{ position: 'absolute', top: '680px', right: '680px', width: '150px', height: '50px', marginTop: '50px',backgroundColor: '#053225'}}>
               View Results
             </Button></>
 
@@ -183,7 +204,7 @@ const BasicQuiz:React.FC=()=>{
         <Button 
           onClick={handleNextQuestion} 
           variant="primary" 
-          disabled={!selectedOption || quizComplete}
+          disabled={!selectedOption || quizComplete || (currentQuestionIndex === questions.length - 1)}
           style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
           Next Question
         </Button>
