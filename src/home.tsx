@@ -10,6 +10,7 @@ const initialKey = prevKey ? JSON.parse(prevKey) : '';
 
 function HomePage() {
     const [key, setKey] = useState<string>(initialKey);
+    const [isKeySubmitted, setIsKeySubmitted] = useState<boolean>(false);
     const navigate = useNavigate(); 
   
     const navigateToDetailedQuiz = () => {
@@ -23,8 +24,11 @@ function HomePage() {
       setKey(event.target.value);
     };
     const handleSubmit = () => {
-      localStorage.setItem(saveKeyData, JSON.stringify(key));
-      window.location.reload(); // Refresh to apply the new API key
+      if(key){
+        setIsKeySubmitted(true);
+        localStorage.setItem(saveKeyData, JSON.stringify(key));
+        //window.location.reload(); 
+      }
     };
   
     return (
@@ -46,7 +50,7 @@ function HomePage() {
               </p>
               <Button onClick={navigateToBasicQuiz}
               style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff', fontFamily: 'Modern No. 20', }}
-              disabled={!key}
+              disabled={!isKeySubmitted}
               >Start Basic Quiz</Button>
               
 
@@ -59,7 +63,7 @@ function HomePage() {
               </p>
               <Button onClick={navigateToDetailedQuiz} 
               style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff', fontFamily: 'Modern No. 20' }}
-              disabled={!key}
+              disabled={!isKeySubmitted}
               >Start Detailed Quiz</Button>
             </Col>
           </Row>
