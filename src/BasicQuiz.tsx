@@ -65,57 +65,42 @@ const BasicQuiz:React.FC=()=>{
 
 
     const handleOptionClick = (option: string) => {
-        setSelectedOption(option)
+      setSelectedOption(option)
 
-        if (currentQuestionIndex === questions.length -1) {
-          const currentQuestion = questions[currentQuestionIndex];
-          
-          // Update the answers with the selected answer
-          setAnswers(prevAnswers => [
-            ...prevAnswers,
-            {
-              question: currentQuestion.question,
-              selectedAnswer: option
-            }
-          ]);
-    
-          setQuizComplete(true);
-          setVisibility(true);
-          localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
-  
-          }
+      const currentQuestion = questions[currentQuestionIndex];
+      const updatedAnswers = [...answers];
+
+      const answerIndex = updatedAnswers.findIndex(
+        (answer) => answer.question === currentQuestion.question
+      );
+      
+      if (answerIndex > -1) {
+        updatedAnswers[answerIndex].selectedAnswer = option;
+      } else {
+        updatedAnswers.push({ question: currentQuestion.question, selectedAnswer: option });
+      }
+      
+      setAnswers(updatedAnswers);
         
+      // For last question set the quiz as done 
+      if (currentQuestionIndex === questions.length - 1) {
+        setQuizComplete(true);
+        setVisibility(true);
+        localStorage.setItem('basicQuizAnswers', JSON.stringify(updatedAnswers));
+      }
     };
+      
 
     
 
     const handleNextQuestion = () => {
-      if (selectedOption !== null) {
-        const currentQuestion = questions[currentQuestionIndex];
-        
-        // Update the answers with the selected answer
-        setAnswers(prevAnswers => [
-          ...prevAnswers,
-          {
-            question: currentQuestion.question,
-            selectedAnswer: selectedOption
-          }
-        ]);
-  
-        // Move to the next question or complete the quiz
-        if (currentQuestionIndex < questions.length - 1) {
-          setCurrentIndex(currentQuestionIndex + 1);
-          setSelectedOption(null);
-        } else {
-          setQuizComplete(true);
-          setVisibility(true);
-          localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
-
-        }
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentIndex(currentQuestionIndex + 1);
+        setSelectedOption(null);
       }
-      
     };
-//comment
+
+
     const handlePrevQuestion = () => {
       
       setCurrentIndex(currentQuestionIndex -1);
@@ -130,7 +115,7 @@ const BasicQuiz:React.FC=()=>{
     };
 
     //progress bar tracks question index
-    const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
+    const progress = (currentQuestionIndex + (selectedOption ? 1 : 0)) / questions.length * 100;
 
     return(
       <Container fluid style={{backgroundColor:'#C8D6AF', paddingBottom: '50px', minHeight: '100vh',}}>
