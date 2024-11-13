@@ -2,20 +2,8 @@ import React, { useState } from 'react';
 import { Button, Col, Container, ProgressBar, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-//comment
+
 const questions: { question: string, options: string[] }[] = [
-  {
-    question : "What time do you like to work?",
-    options: ["Morning", "Afternoon", "Night Time"]
-  },
-  {
-    question : "I like to work by...",
-    options: ["Talking", "Typing", "Writing"]
-},
-{
-  question: "What sort of work life speaks to your soul ",
-  options: ["Competitive and high-pressure", "Independent and self-directed", "Collaborative and team-oriented", "Structured and organized"]
-},
   {
       question : "How do you prefer to work on projects?",
       options: ["Independently", "In a team", "With a supervisor/mentor", "Leading the project"]
@@ -86,10 +74,6 @@ const questions: { question: string, options: string[] }[] = [
        "Creative and Communication", "Trades, Hospitality and Recreation"]
   },
   {
-    question: "How much do you agree with the statement: I am extroverted and enthusiastic.",
-    options: ["Agree", "Neutral", "Disagree"]
-  },
-  {
     question: "How physically demanding do you prefer your job to be?",
     options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
   },
@@ -117,7 +101,27 @@ const DetailedQuiz:React.FC=()=>{
       
       const handleOptionClick = (option: string) => {
         setSelectedOption(option)
-      };
+
+        if (currentQuestionIndex === questions.length -1) {
+          const currentQuestion = questions[currentQuestionIndex];
+          
+          // Update the answers with the selected answer
+          setAnswers(prevAnswers => [
+            ...prevAnswers,
+            {
+              question: currentQuestion.question,
+              selectedAnswer: option
+            }
+          ]);
+    
+          setQuizComplete(true);
+          setVisibility(true);
+          localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
+  
+          }
+        
+    };
+
 
       const handleNextQuestion = () => {
         if (selectedOption !== null) {
@@ -157,8 +161,8 @@ const DetailedQuiz:React.FC=()=>{
       };
 
 
-      const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
- 
+    const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
+
     return(
       <Container fluid style={{backgroundColor:'#C8D6AF', minHeight: '100vh'}}>
       <div>
@@ -168,30 +172,23 @@ const DetailedQuiz:React.FC=()=>{
       <h1 style={{fontFamily: 'Palatino',fontWeight: 'bold'}}>Detailed Career Quiz</h1>
       <p style={{fontFamily: 'Palatino'}}>Welcome to the Detailed Career Quiz!</p>
   </div>
-  <div style={{ width: '50%', margin: '0 auto'}}>
-        <ProgressBar
+
+  <div style={{border: '3px solid #772e25',width: '50%', margin: '0 auto'}}>
+  <ProgressBar
         now={progress}
         label={`${Math.round(progress)}%`}
-        style={{ 
-          width: '100%', 
-          border: '3px solid #772e25', 
-          borderRadius: '7px', 
-          backgroundColor: '#FFECCC', 
-          height: '30px' }}
+        style={{
+          backgroundColor: '#FFECCC', // Background for entire progress bar container
+          height: '30px',
+        }}
       >
         <div style={{
             width: `${progress}%`,
-            backgroundColor: '#053225', // Dark color for the filled portion
+            backgroundColor: '#053225', // Custom color for the progress
             height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            transition: 'width 0.5s ease',
           }}
         />
       </ProgressBar>
-      {`${Math.round(progress)}%`}
   </div>
   
   <Container style={{ marginTop: '50px', border: '5px solid #772e25', width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC'}}>
@@ -215,22 +212,22 @@ const DetailedQuiz:React.FC=()=>{
   <div>
 
   {visible && quizComplete && selectedOption && (
-    <><div>You have completed the detailed quiz!</div><Button
+    <><div></div><Button
     onClick={goToResults}
         variant="primary"
-        style={{ position: 'absolute', bottom: '80px', right: '680px', width: '150px', height: '50px', marginTop: '50px' , backgroundColor: '#053225', borderColor: '#053225'}}>
+        style={{ position: 'absolute', top: '680px', right: '680px', width: '150px', height: '50px', marginTop: '50px' , backgroundColor: '#053225', borderColor: '#053225'}}>
         View Results
       </Button></>
 
   )}    
   
   <Button 
-  onClick={handleNextQuestion} 
-  variant="primary" 
-  disabled={!selectedOption || quizComplete}
-  style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
-    Next Question
-  </Button>
+          onClick={handleNextQuestion} 
+          variant="primary" 
+          disabled={!selectedOption || quizComplete || (currentQuestionIndex === questions.length - 1)}
+          style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
+          Next Question
+        </Button>
   <Button 
   onClick={handlePrevQuestion} 
   variant="primary" 
