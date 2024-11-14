@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Row, ProgressBar } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './App.css';
 
 const questions: { question: string, options: string[] }[] = [
   {
@@ -52,47 +53,21 @@ const questions: { question: string, options: string[] }[] = [
 ];
 
 const BasicQuiz:React.FC=()=>{
-    const [selectedOption, setSelectedOption] = useState<string | null>(null); 
-    const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
-    const [quizComplete, setQuizComplete] = useState<boolean>(false);
-    const [answers, setAnswers] = useState<{ question: string, selectedAnswer:string}[]>([]);
-    const [visible, setVisibility] = useState<boolean>(false);
-    const navigate = useNavigate();
-    
-    const goToHome = () => {
-        navigate('/');
-    };
-
-
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [currentQuestionIndex, setCurrentIndex] = useState<number>(0);
+  const [quizComplete, setQuizComplete] = useState<boolean>(false);
+  const [answers, setAnswers] = useState<{ question: string, selectedAnswer:string}[]>([]);
+  const [visible, setVisibility] = useState<boolean>(false);
+  const navigate = useNavigate();
+   
     const handleOptionClick = (option: string) => {
-        setSelectedOption(option)
-
-        if (currentQuestionIndex === questions.length -1) {
-          const currentQuestion = questions[currentQuestionIndex];
-          
-          // Update the answers with the selected answer
-          setAnswers(prevAnswers => [
-            ...prevAnswers,
-            {
-              question: currentQuestion.question,
-              selectedAnswer: option
-            }
-          ]);
-    
-          setQuizComplete(true);
-          setVisibility(true);
-          localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
-  
-          }
-        
+      setSelectedOption(option)
     };
-
-    
 
     const handleNextQuestion = () => {
       if (selectedOption !== null) {
         const currentQuestion = questions[currentQuestionIndex];
-        
+      
         // Update the answers with the selected answer
         setAnswers(prevAnswers => [
           ...prevAnswers,
@@ -101,8 +76,7 @@ const BasicQuiz:React.FC=()=>{
             selectedAnswer: selectedOption
           }
         ]);
-  
-        // Move to the next question or complete the quiz
+         // Move to the next question or complete the quiz
         if (currentQuestionIndex < questions.length - 1) {
           setCurrentIndex(currentQuestionIndex + 1);
           setSelectedOption(null);
@@ -111,115 +85,65 @@ const BasicQuiz:React.FC=()=>{
           setVisibility(true);
           localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
 
+
         }
       }
-      
     };
-//comment
+
     const handlePrevQuestion = () => {
-      
       setCurrentIndex(currentQuestionIndex -1);
       setSelectedOption(null);
       setQuizComplete(false);
       setVisibility(false);
-    };
+    }
+
 
     const goToResults = () => {
-      
-      navigate('/Results', {state: {answers}});
+      navigate('/Results');
     };
 
-    //progress bar tracks question index
+
+
+
     const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
-
-    return(
-      <Container fluid style={{backgroundColor:'#C8D6AF', paddingBottom: '50px', minHeight: '100vh',}}>
-        <div>
-            <Button onClick={goToHome} variant="primary"style ={{position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225', borderColor: '#053225',}}>
-            Go to Home
-          </Button>
-            <h1 style={{fontFamily: 'Palatino',fontWeight: 'bold'}}>Basic Career Quiz</h1> 
-            <p>Welcome to the Basic Career Quiz!</p>
-        </div>
-
-        <div style={{ width: '50%', margin: '0 auto'}}>
-        <ProgressBar
-        now={progress}
-        label={`${Math.round(progress)}%`}
-        style={{ 
-          width: '100%', 
-          border: '3px solid #772e25', 
-          borderRadius: '7px', 
-          backgroundColor: '#FFECCC', 
-          height: '30px' }}
-      >
-        <div style={{
-            width: `${progress}%`,
-            backgroundColor: '#053225', // Dark color for the filled portion
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            transition: 'width 0.5s ease',
-          }}
-        />
-      </ProgressBar>
-      {`${Math.round(progress)}%`}
-  </div>
-  
-
-        <Container style={{ marginTop: '50px', border: '5px solid #772e25',  width: '1000px', height: '500px', paddingTop: '50px', backgroundColor:'#FFEECC', borderColor: '#772e25'
- }}>
-        {/* displays question at current index*/}         
-          <h2 style={{fontFamily: 'Palatino'}} >{questions[currentQuestionIndex].question}</h2>
-          <Row> {/* maps every option of the current question index to buttons */}
-              {questions[currentQuestionIndex].options.map((option: string) => (
-                  <Col key={option} style={{ margin: '10px',marginTop: '80px', padding: '30px'}}>
-                      <Button
-                          variant="primary"
-                          onClick={() => handleOptionClick(option)}
-                          style={{
-                              width: '160px', height: '105px', borderRadius: '30px',
-                              backgroundColor: selectedOption === option ? '#C8D6AF':'#053225', borderColor: '#053225'
-                          }}>
-                          {option}
-                      </Button>
-                  </Col>
-              ))}
-          </Row>
-        </Container>
-        <div>
-
-        {visible && quizComplete && selectedOption && (
-          <><div></div><Button
-              onClick={goToResults}
-              variant="primary"
-              style={{ position: 'absolute', top: '680px', right: '680px', width: '150px', height: '50px', marginTop: '50px',backgroundColor: '#053225'}}>
-              View Results
-            </Button></>
-
-        )}    
-        
-        <Button 
-          onClick={handleNextQuestion} 
-          variant="primary" 
-          disabled={!selectedOption || quizComplete || (currentQuestionIndex === questions.length - 1)}
-          style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', right: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
-          Next Question
-        </Button>
-
-        <Button 
-          onClick={handlePrevQuestion} 
-          variant="primary" 
-          disabled={currentQuestionIndex === 0}
-          style ={{backgroundColor: '#053225', borderColor: '#053225', position: 'absolute', left: '300px', top: '550px', width: '200px', height: '50', marginTop: '50px'}}>
-          Previous Question
-      </Button>
-        </div>
-        </Container>
-    );
-};
-
-export default BasicQuiz;
-
+    return (
+     <Container fluid className="quiz-container">
+       <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
+       <h1 className="quiz-title">Detailed Career Quiz</h1>
+       <p className="quiz-description">Welcome to the Detailed Career Quiz!</p>
+ 
+       <div className="progress-container">
+         <div className="progress-bar">
+           <div className="progress-fill" style={{ width: `${progress}%` }}>{`${Math.round(progress)}%`}</div>
+         </div>
+       </div>
+ 
+       <Container className="question-container">
+         <h2>{questions[currentQuestionIndex].question}</h2>
+         <Row>
+           {questions[currentQuestionIndex].options.map((option) => (
+             <Col key={option} className="option-col">
+               <Button
+                 variant="primary"
+                 onClick={() => handleOptionClick(option)}
+                 className={`option-button ${selectedOption === option ? 'selected' : ''}`}
+               >
+                 {option}
+               </Button>
+             </Col>
+           ))}
+         </Row>
+         <div className="navigation-buttons">
+         
+         <Button onClick={handlePrevQuestion} variant="primary" disabled={currentQuestionIndex === 0} className="prev-button">Previous Question</Button>
+         <Button onClick={handleNextQuestion} variant="primary" disabled={!selectedOption || quizComplete} className="next-button">Next Question</Button>
+       </div>
+       </Container>
+       {visible && quizComplete && selectedOption && (
+           <Button onClick={goToResults} variant="primary" className="results-button">View Results</Button>
+         )}
+     </Container>
+   );
+ };
+ 
+ export default BasicQuiz;
