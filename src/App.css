@@ -83,6 +83,7 @@
 .option-button.selected {
   background-color: #C8D6AF;
   border-color: #C8D6AF;
+  color:#44200D
 }
 
 .navigation-buttons {
@@ -116,6 +117,7 @@
   height: 50px;
   background-color: #053225 !important;
   transition: background-color 0.3s ease;
+  color:#44200D
 }
 
 .prev-button:hover,
