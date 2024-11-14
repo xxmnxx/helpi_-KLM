@@ -151,12 +151,15 @@ const ResultPage: React.FC = () => {
 
   return (
     <Container fluid style={{ margin: 0, width: '100%', minHeight: '100vh', backgroundColor: '#C8D6AF',fontSize: '12px',fontWeight: 'bold' }}>
-      <header className="App-Header" style={{ padding: '20px'}}>
-        <h1 style={{ fontSize: '40px', fontWeight: 'bold', fontFamily: 'Palatino' }}>Career Quiz Results</h1>
+      <header className="App-Header" style={{ padding: '20px', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '40px', fontWeight: 'bold', fontFamily: 'Palatino' }}>
+          Career Quiz Results
+        </h1>
       </header>
-
-        <h2 style={{ fontSize: '30px',fontFamily: 'Palatino' }}> Congrats! You finished the Quiz</h2>
-
+      
+      <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
+        Congrats! You finished the Quiz
+      </h2>
 
         {/* Display the AI response or a loading message */}
         {loading ? (
@@ -165,20 +168,20 @@ const ResultPage: React.FC = () => {
 
 
           <div>
-            <h3 style={{ fontSize: '25px', fontFamily: 'Palatino' }}>Your Suggested Career Paths:</h3>
+            <h3 style={{ fontSize: '25px', fontFamily: 'Palatino',textAlign: 'center' }}>Your Suggested Career Paths:</h3>
             {careerResults ? (
               <Container style={{width: '1000px'}}>
               <Row>
                 <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
               <Row style ={{height: '200px'}}>
-              <h3>Career Field #1</h3>
+              <h3 style={{textAlign: 'center'}}>Career Field #1</h3>
               <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                 <h4>={careerResults.careerfield1}=</h4>
                 {careerResults.reasoning1}
               </div>
               </Row>
               <Row style ={{height: '200px', paddingTop: '250px'}} >
-                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside' }}>
+                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside',textAlign: 'center' }}>
                       <h4>Suggested Careers:</h4>
                         <li>{careerResults.career1_1}</li>
                         <li>{careerResults.career1_2}</li>
@@ -188,14 +191,14 @@ const ResultPage: React.FC = () => {
                     </Col>
                     <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <Row style ={{height: '200px'}}>
-                    <h3>Career Field #2</h3>
+                    <h3 style={{textAlign: 'center'}}>Career Field #2</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                     <h4>={careerResults.careerfield2}=</h4>
                     {careerResults.reasoning2}
                     </div>
                     </Row>
                     <Row style ={{height: '200px', paddingTop: '250px'}}>
-                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside' }}>
+                    <ul style={{textAlign: 'center', paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
                         <li>{careerResults.career2_1}</li>
                         <li>{careerResults.career2_2}</li>
@@ -205,14 +208,14 @@ const ResultPage: React.FC = () => {
                     </Col>
                     <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
                     <Row style ={{height: '200px'}}>
-                    <h3>Career Field #3</h3>
+                    <h3 style={{textAlign: 'center'}}>Career Field #3</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
                       <h4>={careerResults.careerfield3}=</h4>
                       {careerResults.reasoning3}
                     </div>
                     </Row>
                     <Row style ={{height: '200px', paddingTop: '250px'}}>
-                    <ul style={{ paddingLeft: '0', listStylePosition: 'inside' }}>
+                    <ul style={{ textAlign: 'center',paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
 
                         <li>{careerResults.career3_1}</li>
