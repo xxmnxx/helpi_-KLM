@@ -63,6 +63,7 @@ const BasicQuiz:React.FC=()=>{
     const handleOptionClick = (option: string) => {
       setSelectedOption(option)
     };
+      
 
     const handleNextQuestion = () => {
       if (selectedOption !== null) {
@@ -101,7 +102,6 @@ const BasicQuiz:React.FC=()=>{
     const goToResults = () => {
       navigate('/Results');
     };
-
 
 
 
