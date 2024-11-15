@@ -3,6 +3,7 @@ import './App.css';
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
 import { useState,useEffect } from 'react';
+import loadingGif from './Coffee Cup.gif';
 
 const ResultPage: React.FC = () => {
   const navigate = useNavigate(); 
@@ -163,7 +164,14 @@ const ResultPage: React.FC = () => {
 
         {/* Display the AI response or a loading message */}
         {loading ? (
-          <p>Loading your personalized career suggestions...</p>
+          <div style={{textAlign: 'center' }}>
+            <img src={loadingGif} alt="loading animation"/>
+            <p style={{color: 'black', fontSize: '18px'}}>Brewing your career suggestions...</p>
+
+          </div>
+          
+          //loading animation here//
+        
         ) : (
 
 
