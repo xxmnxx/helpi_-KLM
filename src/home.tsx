@@ -16,6 +16,9 @@ function HomePage() {
     const navigateToDetailedQuiz = () => {
       navigate('/DetailedQuiz');
     };
+    const navigateToAboutMe = () => {
+      navigate('AboutMe');
+    };
   
     const navigateToBasicQuiz = () => {
       navigate('/BasicQuiz');
@@ -37,7 +40,8 @@ function HomePage() {
         <h1 style={{ fontSize: '70px', fontWeight: 'bold' }}>
           <span style={{ color: '#52681D' }}>Match-a</span>
           <span style={{ color: 'black' }}> Career</span>
-        </h1>          
+        </h1>   
+        <Button onClick = {navigateToAboutMe}style={{backgroundColor:'#772e25'}}></Button>       
         <div style ={{color: '#44200D'}}>Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
           </header>
         <Container style={{ border: '4px solid #772e25', padding: '30px', width: '75%', height: '70%', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
