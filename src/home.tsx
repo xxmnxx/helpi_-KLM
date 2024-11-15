@@ -34,8 +34,11 @@ function HomePage() {
     return (
       <Container fluid style={{ width: '100vw', height: '100vh', margin: '0', padding: '0', backgroundColor: '#FFEECC' }}>
         <header className="App-Header" style={{ padding: '20px' , fontFamily: 'Palatino',fontSize: '30px', fontWeight: 'bold'}}>
-            <h1 style={{fontSize: '70px', fontWeight: 'bold'}}>Career Quiz</h1>
-            <div>By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
+        <h1 style={{ fontSize: '70px', fontWeight: 'bold' }}>
+          <span style={{ color: '#52681D' }}>Match-a</span>
+          <span style={{ color: 'black' }}> Career</span>
+        </h1>          
+        <div style ={{color: '#44200D'}}>Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
           </header>
         <Container style={{ border: '4px solid #772e25', padding: '30px', width: '75%', height: '70%', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
           <h2 style={{fontFamily: 'Palatino'}}>Choose the quiz you want to take!</h2>
