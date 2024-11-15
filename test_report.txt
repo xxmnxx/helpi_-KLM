@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (70 ms)
+  ✕ renders learn react link (72 ms)
 
   ● renders learn react link
 
@@ -49,10 +49,26 @@ FAIL src/App.test.tsx
               [36m<h1[39m
                 [33mstyle[39m=[32m"font-size: 70px; font-weight: bold;"[39m
               [36m>[39m
-                [0mCareer Quiz[0m
+                [36m<span[39m
+                  [33mstyle[39m=[32m"color: rgb(82, 104, 29);"[39m
+                [36m>[39m
+                  [0mMatch-a[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mstyle[39m=[32m"color: black;"[39m
+                [36m>[39m
+                  [0m Career[0m
+                [36m</span>[39m
               [36m</h1>[39m
-              [36m<div>[39m
-                [0mBy: Morgan Nutto, Leah Marcelli, Kate Geiszler[0m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"background-color: rgb(119, 46, 37);"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m/>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"color: rgb(68, 32, 13);"[39m
+              [36m>[39m
+                [0mBrewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler[0m
               [36m</div>[39m
             [36m</header>[39m
             [36m<div[39m
@@ -157,11 +173,12 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |   13.17 |     2.08 |    6.45 |   13.38 |                   
+All files           |   13.76 |     2.08 |    5.71 |   14.07 |                   
+ AboutMe.tsx        |   14.28 |      100 |       0 |   16.66 | 7-12              
  App.tsx            |     100 |      100 |     100 |     100 |                   
  BasicQuiz.tsx      |    6.06 |        0 |       0 |    6.25 | 56-128            
  DetailedQuiz.tsx   |    6.06 |        0 |       0 |    6.25 | 105-174           
- home.tsx           |    64.7 |       25 |      20 |    64.7 | 17,21,24,27-29    
+ home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 17,20,24,27,30-32 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  results.tsx        |    2.94 |        0 |       0 |    2.94 | 9-153             
@@ -169,7 +186,7 @@ All files           |   13.17 |     2.08 |    6.45 |   13.38 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.099 s
+Time:        3.108 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
