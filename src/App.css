@@ -83,6 +83,7 @@
 .option-button.selected {
   background-color: #C8D6AF;
   border-color: #C8D6AF;
+  color:#44200D
 }
 
 .navigation-buttons {

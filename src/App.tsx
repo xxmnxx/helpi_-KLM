@@ -6,6 +6,7 @@ import BasicQuiz from './BasicQuiz';
 import DetailedQuiz from './DetailedQuiz';
 import HomePage from './home';
 import Results from './results';
+import AboutMe from './AboutMe';
 
 
 // local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -44,6 +45,7 @@ function App() {
          <Route path="/BasicQuiz" element={<BasicQuiz />} />
          <Route path="/DetailedQuiz" element={<DetailedQuiz/>} />
          <Route path="/Results" element={<Results/>} />
+         <Route path = "/AboutMe" element={<AboutMe/>}/>
        </Routes>
 
 
