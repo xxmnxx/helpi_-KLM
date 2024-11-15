@@ -151,9 +151,6 @@ const DetailedQuiz:React.FC=()=>{
        navigate('/Results');
      };
 
-
-
-
      const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
      return (
       <Container fluid className="quiz-container">
