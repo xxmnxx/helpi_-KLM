@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (72 ms)
+  ✕ renders learn react link (70 ms)
 
   ● renders learn react link
 
@@ -73,7 +73,7 @@ FAIL src/App.test.tsx
             [36m</header>[39m
             [36m<div[39m
               [33mclass[39m=[32m"container"[39m
-              [33mstyle[39m=[32m"border: 4px solid #772e25; padding: 30px; width: 75%; height: 70%; background-color: rgb(200, 214, 175); font-family: Modern No. 20;"[39m
+              [33mstyle[39m=[32m"border: 4px solid #772e25; padding: 30px; width: 75%; height: 70%; background-color: rgb(200, 214, 175); font-family: Modern No. 20; text-align: center;"[39m
             [36m>[39m
               [36m<h2[39m
                 [33mstyle[39m=[32m"font-family: Palatino;"[39m
@@ -87,10 +87,10 @@ FAIL src/App.test.tsx
                   [33mclass[39m=[32m"custom-box col"[39m
                 [36m>[39m
                   [36m<h3>[39m
-                    [0mBasic Quiz[0m
+                    [0mMake Your Own Coffee![0m
                   [36m</h3>[39m
                   [36m<p>[39m
-                    [0mThis quiz provides a quick and straightforward assessment, featuring general questions designed to identify broad career fields that match your interests and strengths. It’s ideal for those looking for a brief overview to help guide their career exploration.[0m
+                    [0mTake it easy! make your own coffee using hand picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assesment to assist in dicovering a career that best fits.[0m
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
@@ -105,10 +105,10 @@ FAIL src/App.test.tsx
                   [33mclass[39m=[32m"custom-box col"[39m
                 [36m>[39m
                   [36m<h3>[39m
-                    [0mDetailed Quiz[0m
+                    [0mMake Your Own Pastries![0m
                   [36m</h3>[39m
                   [36m<p>[39m
-                    [0mThis quiz offers a more in-depth exploration, featuring targeted questions designed to identify specific career paths that align with your strengths and interests. It's ideal for those who are committed to investing extra time to gain deeper insights into their ideal career trajectory.[0m
+                    [0mGet your hands dirty! Bake your own pasteries using hand picked ingredients, unique to your interests and skills! Ideal for those who are committed to investing extra time to gain deeper insights into their ideal career trajectory.[0m
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
@@ -186,7 +186,7 @@ All files           |   13.76 |     2.08 |    5.71 |   14.07 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.108 s
+Time:        3.098 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
