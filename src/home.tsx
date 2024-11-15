@@ -44,7 +44,7 @@ function HomePage() {
         <Button onClick = {navigateToAboutMe}style={{backgroundColor:'#772e25'}}></Button>       
         <div style ={{color: '#44200D'}}>Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
           </header>
-        <Container style={{ border: '4px solid #772e25', padding: '30px', width: '75%', height: '70%', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20'}}>
+        <Container style={{ border: '4px solid #772e25', padding: '30px', width: '75%', height: '70%', backgroundColor: '#C8D6AF', fontFamily: 'Modern No. 20', textAlign: 'center'}}>
           <h2 style={{fontFamily: 'Palatino'}}>Choose the quiz you want to take!</h2>
           <Row>
             <Col className ="custom-box">
