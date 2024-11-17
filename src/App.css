@@ -123,9 +123,26 @@
 .prev-button:hover,
 .next-button:hover {
   background-color: #FFECCC;
+  border-color:#FFECCC;
 }
 
 .prev-button:active,
 .next-button:active {
   background-color: #C8D6AF;
+}
+
+.about-creators-button {
+  background-color:#772e25;
+  border-color:#772e25;
+  position: 'absolute';
+  top: '5%',;
+  right: '75%';
+  font-size: '18px';
+  padding: '10px 20px'; 
+  border-radius: '5px';
+  color: 'white'
+}
+.about-creators-button:hover{
+  background-color: #c4a848;
+  border-color: #c4a848
 }

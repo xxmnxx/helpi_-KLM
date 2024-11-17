@@ -1,20 +1,40 @@
-import { Button ,Container} from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
 
 
 const AboutMe: React.FC = () => {
-   const navigate = useNavigate();
-   const goToHome = () => {
-    navigate('/');
-   }
-   <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
-   return(
-      <><header style={{ backgroundColor: '#FFECCC' }} /><Container>
-           <Button onClick={goToHome} variant="primary" style={{
-               position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225'}}>
-                Go to Home</Button>
-       </Container></>
-   )
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <header style={{ backgroundColor: '#FFECCC' }} />
+      <Container fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
+      <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
+        <Row className="mt-5">
+          <Col>
+            <h2>Kate Geiszler</h2>
+            <p>Kate .... edit</p>
+          </Col>
+        </Row>
+
+        <Row className="mt-5">
+          <Col>
+            <h2>Leah Marcelli</h2>
+            <p>Leah .. edit .</p>
+
+          </Col>
+        </Row>
+
+        <Row className="mt-5">
+          <Col>
+            <h2>Morgan Nutto</h2>
+            <p>Moran .. edit</p>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
 }
+
 export default AboutMe;
