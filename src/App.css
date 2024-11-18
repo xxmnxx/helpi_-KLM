@@ -133,6 +133,7 @@ body {
   height: 50px;
   background-color: #053225 !important;
   transition: background-color 0.3s ease;
+  border-radius: 10x;
 }
 
 .prev-button:hover,
@@ -160,4 +161,16 @@ body {
 .about-creators-button:hover{
   background-color: #c4a848;
   border-color: #c4a848
+}
+
+.results-container {
+  border: 4px solid #772e25;
+  margin: 10px;
+  padding: 10px;
+  width: 250px;
+  height: 600px;
+  background-color: #FFEECC;
+  font-family: "Modern No. 20";
+  border-radius: 5%;
+  
 }
