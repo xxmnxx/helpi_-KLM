@@ -46,22 +46,25 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"App-Header"[39m
               [33mstyle[39m=[32m"padding: 20px; font-family: Palatino; font-size: 30px; font-weight: bold; position: relative; z-index: 10;"[39m
             [36m>[39m
-              [36m<h1[39m
-                [33mstyle[39m=[32m"font-size: 70px; font-weight: bold;"[39m
-              [36m>[39m
+              [36m<h1>[39m
                 [36m<span[39m
-                  [33mstyle[39m=[32m"color: rgb(82, 104, 29);"[39m
+                  [33mclass[39m=[32m"match-text"[39m
                 [36m>[39m
-                  [0mMatch-a[0m
+                  [0mMatch-a  [0m
                 [36m</span>[39m
                 [36m<span[39m
-                  [33mstyle[39m=[32m"color: black;"[39m
+                  [33mclass[39m=[32m"career-text"[39m
                 [36m>[39m
-                  [0m Career[0m
+                  [0m  Career[0m
                 [36m</span>[39m
+                [36m<div>[39m
+                  [36m<p[39m
+                    [33mstyle[39m=[32m"margin-top: 0px;"[39m
+                  [36m/>[39m
+                [36m</div>[39m
               [36m</h1>[39m
               [36m<div[39m
-                [33mstyle[39m=[32m"color: rgb(68, 32, 13); font-size: 18px;"[39m
+                [33mclass[39m=[32m"creators-info"[39m
               [36m>[39m
                 [0mBrewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler[0m
               [36m</div>[39m
@@ -73,8 +76,7 @@ FAIL src/App.test.tsx
               [36m</button>[39m
             [36m</header>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"quiz-container container"[39m
-              [33mstyle[39m=[32m"position: relative; z-index: 1; background-color: rgba(200, 214, 175, 0.8);"[39m
+              [33mclass[39m=[32m"home-container container"[39m
             [36m>[39m
               [36m<h2[39m
                 [33mstyle[39m=[32m"font-family: Palatino; font-size: 30px; font-weight: bold;"[39m
@@ -186,7 +188,7 @@ All files           |   13.19 |     1.85 |    5.88 |   13.19 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.151 s
+Time:        3.272 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
