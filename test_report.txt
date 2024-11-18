@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (72 ms)
+  ✕ renders learn react link (69 ms)
 
   ● renders learn react link
 
@@ -40,11 +40,11 @@ FAIL src/App.test.tsx
         [36m>[39m
           [36m<div[39m
             [33mclass[39m=[32m"container-fluid"[39m
-            [33mstyle[39m=[32m"width: 100vw; height: 100vh; margin: 0px; padding: 0px; background-color: rgb(255, 238, 204);"[39m
+            [33mstyle[39m=[32m"height: 100vh; margin: 0px; padding: 0px;"[39m
           [36m>[39m
             [36m<header[39m
               [33mclass[39m=[32m"App-Header"[39m
-              [33mstyle[39m=[32m"padding: 20px; font-family: Palatino; font-size: 30px; font-weight: bold;"[39m
+              [33mstyle[39m=[32m"padding: 20px; font-family: Palatino; font-size: 30px; font-weight: bold; position: relative; z-index: 10;"[39m
             [36m>[39m
               [36m<h1[39m
                 [33mstyle[39m=[32m"font-size: 70px; font-weight: bold;"[39m
@@ -61,7 +61,7 @@ FAIL src/App.test.tsx
                 [36m</span>[39m
               [36m</h1>[39m
               [36m<div[39m
-                [33mstyle[39m=[32m"color: rgb(68, 32, 13);"[39m
+                [33mstyle[39m=[32m"color: rgb(68, 32, 13); font-size: 18px;"[39m
               [36m>[39m
                 [0mBrewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler[0m
               [36m</div>[39m
@@ -73,11 +73,11 @@ FAIL src/App.test.tsx
               [36m</button>[39m
             [36m</header>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"container"[39m
-              [33mstyle[39m=[32m"border: 4px solid #772e25; padding: 30px; width: 75%; height: 70%; background-color: rgb(200, 214, 175); font-family: Modern No. 20; text-align: center;"[39m
+              [33mclass[39m=[32m"quiz-container container"[39m
+              [33mstyle[39m=[32m"position: relative; z-index: 1; background-color: rgba(200, 214, 175, 0.8);"[39m
             [36m>[39m
               [36m<h2[39m
-                [33mstyle[39m=[32m"font-family: Palatino;"[39m
+                [33mstyle[39m=[32m"font-family: Palatino; font-size: 30px; font-weight: bold;"[39m
               [36m>[39m
                 [0mChoose the quiz you want to take![0m
               [36m</h2>[39m
@@ -91,12 +91,12 @@ FAIL src/App.test.tsx
                     [0mMake Your Own Coffee![0m
                   [36m</h3>[39m
                   [36m<p>[39m
-                    [0mTake it easy! make your own coffee using hand picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assesment to assist in dicovering a career that best fits.[0m
+                    [0mTake it easy! Make your own coffee using hand-picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assessment to assist in discovering a career that best fits.[0m
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
                     [33mdisabled[39m=[32m""[39m
-                    [33mstyle[39m=[32m"background-color: rgb(5, 50, 37); border-color: #053225; color: rgb(255, 255, 255); font-family: Modern No. 20;"[39m
+                    [33mstyle[39m=[32m"background-color: rgb(5, 50, 37); border-color: #053225; color: rgb(255, 255, 255);"[39m
                     [33mtype[39m=[32m"button"[39m
                   [36m>[39m
                     [0mStart Basic Quiz[0m
@@ -109,12 +109,12 @@ FAIL src/App.test.tsx
                     [0mMake Your Own Pastries![0m
                   [36m</h3>[39m
                   [36m<p>[39m
-                    [0mGet your hands dirty! Bake your own pasteries using hand picked ingredients, unique to your interests and skills! Ideal for those who are committed to investing extra time to gain deeper insights into their ideal career trajectory.[0m
+                    [0mGet your hands dirty! Bake your own pastries using hand-picked ingredients, unique to your interests and skills! Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.[0m
                   [36m</p>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
                     [33mdisabled[39m=[32m""[39m
-                    [33mstyle[39m=[32m"background-color: rgb(5, 50, 37); border-color: #053225; color: rgb(255, 255, 255); font-family: Modern No. 20;"[39m
+                    [33mstyle[39m=[32m"background-color: rgb(5, 50, 37); border-color: #053225; color: rgb(255, 255, 255);"[39m
                     [33mtype[39m=[32m"button"[39m
                   [36m>[39m
                     [0mStart Detailed Quiz[0m
@@ -137,7 +137,6 @@ FAIL src/App.test.tsx
                     [33mplaceholder[39m=[32m"Insert API Key Here"[39m
                     [33mtype[39m=[32m"password"[39m
                   [36m/>[39m
-                  [36m<br />[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
                     [33mstyle[39m=[32m"background-color: rgb(5, 50, 37);"[39m
@@ -179,7 +178,7 @@ All files           |    13.1 |     1.85 |    5.88 |    13.1 |
  App.tsx            |     100 |      100 |     100 |     100 |                   
  BasicQuiz.tsx      |    5.26 |        0 |       0 |    5.26 | 56-129            
  DetailedQuiz.tsx   |    5.26 |        0 |       0 |    5.26 | 105-175           
- home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 17,20,24,27,30-32 
+ home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 17,20,24,28,32-34 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  results.tsx        |    2.94 |        0 |       0 |    2.94 | 9-153             
@@ -187,7 +186,7 @@ All files           |    13.1 |     1.85 |    5.88 |    13.1 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.319 s
+Time:        3.142 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
