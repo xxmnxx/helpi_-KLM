@@ -110,33 +110,34 @@ const DetailedQuiz:React.FC=()=>{
    const navigate = useNavigate();
     
      const handleOptionClick = (option: string) => {
-       setSelectedOption(option)
+      setSelectedOption(option)
+      const currentQuestion = questions[currentQuestionIndex];
+      const updatedAnswers = [...answers];
+      const answerIndex = updatedAnswers.findIndex(
+        (answer) => answer.question === currentQuestion.question
+      );
+      
+      if (answerIndex > -1) {
+        updatedAnswers[answerIndex].selectedAnswer = option;
+      } else {
+        updatedAnswers.push({ question: currentQuestion.question, selectedAnswer: option });
+      }
+      
+      setAnswers(updatedAnswers);
+
+      // For last question set the quiz as done 
+      if (currentQuestionIndex === questions.length - 1) {
+        setQuizComplete(true);
+        setVisibility(true);
+        localStorage.setItem('basicQuizAnswers', JSON.stringify(updatedAnswers));
+      }
      };
 
      const handleNextQuestion = () => {
-       if (selectedOption !== null) {
-         const currentQuestion = questions[currentQuestionIndex];
-       
-         // Update the answers with the selected answer
-         setAnswers(prevAnswers => [
-           ...prevAnswers,
-           {
-             question: currentQuestion.question,
-             selectedAnswer: selectedOption
-           }
-         ]);
-          // Move to the next question or complete the quiz
-         if (currentQuestionIndex < questions.length - 1) {
-           setCurrentIndex(currentQuestionIndex + 1);
-           setSelectedOption(null);
-         } else {
-           setQuizComplete(true);
-           setVisibility(true);
-           localStorage.setItem('detailedQuizAnswers', JSON.stringify(answers));
- 
- 
-         }
-       }
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentIndex(currentQuestionIndex + 1);
+        setSelectedOption(null);
+      }
      };
 
      const handlePrevQuestion = () => {
@@ -151,7 +152,7 @@ const DetailedQuiz:React.FC=()=>{
        navigate('/Results');
      };
 
-     const progress = (currentQuestionIndex + (quizComplete ? 1 : 0)) / questions.length * 100;
+     const progress = (currentQuestionIndex + (selectedOption ? 1 : 0)) / questions.length * 100;
      return (
       <Container fluid className="quiz-container">
         <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
@@ -181,8 +182,9 @@ const DetailedQuiz:React.FC=()=>{
           </Row>
           <div className="navigation-buttons">
           
+          
           <Button onClick={handlePrevQuestion} variant="primary" disabled={currentQuestionIndex === 0} className="prev-button">Previous Question</Button>
-          <Button onClick={handleNextQuestion} variant="primary" disabled={!selectedOption || quizComplete} className="next-button">Next Question</Button>
+          <Button onClick={handleNextQuestion} variant="primary" disabled={!selectedOption || quizComplete || (currentQuestionIndex === questions.length - 1)} className="next-button">Next Question</Button>
         </div>
         </Container>
         {visible && quizComplete && selectedOption && (
