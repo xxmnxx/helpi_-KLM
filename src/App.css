@@ -1,7 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('https://img.freepik.com/free-vector/coffee-shop-instagram-post-background-vector_53876-136841.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Styling for the main container to ensure the content stays on top */
 .quiz-container {
-  background-color: #C8D6AF;
+  background-color: rgba(200, 214, 175, 0.8); /* Added transparency for readability */
   min-height: 100vh;
   text-align: center;
+  position: relative; /* Allows for absolute positioning inside */
 }
 
 .home-button {
@@ -13,7 +25,9 @@
   width: 150px;
   height: 50px;
 }
-
+.home-button:hover{
+  background-color: #C8D6AF;
+}
 
 .quiz-title {
   font-family: 'Palatino', serif;
