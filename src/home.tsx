@@ -39,20 +39,27 @@ function HomePage() {
   return (
     <Container fluid style={{ height: '100vh', margin: 0, padding: 0 }}>
       <header className="App-Header" style={{ padding: '20px', fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold', position: 'relative', zIndex: 10 }}>
-        <h1 style={{ fontSize: '70px', fontWeight: 'bold' }}>
-          <span style={{ color: '#52681D' }}>Match-a</span>
-          <span style={{ color: 'black' }}> Career</span>
+        <h1>
+        <span className="match-text">Match-a  </span>
+        <span className="career-text">  Career</span>
+        <div>
+
+  <p style={{ marginTop: '0px' }}></p>
+  </div>
         </h1>
-        <div style={{ color: '#44200D', fontSize: '18px' }}>Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
-        <Button onClick={navigateToAboutMe} className="about-creators-button">
-          About the Creators
-        </Button>
-      </header>
-
+        <div className="creators-info">
+    Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler
+  </div>        
+  <Button onClick={navigateToAboutMe} className="about-creators-button">
+    About the Creators
+  </Button>
+</header>
+      
       {/* Container with the background image as full page */}
-      <Container className="quiz-container" style={{ position: 'relative', zIndex: 1, backgroundColor: 'rgba(200, 214, 175, 0.8)' }}>
-        <h2 style={{ fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold' }}>Choose the quiz you want to take!</h2>
-
+      <Container className="home-container">
+  <h2 style={{ fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold' }}>
+    Choose the quiz you want to take!
+  </h2>
         <Row>
           <Col className="custom-box">
             <h3>Make Your Own Coffee!</h3>

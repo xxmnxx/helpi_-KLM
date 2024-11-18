@@ -9,13 +9,31 @@ body {
 }
 
 /* Styling for the main container to ensure the content stays on top */
-.quiz-container {
-  background-color: rgba(200, 214, 175, 0.8); /* Added transparency for readability */
-  min-height: 100vh;
+.home-container {
+  background-color: rgba(200, 214, 175, 0.8); /* More distinct green */
+  width: 60%;         /* 60% of the viewport width */
+  height: 60%;        /* 50% of the viewport height */
+  margin: auto;       /* Centers the container horizontally */
+  display: flex;      /* Enables flexbox */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center;    /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
   text-align: center;
-  position: relative; /* Allows for absolute positioning inside */
+  position: relative;
+  padding: 5%;        /* Adds 5% padding inside the container */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  border-color: #053225;
 }
 
+/* Quiz page container with a new shade of green */
+.quiz-container {
+  background-color: rgba(200, 214, 175, 0.8);  /* Adjusted green */
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+/* Green button styling for both home and quiz */
 .home-button {
   background-color: #053225;
   border-color: #053225;
@@ -132,6 +150,7 @@ body {
   height: 50px;
   background-color: #053225 !important;
   transition: background-color 0.3s ease;
+  border-color: #053225;
 }
 
 .prev-button:hover,
@@ -143,6 +162,7 @@ body {
 .prev-button:active,
 .next-button:active {
   background-color: #C8D6AF;
+  border-color: #C8D6AF;
 }
 
 .about-creators-button {
@@ -159,4 +179,37 @@ body {
 .about-creators-button:hover{
   background-color: #c4a848;
   border-color: #c4a848
+}
+.App-Header {
+  padding: 20px;
+  font-family: 'Palatino', serif;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  z-index: 10;
+  text-align: center; /* Ensures the text inside the header is centered */
+}
+
+.App-Header h1 {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.App-Header h1 span {
+  display: inline-block; /* Makes the span behave like a block to align */
+}
+
+.App-Header .match-text {
+  color: #52681D;
+}
+
+.App-Header .career-text {
+  color: black;
+}
+
+.App-Header .creators-info {
+  color: #44200D;
+  font-size: 18px;
+  margin-top: 10px;
 }
