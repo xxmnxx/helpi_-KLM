@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (71 ms)
+  ✕ renders learn react link (74 ms)
 
   ● renders learn react link
 
@@ -95,6 +95,11 @@ FAIL src/App.test.tsx
                   [36m<p>[39m
                     [0mTake it easy! Make your own coffee using hand-picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assessment to assist in discovering a career that best fits.[0m
                   [36m</p>[39m
+                  [36m<img[39m
+                    [33malt[39m=[32m"loading coffee"[39m
+                    [33mclass[39m=[32m"dancing-coffee"[39m
+                    [33msrc[39m=[32m"coffee-lover-hot-coffee.gif"[39m
+                  [36m/>[39m
                   [36m<button[39m
                     [33mclass[39m=[32m"btn btn-primary"[39m
                     [33mdisabled[39m=[32m""[39m
@@ -121,6 +126,11 @@ FAIL src/App.test.tsx
                   [36m>[39m
                     [0mStart Detailed Quiz[0m
                   [36m</button>[39m
+                  [36m<img[39m
+                    [33malt[39m=[32m"loading coffee"[39m
+                    [33mclass[39m=[32m"donut"[39m
+                    [33msrc[39m=[32m"donut.gif"[39m
+                  [36m/>[39m
                 [36m</div>[39m
               [36m</div>[39m
               [36m<p[39m
@@ -178,9 +188,9 @@ File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 All files           |   13.19 |     1.85 |    5.88 |   13.19 |                   
  AboutMe.tsx        |      25 |      100 |       0 |      25 | 7-13              
  App.tsx            |     100 |      100 |     100 |     100 |                   
- BasicQuiz.tsx      |    5.26 |        0 |       0 |    5.26 | 56-129            
+ BasicQuiz.tsx      |    5.26 |        0 |       0 |    5.26 | 57-129            
  DetailedQuiz.tsx   |    5.26 |        0 |       0 |    5.26 | 105-175           
- home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 17,20,24,28,32-34 
+ home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 18,21,25,29,33-35 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  results.tsx        |    3.03 |        0 |       0 |    3.03 | 9-240             
@@ -188,7 +198,7 @@ All files           |   13.19 |     1.85 |    5.88 |   13.19 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.272 s
+Time:        3.284 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
