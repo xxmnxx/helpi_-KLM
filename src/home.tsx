@@ -46,17 +46,16 @@ function HomePage() {
         <span className="match-text">Match-a  </span>
         <span className="career-text">  Career</span>
         <div>
-
-  <p style={{ marginTop: '0px' }}></p>
-  </div>
-        </h1>
-        <div className="creators-info">
-    Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler
-  </div>        
-  <Button onClick={navigateToAboutMe} className="about-creators-button">
-    About the Creators
-  </Button>
-</header>
+        <p style={{ marginTop: '0px' }}></p>
+        </div>
+              </h1>
+              <div className="creators-info">
+          Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler
+        </div>        
+        <Button onClick={navigateToAboutMe} className="about-creators-button">
+          About the Creators
+        </Button>
+      </header>
       
       {/* Container with the background image as full page */}
       <Container className="home-container">
