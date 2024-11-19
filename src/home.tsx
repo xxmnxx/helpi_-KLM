@@ -3,6 +3,8 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import './App.css'; // Make sure your CSS file is imported
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import basicIcon from './Images/hot-coffee.svg';
+import detailedIcon from './Images/croissant.svg';
 import dancingCoffee from './coffee-lover-hot-coffee.gif';
 import donut from './donut.gif'
 const saveKeyData = 'MYKEY';
@@ -63,6 +65,7 @@ function HomePage() {
   </h2>
         <Row>
           <Col className="custom-box">
+          <img src= {basicIcon} style={{width: '150px', height: 'auto'}}/>
             <h3>Make Your Own Coffee!</h3>
             <p>Take it easy! Make your own coffee using hand-picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assessment to assist in discovering a career that best fits.</p>
             <img className="dancing-coffee" src={dancingCoffee} alt="loading coffee" />
@@ -76,6 +79,7 @@ function HomePage() {
             
           </Col>
           <Col className="custom-box">
+          <img src= {detailedIcon} style={{width: '150px', height: 'auto'}}/>
             <h3>Make Your Own Pastries!</h3>
             <p>Get your hands dirty! Bake your own pastries using hand-picked ingredients, unique to your interests and skills! Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.</p>
             <Button

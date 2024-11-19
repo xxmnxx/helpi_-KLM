@@ -3,7 +3,7 @@ import './App.css';
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
 import { useState,useEffect } from 'react';
-import loadingGif from './Coffee Cup.gif';
+import loadingGif from './Images/Coffee Cup.gif';
 
 const ResultPage: React.FC = () => {
   const navigate = useNavigate(); 
