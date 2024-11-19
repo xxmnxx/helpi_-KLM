@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (74 ms)
+  ✕ renders learn react link (73 ms)
 
   ● renders learn react link
 
@@ -89,6 +89,10 @@ FAIL src/App.test.tsx
                 [36m<div[39m
                   [33mclass[39m=[32m"custom-box col"[39m
                 [36m>[39m
+                  [36m<img[39m
+                    [33msrc[39m=[32m"hot-coffee.svg"[39m
+                    [33mstyle[39m=[32m"width: 150px; height: auto;"[39m
+                  [36m/>[39m
                   [36m<h3>[39m
                     [0mMake Your Own Coffee![0m
                   [36m</h3>[39m
@@ -112,6 +116,10 @@ FAIL src/App.test.tsx
                 [36m<div[39m
                   [33mclass[39m=[32m"custom-box col"[39m
                 [36m>[39m
+                  [36m<img[39m
+                    [33msrc[39m=[32m"croissant.svg"[39m
+                    [33mstyle[39m=[32m"width: 150px; height: auto;"[39m
+                  [36m/>[39m
                   [36m<h3>[39m
                     [0mMake Your Own Pastries![0m
                   [36m</h3>[39m
@@ -190,7 +198,7 @@ All files           |   13.19 |     1.85 |    5.88 |   13.19 |
  App.tsx            |     100 |      100 |     100 |     100 |                   
  BasicQuiz.tsx      |    5.26 |        0 |       0 |    5.26 | 57-129            
  DetailedQuiz.tsx   |    5.26 |        0 |       0 |    5.26 | 105-175           
- home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 18,21,25,29,33-35 
+ home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 20,23,27,31,35-37 
  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  results.tsx        |    3.03 |        0 |       0 |    3.03 | 9-240             
@@ -198,7 +206,7 @@ All files           |   13.19 |     1.85 |    5.88 |   13.19 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.284 s
+Time:        3.135 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
