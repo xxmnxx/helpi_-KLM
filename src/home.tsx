@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import basicIcon from './Images/hot-coffee.svg';
 import detailedIcon from './Images/croissant.svg';
-
+import dancingCoffee from './coffee-lover-hot-coffee.gif';
+import donut from './donut.gif'
 const saveKeyData = 'MYKEY';
 const prevKey = localStorage.getItem(saveKeyData);
 const initialKey = prevKey ? JSON.parse(prevKey) : '';
@@ -41,25 +42,33 @@ function HomePage() {
   return (
     <Container fluid style={{ height: '100vh', margin: 0, padding: 0 }}>
       <header className="App-Header" style={{ padding: '20px', fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold', position: 'relative', zIndex: 10 }}>
-        <h1 style={{ fontSize: '70px', fontWeight: 'bold' }}>
-          <span style={{ color: '#52681D' }}>Match-a</span>
-          <span style={{ color: 'black' }}> Career</span>
+        <h1>
+        <span className="match-text">Match-a  </span>
+        <span className="career-text">  Career</span>
+        <div>
+
+  <p style={{ marginTop: '0px' }}></p>
+  </div>
         </h1>
-        <div style={{ color: '#44200D', fontSize: '18px' }}>Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler</div>
-        <Button onClick={navigateToAboutMe} className="about-creators-button">
-          About the Creators
-        </Button>
-      </header>
-
+        <div className="creators-info">
+    Brewed By: Morgan Nutto, Leah Marcelli, Kate Geiszler
+  </div>        
+  <Button onClick={navigateToAboutMe} className="about-creators-button">
+    About the Creators
+  </Button>
+</header>
+      
       {/* Container with the background image as full page */}
-      <Container className="quiz-container" style={{ position: 'relative', zIndex: 1, backgroundColor: 'rgba(200, 214, 175, 0.8)' }}>
-        <h2 style={{ fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold' }}>Choose the quiz you want to take!</h2>
-
+      <Container className="home-container">
+  <h2 style={{ fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold' }}>
+    Choose the quiz you want to take!
+  </h2>
         <Row>
           <Col className="custom-box">
           <img src= {basicIcon} style={{width: '150px', height: 'auto'}}/>
             <h3>Make Your Own Coffee!</h3>
             <p>Take it easy! Make your own coffee using hand-picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assessment to assist in discovering a career that best fits.</p>
+            <img className="dancing-coffee" src={dancingCoffee} alt="loading coffee" />
             <Button
               onClick={navigateToBasicQuiz}
               style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff' }}
@@ -67,6 +76,7 @@ function HomePage() {
             >
               Start Basic Quiz
             </Button>
+            
           </Col>
           <Col className="custom-box">
           <img src= {detailedIcon} style={{width: '150px', height: 'auto'}}/>
@@ -79,6 +89,8 @@ function HomePage() {
             >
               Start Detailed Quiz
             </Button>
+            <img className="donut" src={donut} alt="loading coffee" />
+
           </Col>
         </Row>
 

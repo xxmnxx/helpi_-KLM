@@ -21,7 +21,8 @@ const AboutMe: React.FC = () => {
         <Row className="mt-5">
           <Col>
             <h2>Leah Marcelli</h2>
-            <p>Leah .. edit .</p>
+            <p>Leah Marcelli is a senior at the University of Delaware. She currently studies Mathematics with minors in 
+               Computer Science and Statistics. She is very excited to be working on this project to gain experience in software development .</p>
 
           </Col>
         </Row>

@@ -29,10 +29,6 @@ const ResultPage: React.FC = () => {
     career3_3: string;
 } | null>(null);
 
-  // Navigate to home
-  const goToHome = () => {
-    navigate('/');
-  };
 //comment
   // Fetch answers from localStorage and send them to OpenAI
   useEffect(() => {
@@ -180,7 +176,7 @@ const ResultPage: React.FC = () => {
             {careerResults ? (
               <Container style={{width: '1000px'}}>
               <Row>
-                <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                <Col className="results-container">
               <Row style ={{height: '200px'}}>
               <h3 style={{textAlign: 'center'}}>Career Field #1</h3>
               <div style={{textAlign: 'center', paddingBottom: '10%'}}>
@@ -197,7 +193,7 @@ const ResultPage: React.FC = () => {
                     </ul>
                     </Row>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col className="results-container">
                     <Row style ={{height: '200px'}}>
                     <h3 style={{textAlign: 'center'}}>Career Field #2</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
@@ -214,7 +210,7 @@ const ResultPage: React.FC = () => {
                     </ul>
                     </Row>
                     </Col>
-                    <Col style={{ border: '4px solid #772e25', margin: '10px', padding: '10px', width: '200px', height: '600px',backgroundColor: '#FFEECC', fontFamily: 'Modern No. 20' }}>
+                    <Col className="results-container">
                     <Row style ={{height: '200px'}}>
                     <h3 style={{textAlign: 'center'}}>Career Field #3</h3>
                     <div style={{textAlign: 'center', paddingBottom: '10%'}}>
@@ -241,11 +237,7 @@ const ResultPage: React.FC = () => {
         )}
 
 
-        <Button onClick={goToHome} variant="primary" style={{
-          position: 'absolute', left: '30px', top: '30px', width: '150px', height: '50', backgroundColor: '#053225'
-        }}>
-          Go to Home
-        </Button>
+      <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
       </Container>
   );
 };
