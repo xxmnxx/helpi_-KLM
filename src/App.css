@@ -11,8 +11,8 @@ body {
 /* Styling for the main container to ensure the content stays on top */
 .home-container {
   background-color: rgba(200, 214, 175, 0.8); /* More distinct green */
-  width: 70%;         /* 60% of the viewport width */
-  height: 60%;        /* 50% of the viewport height */
+  width: 80%;         /* 80% of the viewport width */
+  height: 80%;        /* 80% of the viewport height */
   margin: auto;       /* Centers the container horizontally */
   display: flex;      /* Enables flexbox */
   flex-direction: column; /* Stacks children vertically */
@@ -28,11 +28,25 @@ body {
 /* Quiz page container with a new shade of green */
 .quiz-container {
   background-color: rgba(200, 214, 175, 0.8);  /* Adjusted green */
+  background-size: cover;
   min-height: 100vh;
+  height:auto;
   text-align: center;
   position: relative;
+  
 }
 
+.custom-box {
+  border-color: #44200D;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  border-radius: 10%;
+  border-width: 5px;
+  margin: 10px;
+  width: fit-content;
+}
 /* Green button styling for both home and quiz */
 .home-button {
   background-color: #053225;

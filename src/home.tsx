@@ -60,12 +60,12 @@ function HomePage() {
       
       {/* Container with the background image as full page */}
       <Container className="home-container">
-  <h2 style={{ fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold' }}>
+  <h2 style={{ fontFamily: 'Palatino', fontSize: '30px' , fontWeight: 'bold' }}>
     Choose the quiz you want to take!
   </h2>
         <Row>
           <Col className="custom-box">
-          <img src= {basicIcon} style={{width: '150px', height: 'auto'}}/>
+          <img src= {basicIcon} style={{width: '100px', height: 'auto'}}/>
             <h3>Make Your Own Coffee!</h3>
             <p>Take it easy! Make your own coffee using hand-picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assessment to assist in discovering a career that best fits.</p>
             <img className="dancing-coffee" src={dancingCoffee} alt="loading coffee" />
@@ -79,7 +79,7 @@ function HomePage() {
             
           </Col>
           <Col className="custom-box">
-          <img src= {detailedIcon} style={{width: '150px', height: 'auto'}}/>
+          <img src= {detailedIcon} style={{width: '100px', height: 'auto'}}/>
             <h3>Make Your Own Pastries!</h3>
             <p>Get your hands dirty! Bake your own pastries using hand-picked ingredients, unique to your interests and skills! Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.</p>
             <Button
