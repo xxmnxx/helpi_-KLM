@@ -11,7 +11,7 @@ body {
 /* Styling for the main container to ensure the content stays on top */
 .home-container {
   background-color: rgba(200, 214, 175, 0.8); /* More distinct green */
-  width: 60%;         /* 60% of the viewport width */
+  width: 70%;         /* 60% of the viewport width */
   height: 60%;        /* 50% of the viewport height */
   margin: auto;       /* Centers the container horizontally */
   display: flex;      /* Enables flexbox */
@@ -224,7 +224,18 @@ body {
   background-color: #FFEECC;
   font-family: "Modern No. 20";
   border-radius: 5%;
-  
+}
+.dancing-coffee {
+  width: 20% !important;
+  height: auto !important;
+}
+.donut {
+  width: 20% !important;
+  height: auto !important;
+}
+.bear{
+  width: 10% !important;
+  height: auto !important;
 }
 
 
