@@ -156,7 +156,7 @@ const ResultPage: React.FC = () => {
       </header>
       
       <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
-        Congrats! You finished the Quiz
+        Success, your matcha was made!
       </h2>
 
         {/* Display the AI response or a loading message */}
