@@ -155,9 +155,6 @@ const ResultPage: React.FC = () => {
         <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
       </header>
       
-      <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
-        Success, your matcha was made!
-      </h2>
 
         {/* Display the AI response or a loading message */}
         {loading ? (
@@ -170,12 +167,13 @@ const ResultPage: React.FC = () => {
           //loading animation here//
         
         ) : (
-
-
           <div>
+            <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
+        Success, your matcha was made!
+      </h2>
             <h3 style={{ fontSize: '25px', fontFamily: 'Palatino',textAlign: 'center' }}>Your Suggested Career Paths:</h3>
             {careerResults ? (
-              <Container style={{width: '1000px'}}>
+              <Container style={{width: '2000px'}}>
               <Row>
                 <Col className="results-container">
               <Row style ={{height: '200px'}}>
@@ -185,7 +183,7 @@ const ResultPage: React.FC = () => {
                 {careerResults.reasoning1}
               </div>
               </Row>
-              <Row style ={{height: '200px', paddingTop: '250px'}} >
+              <Row style ={{height: '200px', paddingTop: '150px'}} >
                     <ul style={{ paddingLeft: '0', listStylePosition: 'inside',textAlign: 'center' }}>
                       <h4>Suggested Careers:</h4>
                         <li>{careerResults.career1_1}</li>
@@ -202,7 +200,7 @@ const ResultPage: React.FC = () => {
                     {careerResults.reasoning2}
                     </div>
                     </Row>
-                    <Row style ={{height: '200px', paddingTop: '250px'}}>
+                    <Row style ={{height: '200px', paddingTop: '150px'}}>
                     <ul style={{textAlign: 'center', paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
                         <li>{careerResults.career2_1}</li>
@@ -219,7 +217,7 @@ const ResultPage: React.FC = () => {
                       {careerResults.reasoning3}
                     </div>
                     </Row>
-                    <Row style ={{height: '200px', paddingTop: '250px'}}>
+                    <Row style ={{height: '200px', paddingTop: '150px'}}>
                     <ul style={{ textAlign: 'center',paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
 
