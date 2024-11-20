@@ -66,6 +66,13 @@ body {
   width: 150px;
   height: 50px;
 }
+
+.home-button:focus, 
+.home-button:focus-visible, 
+.home-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 .home-button:hover{
   background-color: #C8D6AF;
 }
@@ -200,6 +207,16 @@ body {
   border-color: #C8D6AF;
 }
 
+.prev-button:focus, 
+.prev-button:focus-visible, 
+.prev-button:active,
+.next-button:focus, 
+.next-button:focus-visible, 
+.next-button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .about-creators-button {
   background-color:#772e25;
   border-color:#772e25;
@@ -231,8 +248,6 @@ body {
   font-size: 70px;
   font-weight: bold;
 }
-
-
 
 .App-Header .match-text {
   color: #52681D;
@@ -270,5 +285,11 @@ body {
   height: auto !important;
 }
 
+.Submit-Button:focus, 
+.Submit-Button:focus-visible, 
+.Submit-Button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 
