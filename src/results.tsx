@@ -3,7 +3,8 @@ import './App.css';
 import { useNavigate } from 'react-router-dom';
 import OpenAI from "openai";
 import { useState,useEffect } from 'react';
-import loadingGif from './Images/Coffee Cup.gif';
+import loadingBasicGif from './Images/Coffee Cup.gif';
+import loadingDetailedGif from './Images/stir.gif';
 
 const ResultPage: React.FC = () => {
   const navigate = useNavigate(); 
@@ -29,6 +30,8 @@ const ResultPage: React.FC = () => {
     career3_3: string;
 } | null>(null);
 
+
+const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
 //comment
   // Fetch answers from localStorage and send them to OpenAI
   useEffect(() => {
@@ -41,8 +44,10 @@ const ResultPage: React.FC = () => {
         // Parse the stored answers
         let userAnswers;
         if (storedAnswersDetailed) {
+            setIsDetailedQuiz(true);
             userAnswers = JSON.parse(storedAnswersDetailed);
         } else if (storedAnswersBasic) {
+            setIsDetailedQuiz(false);
             userAnswers = JSON.parse(storedAnswersBasic);
         } else {
             userAnswers = [];
@@ -159,8 +164,20 @@ const ResultPage: React.FC = () => {
         {/* Display the AI response or a loading message */}
         {loading ? (
           <div style={{textAlign: 'center' }}>
-            <img src={loadingGif} alt="loading animation"/>
-            <p style={{color: 'black', fontSize: '18px'}}>Brewing your career suggestions...</p>
+
+            <img 
+            className= 'loading' 
+            src={isDetailedQuiz? loadingDetailedGif : loadingBasicGif} 
+            alt="loading animation"
+            />
+
+
+            {isDetailedQuiz ? (
+              <p style={{color: 'black', fontSize: '18px'}}>Baking your career suggestions...</p>
+            ):(
+              <p style={{color: 'black', fontSize: '18px'}}>Brewing your career suggestions...</p>
+
+            )};
 
           </div>
           
@@ -168,9 +185,17 @@ const ResultPage: React.FC = () => {
         
         ) : (
           <div>
-            <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
-        Success, your matcha was made!
-      </h2>
+            {isDetailedQuiz ? ( 
+              <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
+              Success, your pasteries are done!
+            </h2>
+            ) : (
+              <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
+              Success, your coffee is done!
+            </h2>
+            )}
+            
+
             <h3 style={{ fontSize: '25px', fontFamily: 'Palatino',textAlign: 'center' }}>Your Suggested Career Paths:</h3>
             {careerResults ? (
               <Container style={{width: '2000px'}}>
