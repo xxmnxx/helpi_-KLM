@@ -152,6 +152,7 @@ const ResultPage: React.FC = () => {
         <h1 style={{ fontSize: '40px', fontWeight: 'bold', fontFamily: 'Palatino' }}>
           Career Quiz Results
         </h1>
+        <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
       </header>
       
       <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
@@ -236,8 +237,6 @@ const ResultPage: React.FC = () => {
           </div>
         )}
 
-
-      <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
       </Container>
   );
 };
