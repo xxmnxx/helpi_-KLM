@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/helpi_-KLM/static/css/main.d5a6f99a.css",
-    "main.js": "/helpi_-KLM/static/js/main.ebfdd206.js",
+    "main.js": "/helpi_-KLM/static/js/main.0f549759.js",
     "static/js/453.bad6c33a.chunk.js": "/helpi_-KLM/static/js/453.bad6c33a.chunk.js",
     "static/media/donut.gif": "/helpi_-KLM/static/media/donut.728f49d850b3a5c579bd.gif",
     "static/media/bear.png": "/helpi_-KLM/static/media/bear.278dded2c86682c5aa8e.png",
+    "static/media/stir.gif": "/helpi_-KLM/static/media/stir.eb641ee877fdb836ed1c.gif",
+    "static/media/Coffee Cup.gif": "/helpi_-KLM/static/media/Coffee Cup.66bbc7fbf4a4020d9e3f.gif",
     "static/media/croissant.svg": "/helpi_-KLM/static/media/croissant.d1838bcdfe32ee245989b6e341194863.svg",
     "static/media/coffee-lover-hot-coffee.gif": "/helpi_-KLM/static/media/coffee-lover-hot-coffee.17dabfbc103fad48bfb1.gif",
     "static/media/hot-coffee.svg": "/helpi_-KLM/static/media/hot-coffee.563fc0c68ebb1789be8a22d177a98b34.svg",
     "index.html": "/helpi_-KLM/index.html",
     "main.d5a6f99a.css.map": "/helpi_-KLM/static/css/main.d5a6f99a.css.map",
-    "main.ebfdd206.js.map": "/helpi_-KLM/static/js/main.ebfdd206.js.map",
+    "main.0f549759.js.map": "/helpi_-KLM/static/js/main.0f549759.js.map",
     "453.bad6c33a.chunk.js.map": "/helpi_-KLM/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5a6f99a.css",
-    "static/js/main.ebfdd206.js"
+    "static/js/main.0f549759.js"
   ]
 }
