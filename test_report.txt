@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (75 ms)
+  ✕ renders learn react link (73 ms)
 
   ● renders learn react link
 
