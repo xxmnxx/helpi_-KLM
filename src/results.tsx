@@ -92,19 +92,19 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                       type: "object",
                       properties: {
                           careerfield1: { type: "string", description: "Name of the first career field" },
-                          reasoning1: {type: "string", description: "In depth (4-5 sentences) reasoning for the career field chosen"},
+                          reasoning1: {type: "string", description: "In depth (4 sentences - no more than 570 characters) reasoning for the career field chosen"},
                           career1_1: { type: "string", description: "First example career in career field 1" },
                           career1_2: { type: "string", description: "Second example career in career field 1" },
                           career1_3: { type: "string", description: "Third example career in career field 1" },
   
                           careerfield2: { type: "string", description: "Name of the second career field" },
-                          reasoning2: {type: "string", description: "In depth  (4-5 sentences) reasoning for the career field chosen"},
+                          reasoning2: {type: "string", description: "In depth  (4 sentences - no more than 570 characters) reasoning for the career field chosen"},
                           career2_1: { type: "string", description: "First example career in career field 2" },
                           career2_2: { type: "string", description: "Second example career in career field 2" },
                           career2_3: { type: "string", description: "Third example career in career field 2" },
   
                           careerfield3: { type: "string", description: "Name of the third career field" },
-                          reasoning3: {type: "string", description: "In depth  (4-5 sentences) reasoning for the career field chosen"},
+                          reasoning3: {type: "string", description: "In depth  (4 sentences - no more than 570 characters) reasoning for the career field chosen"},
                           career3_1: { type: "string", description: "First example career in career field 3" },
                           career3_2: { type: "string", description: "Second example career in career field 3" },
                           career3_3: { type: "string", description: "Third example career in career field 3" }
@@ -213,7 +213,7 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                 {careerResults.reasoning1}
               </div>
               </Row>
-              <Row style ={{height: '200px', paddingTop: '150px'}} >
+              <Row style ={{height: '200px', paddingTop: '160px'}} >
                     <ul style={{ paddingLeft: '0', listStylePosition: 'inside',textAlign: 'center' }}>
                       <h4>Suggested Careers:</h4>
                         <li>{careerResults.career1_1}</li>
@@ -230,7 +230,7 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                     {careerResults.reasoning2}
                     </div>
                     </Row>
-                    <Row style ={{height: '200px', paddingTop: '150px'}}>
+                    <Row style ={{height: '200px', paddingTop: '160px'}}>
                     <ul style={{textAlign: 'center', paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
                         <li>{careerResults.career2_1}</li>
@@ -247,7 +247,7 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                       {careerResults.reasoning3}
                     </div>
                     </Row>
-                    <Row style ={{height: '200px', paddingTop: '150px'}}>
+                    <Row style ={{height: '200px', paddingTop: '160px'}}>
                     <ul style={{ textAlign: 'center',paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
 
