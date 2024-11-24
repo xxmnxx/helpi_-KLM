@@ -11,6 +11,7 @@ const ResultPage: React.FC = () => {
   //const [aiResponse, setAiResponse] = useState<string | null>(null); // State to store OpenAI response
   const [loading, setLoading] = useState<boolean>(true); // Loading state
   const [careerResults, setCareerResults] = useState<{
+  
     careerfield1: string;
     reasoning1: string;
     career1_1: string;
@@ -30,8 +31,9 @@ const ResultPage: React.FC = () => {
     career3_3: string;
 } | null>(null);
 
-
 const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
+
+
 //comment
   // Fetch answers from localStorage and send them to OpenAI
   useEffect(() => {
@@ -41,12 +43,15 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
         const storedAnswersBasic = localStorage.getItem('basicQuizAnswers');
         const storedAnswersDetailed = localStorage.getItem('detailedQuizAnswers');
         
+        console.log('storedAnswersBasic:', storedAnswersBasic);
+        console.log('storedAnswersDetailed:', storedAnswersDetailed);
+
         // Parse the stored answers
         let userAnswers;
         if (storedAnswersDetailed) {
             setIsDetailedQuiz(true);
             userAnswers = JSON.parse(storedAnswersDetailed);
-        } else if (storedAnswersBasic) {
+        } else if (storedAnswersBasic != null) {
             setIsDetailedQuiz(false);
             userAnswers = JSON.parse(storedAnswersBasic);
         } else {

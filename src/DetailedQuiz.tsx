@@ -129,7 +129,7 @@ const DetailedQuiz:React.FC=()=>{
       if (currentQuestionIndex === questions.length - 1) {
         setQuizComplete(true);
         setVisibility(true);
-        localStorage.setItem('basicQuizAnswers', JSON.stringify(updatedAnswers));
+        localStorage.setItem('detailedQuizAnswers', JSON.stringify(updatedAnswers));
       }
      };
 
