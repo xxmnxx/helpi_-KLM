@@ -65,6 +65,7 @@ body {
   top: 30px;
   width: 150px;
   height: 50px;
+  border-radius: 20px;
 }
 
 .home-button:focus, 
@@ -274,6 +275,18 @@ body {
   border-radius: 5%;
   margin: 30px;
 }
+.about-me-container {
+  border: 4px solid #772e25;
+  margin: 10px;
+  padding: 10px;
+  width: 55%;
+  height: 25%px;
+  background-color: rgba(200, 214, 175, 0.8);
+  font-family: "Palatino";
+  font-size: 15px;
+  border-radius: 5%;
+  margin: 30px;
+}
 .dancing-coffee {
   width: 20% !important;
   height: auto !important;
@@ -285,6 +298,12 @@ body {
 .bear{
   width: 10% !important;
   height: auto !important;
+}
+
+.about-me-image{
+  width: 60% !important;
+  height: auto !important;
+  border-radius: 5%;
 }
 
 .Submit-Button:focus, 
