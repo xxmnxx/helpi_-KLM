@@ -189,8 +189,6 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
           //loading animation here//
         
         ) : (
-
-
           <div>
             {isDetailedQuiz ? ( 
               <h2 style={{ fontSize: '30px', fontFamily: 'Palatino', textAlign: 'center' }}>
@@ -202,9 +200,10 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
             </h2>
             )}
             
+
             <h3 style={{ fontSize: '25px', fontFamily: 'Palatino',textAlign: 'center' }}>Your Suggested Career Paths:</h3>
             {careerResults ? (
-              <Container style={{width: '1000px'}}>
+              <Container style={{width: '2000px'}}>
               <Row>
                 <Col className="results-container">
               <Row style ={{height: '200px'}}>
@@ -214,7 +213,7 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                 {careerResults.reasoning1}
               </div>
               </Row>
-              <Row style ={{height: '200px', paddingTop: '250px'}} >
+              <Row style ={{height: '200px', paddingTop: '150px'}} >
                     <ul style={{ paddingLeft: '0', listStylePosition: 'inside',textAlign: 'center' }}>
                       <h4>Suggested Careers:</h4>
                         <li>{careerResults.career1_1}</li>
@@ -231,7 +230,7 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                     {careerResults.reasoning2}
                     </div>
                     </Row>
-                    <Row style ={{height: '200px', paddingTop: '250px'}}>
+                    <Row style ={{height: '200px', paddingTop: '150px'}}>
                     <ul style={{textAlign: 'center', paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
                         <li>{careerResults.career2_1}</li>
@@ -248,7 +247,7 @@ const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
                       {careerResults.reasoning3}
                     </div>
                     </Row>
-                    <Row style ={{height: '200px', paddingTop: '250px'}}>
+                    <Row style ={{height: '200px', paddingTop: '150px'}}>
                     <ul style={{ textAlign: 'center',paddingLeft: '0', listStylePosition: 'inside' }}>
                     <h4>Suggested Careers:</h4>
 
