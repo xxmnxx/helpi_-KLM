@@ -5,7 +5,8 @@ import { HashRouter as Router, Route, Routes} from 'react-router-dom';
 import BasicQuiz from './BasicQuiz';
 import DetailedQuiz from './DetailedQuiz';
 import HomePage from './home';
-import Results from './results';
+import BasicResultPage from './BasicResultPage';
+import DetailedResultPage from './DetailedResultPage';
 import AboutMe from './AboutMe';
 
 
@@ -44,8 +45,9 @@ function App() {
          <Route path="/" element={<HomePage />} />
          <Route path="/BasicQuiz" element={<BasicQuiz />} />
          <Route path="/DetailedQuiz" element={<DetailedQuiz/>} />
-         <Route path="/Results" element={<Results/>} />
-         <Route path = "/AboutMe" element={<AboutMe/>}/>
+         <Route path="/basic-results" element={<BasicResultPage />} />
+        <Route path="/detailed-results" element={<DetailedResultPage />} />
+                 <Route path = "/AboutMe" element={<AboutMe/>}/>
        </Routes>
 
 

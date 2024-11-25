@@ -181,8 +181,8 @@ const DetailedQuiz:React.FC=()=>{
      }
 
 
-     const goToResults = () => {
-       navigate('/Results');
+     const goToDetailedResults = () => {
+       navigate('/DetailedResultPage');
      };
 
      const progress = (currentQuestionIndex + (selectedOption ? 1 : 0)) / questions.length * 100;
@@ -221,7 +221,7 @@ const DetailedQuiz:React.FC=()=>{
         </div>
         </Container>
         {visible && quizComplete && selectedOption && (
-            <Button onClick={goToResults} variant="primary" className="results-button">View Results</Button>
+            <Button onClick={goToDetailedResults} variant="primary" className="results-button">View Results</Button>
           )}
       </Container>
     );
