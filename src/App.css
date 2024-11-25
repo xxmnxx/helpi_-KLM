@@ -263,11 +263,45 @@ body {
   font-size: 18px;
   margin-top: 10px;
 }
+
+
+
+
+.careerResults {
+  width: auto;
+}
+.careerResults li {
+  font-style: bold;
+}
+.careerResults ul {
+  padding-Left: 0;
+  list-style-position: inside;
+  text-align: center;
+}
+.careerResults row {
+  height: auto;
+  padding-top: 50px;
+}
+.careerResults p {
+  font-style: normal;
+}
+.careerResults div {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.careerResults h3 {
+  text-align: center;
+}
+.careerResults h4 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
 .results-container {
   border: 4px solid #772e25;
   margin: 10px;
   padding: 10px;
-  width: 400px;
+  width: auto;
   height: auto;
   background-color: #FFEECC;
   font-family: "Palatino";
@@ -295,10 +329,7 @@ body {
   width: 20% !important;
   height: auto !important;
 }
-.bear{
-  width: 10% !important;
-  height: auto !important;
-}
+
 
 .about-me-image{
   width: 60% !important;

@@ -189,7 +189,7 @@ const DetailedResultPage: React.FC = () => {
               fontFamily: 'Palatino',
             }}
           >
-            Career Quiz Results
+            Quiz Results
           </h1>
           <Button
             onClick={() => navigate('/')}
@@ -227,75 +227,62 @@ const DetailedResultPage: React.FC = () => {
             >
               Your Suggested Career Paths:
             </h3>
-            <Container style={{ width: '2000px' }}>
+            <Container className="careerResults">
               <Row>
                 <Col className="results-container">
-                  <Row style={{ height: 'auto' }}>
-                    <h3 style={{ textAlign: 'center' }}>Career Field #1</h3>
-                    <div style={{ textAlign: 'center', paddingBottom: '20px' }}>
-                      <h4>{careerResults.careerfield1}</h4>
+                  <Row>
+                    <h3>Career Field #1:</h3>
+                    <div>
+                      <h4>={careerResults.careerfield1}=</h4>
                     </div>
                   </Row>
-                  <Row style={{ height: 'auto', paddingTop: '50px' }}>
-                    <ul
-                      style={{
-                        paddingLeft: '0',
-                        listStylePosition: 'inside',
-                        textAlign: 'center',
-                      }}
-                    >
+                  <Row>
+                    <ul>
                       <h4>Suggested Careers:</h4>
                       <li>{careerResults.career1_1}</li>
                       {careerResults.reasoning1_1}
                       <li>{careerResults.career1_2}</li>
                       {careerResults.reasoning1_2}
                       <li>{careerResults.career1_3}</li>
+                      {careerResults.reasoning1_3}
                     </ul>
                   </Row>
                 </Col>
                 <Col className="results-container">
-                  <Row style={{ height: '200px' }}>
-                    <h3 style={{ textAlign: 'center' }}>Career Field #2</h3>
-                    <div style={{ textAlign: 'center', paddingBottom: '10%' }}>
-                      <h4>{careerResults.careerfield2}</h4>
-                      {careerResults.reasoning2}
+                  <Row>
+                    <h3>Career Field #2</h3>
+                    <div>
+                      <h4>={careerResults.careerfield2}=</h4>
                     </div>
                   </Row>
-                  <Row style={{ height: '200px', paddingTop: '160px' }}>
-                    <ul
-                      style={{
-                        textAlign: 'center',
-                        paddingLeft: '0',
-                        listStylePosition: 'inside',
-                      }}
-                    >
+                  <Row>
+                    <ul>
                       <h4>Suggested Careers:</h4>
                       <li>{careerResults.career2_1}</li>
+                      {careerResults.reasoning2_1}
                       <li>{careerResults.career2_2}</li>
+                      {careerResults.reasoning2_2}
                       <li>{careerResults.career2_3}</li>
+                      {careerResults.reasoning2_3}
                     </ul>
                   </Row>
                 </Col>
                 <Col className="results-container">
-                  <Row style={{ height: '200px' }}>
-                    <h3 style={{ textAlign: 'center' }}>Career Field #3</h3>
-                    <div style={{ textAlign: 'center', paddingBottom: '10%' }}>
-                      <h4>{careerResults.careerfield3}</h4>
-                      {careerResults.reasoning3}
+                  <Row>
+                    <h3>Career Field #3</h3>
+                    <div>
+                      <h4>={careerResults.careerfield3}=</h4>
                     </div>
                   </Row>
-                  <Row style={{ height: '200px', paddingTop: '160px' }}>
-                    <ul
-                      style={{
-                        textAlign: 'center',
-                        paddingLeft: '0',
-                        listStylePosition: 'inside',
-                      }}
-                    >
+                  <Row>
+                    <ul>
                       <h4>Suggested Careers:</h4>
                       <li>{careerResults.career3_1}</li>
+                      {careerResults.reasoning3_1}
                       <li>{careerResults.career3_2}</li>
+                      {careerResults.reasoning3_2}
                       <li>{careerResults.career3_3}</li>
+                      {careerResults.reasoning3_3}
                     </ul>
                   </Row>
                 </Col>
