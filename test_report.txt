@@ -26,7 +26,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (76 ms)
+  ✕ renders learn react link (83 ms)
 
   ● renders learn react link
 
@@ -190,24 +190,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |   12.75 |     1.66 |    5.88 |   12.75 |                   
- AboutMe.tsx        |      25 |      100 |       0 |      25 | 8-14              
- App.tsx            |     100 |      100 |     100 |     100 |                   
- BasicQuiz.tsx      |    5.26 |        0 |       0 |    5.26 | 57-129            
- DetailedQuiz.tsx   |    5.26 |        0 |       0 |    5.26 | 138-208           
- home.tsx           |   63.15 |       25 |   16.66 |   63.15 | 20,23,27,31,35-37 
- index.tsx          |       0 |      100 |     100 |       0 | 7-19              
- reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- results.tsx        |    2.63 |        0 |       0 |    2.63 | 10-165            
---------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.352 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -220,3 +202,22 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |   11.37 |     1.61 |    5.12 |   11.37 |                   
+ AboutMe.tsx            |       0 |      100 |       0 |       0 | 8-14              
+ App.tsx                |     100 |      100 |     100 |     100 |                   
+ BasicQuiz.tsx          |    5.12 |        0 |       0 |    5.12 | 57-131            
+ BasicResultPage.tsx    |    3.57 |        0 |       0 |    3.57 | 10-134            
+ DetailedQuiz.tsx       |    5.26 |        0 |       0 |    5.26 | 138-208           
+ DetailedResultPage.tsx |    3.57 |        0 |       0 |    3.57 | 9-164             
+ home.tsx               |   63.15 |       25 |   16.66 |   63.15 | 20,23,27,31,35-37 
+ index.tsx              |       0 |      100 |     100 |       0 | 7-19              
+ reportWebVitals.ts     |       0 |        0 |       0 |       0 | 3-10              
+------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.314 s
+Ran all test suites.
