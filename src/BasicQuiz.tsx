@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
-import bear from './bear.png';
 
 const questions: { question: string, options: string[] }[] = [
   {
@@ -102,8 +101,8 @@ const BasicQuiz:React.FC=()=>{
 
 
     const goToBasicResults = () => {
-      console.log("Navigating to results page");
-      navigate('/BasicResultPage'); // Navigate to Results page
+      localStorage.setItem('basicQuizAnswers', JSON.stringify(answers));
+      navigate('/basic-results'); // Navigate to Results page
     };
   
 
@@ -112,7 +111,6 @@ const BasicQuiz:React.FC=()=>{
     const progress = (currentQuestionIndex + (selectedOption ? 1 : 0)) / questions.length * 100;
     return (
      <Container fluid className="quiz-container">
-      <img className="bear" src={bear} alt="cartoon bear" />
        <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
        <h1 className="quiz-title">Basic Career Quiz</h1>
        <p className="quiz-description">Welcome to the Basic Career Quiz!</p>

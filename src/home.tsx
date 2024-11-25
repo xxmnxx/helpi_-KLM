@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import basicIcon from './Images/hot-coffee.svg';
 import detailedIcon from './Images/croissant.svg';
-import dancingCoffee from './coffee-lover-hot-coffee.gif';
-import donut from './donut.gif'
+import dancingCoffee from './Images/coffee-lover-hot-coffee.gif';
+import donut from './Images/donut.gif'
 const saveKeyData = 'MYKEY';
 const prevKey = localStorage.getItem(saveKeyData);
 const initialKey = prevKey ? JSON.parse(prevKey) : '';
@@ -20,7 +20,7 @@ function HomePage() {
     navigate('/DetailedQuiz');
   };
   const navigateToAboutMe = () => {
-    navigate('AboutMe');
+    navigate('/AboutMe');
   };
 
   const navigateToBasicQuiz = () => {

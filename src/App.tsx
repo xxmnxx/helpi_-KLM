@@ -5,8 +5,8 @@ import { HashRouter as Router, Route, Routes} from 'react-router-dom';
 import BasicQuiz from './BasicQuiz';
 import DetailedQuiz from './DetailedQuiz';
 import HomePage from './home';
-import BasicResultPage from './BasicResultPage';
-import DetailedResultPage from './DetailedResultPage';
+import BasicResultPage from './basic-results';
+import DetailedResultPage from './detailed-results';
 import AboutMe from './AboutMe';
 
 

@@ -182,7 +182,7 @@ const DetailedQuiz:React.FC=()=>{
 
 
      const goToDetailedResults = () => {
-       navigate('/DetailedResultPage');
+       navigate('/detailed-results');
      };
 
      const progress = (currentQuestionIndex + (selectedOption ? 1 : 0)) / questions.length * 100;
