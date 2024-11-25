@@ -101,9 +101,11 @@ const BasicQuiz:React.FC=()=>{
     }
 
 
-    const goToResults = () => {
-      navigate('/Results');
+    const goToBasicResults = () => {
+      console.log("Navigating to results page");
+      navigate('/BasicResultPage'); // Navigate to Results page
     };
+  
 
 
 
@@ -140,7 +142,7 @@ const BasicQuiz:React.FC=()=>{
        </div>
        </Container>
        {visible && quizComplete && selectedOption && (
-           <Button onClick={goToResults} variant="primary" className="results-button">View Results</Button>
+           <Button onClick={goToBasicResults} variant="primary" className="results-button">View Results</Button>
          )}
      </Container>
    );
