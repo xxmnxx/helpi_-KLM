@@ -14,20 +14,30 @@ const DetailedResultPage: React.FC = () => {
     careerfield1: string;
     reasoning1: string;
     career1_1: string;
+    reasoning1_1: string;
     career1_2: string;
+    reasoning1_2: string;
     career1_3: string;
+    reasoning1_3: string;
+
 
     careerfield2: string;
     reasoning2: string
     career2_1: string;
+    reasoning2_1: string;
     career2_2: string;
+    reasoning2_2: string;
     career2_3: string;
+    reasoning2_3: string;
 
     careerfield3: string;
     reasoning3: string;
     career3_1: string;
+    reasoning3_1: string;
     career3_2: string;
+    reasoning3_2: string;
     career3_3: string;
+    reasoning3_3: string;
 } | null>(null);
 
 //const [isDetailedQuiz, setIsDetailedQuiz]= useState<boolean>(false);
@@ -66,7 +76,7 @@ const DetailedResultPage: React.FC = () => {
           model: "gpt-4o-2024-08-06",
           messages: [
               { role: "system", content: "Provide career fields and example careers in JSON format, following the structure provided." },
-              { role: "user",  content: `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers,if theres only 10 answers, give me basic quiz results as defined. If theres 25 answers, give me detailed quiz results as defined.`}
+              { role: "user", content: `Here are the answers to my career quiz:\n${formattedAnswers}\nBased on these answers, give me detailed quiz results as defined with reasoning for each example career.`}
           ],
           response_format: {
               type: "json_schema",
@@ -76,27 +86,38 @@ const DetailedResultPage: React.FC = () => {
                       type: "object",
                       properties: {
                           careerfield1: { type: "string", description: "Name of the first career field" },
-                          reasoning1: {type: "string", description: "In depth (4 sentences - no more than 570 characters) reasoning for the career field chosen"},
+                          reasoning1: {type: "string", description: "Brief (3 sentences) reasoning for the career field chosen"},
                           career1_1: { type: "string", description: "First example career in career field 1" },
+                          reasoning1_1:{type: "string", description: "Brief reasoning for first example career"},
                           career1_2: { type: "string", description: "Second example career in career field 1" },
+                          reasoning1_2:{type: "string", description: "Brief reasoning for second example career"},
                           career1_3: { type: "string", description: "Third example career in career field 1" },
+                          reasoning1_3:{type: "string", description: "Brief reasoning for third example career"},
+
   
                           careerfield2: { type: "string", description: "Name of the second career field" },
-                          reasoning2: {type: "string", description: "In depth  (4 sentences - no more than 570 characters) reasoning for the career field chosen"},
+                          reasoning2: {type: "string", description: "Brief (3 sentences) reasoning for the career field chosen"},
                           career2_1: { type: "string", description: "First example career in career field 2" },
+                          reasoning2_1:{type: "string", description: "Brief reasoning for first example career"},
                           career2_2: { type: "string", description: "Second example career in career field 2" },
+                          reasoning2_2:{type: "string", description: "Brief reasoning for second example career"},
                           career2_3: { type: "string", description: "Third example career in career field 2" },
-  
+                          reasoning2_3:{type: "string", description: "Brief reasoning for third example career"},
+
                           careerfield3: { type: "string", description: "Name of the third career field" },
-                          reasoning3: {type: "string", description: "In depth  (4 sentences - no more than 570 characters) reasoning for the career field chosen"},
+                          reasoning3: {type: "string", description: "Breif  (3 sentences) reasoning for the career field chosen"},
                           career3_1: { type: "string", description: "First example career in career field 3" },
+                          reasoning3_1:{type: "string", description: "Brief reasoning for first example career"},
                           career3_2: { type: "string", description: "Second example career in career field 3" },
-                          career3_3: { type: "string", description: "Third example career in career field 3" }
+                          reasoning3_2:{type: "string", description: "Brief reasoning for second example career"},
+                          career3_3: { type: "string", description: "Third example career in career field 3" },
+                          reasoning3_3:{type: "string", description: "Brief reasoning for third example career"},
+
                       },
                       required: [
-                          "careerfield1", "reasoning1", "career1_1", "career1_2", "career1_3",
-                          "careerfield2", "reasoning2", "career2_1", "career2_2", "career2_3",
-                          "careerfield3", "reasoning3", "career3_1", "career3_2", "career3_3"
+                          "careerfield1", "reasoning1", "career1_1", "career1_2", "career1_3","reasoning1_1", "reasoning1_2","reasoning1_3",
+                          "careerfield2", "reasoning2", "career2_1", "career2_2", "career2_3","reasoning2_1","reasoning2_2","reasoning2_3",
+                          "careerfield3", "reasoning3", "career3_1", "career3_2", "career3_3", "reasoning3_1","reasoning3_2","reasoning3_3"
                       ]
                   }
               }
@@ -111,18 +132,28 @@ const DetailedResultPage: React.FC = () => {
                             careerfield1: parsedResponse.careerfield1,
                             reasoning1: parsedResponse.reasoning1,
                             career1_1: parsedResponse.career1_1,
+                            reasoning1_1: parsedResponse.reasoning1_1,
                             career1_2: parsedResponse.career1_2,
+                            reasoning1_2: parsedResponse.reasoning1_2,
                             career1_3: parsedResponse.career1_3,
+                            reasoning1_3: parsedResponse.reasoning1_3,
                             careerfield2: parsedResponse.careerfield2,
                             reasoning2: parsedResponse.reasoning2,
                             career2_1: parsedResponse.career2_1,
+                            reasoning2_1: parsedResponse.reasoning2_1,
                             career2_2: parsedResponse.career2_2,
+                            reasoning2_2: parsedResponse.reasoning2_2,
                             career2_3: parsedResponse.career2_3,
+                            reasoning2_3: parsedResponse.reasoning2_3,
                             careerfield3: parsedResponse.careerfield3,
                             reasoning3: parsedResponse.reasoning3,
                             career3_1: parsedResponse.career3_1,
+                            reasoning3_1: parsedResponse.reasoning3_1,
                             career3_2: parsedResponse.career3_2,
+                            reasoning3_2: parsedResponse.reasoning3_2,    
                             career3_3: parsedResponse.career3_3,
+                            reasoning3_3: parsedResponse.reasoning3_3,
+
                         });
                     }
                 }
@@ -199,14 +230,13 @@ const DetailedResultPage: React.FC = () => {
             <Container style={{ width: '2000px' }}>
               <Row>
                 <Col className="results-container">
-                  <Row style={{ height: '200px' }}>
+                  <Row style={{ height: 'auto' }}>
                     <h3 style={{ textAlign: 'center' }}>Career Field #1</h3>
-                    <div style={{ textAlign: 'center', paddingBottom: '10%' }}>
+                    <div style={{ textAlign: 'center', paddingBottom: '20px' }}>
                       <h4>{careerResults.careerfield1}</h4>
-                      {careerResults.reasoning1}
                     </div>
                   </Row>
-                  <Row style={{ height: '200px', paddingTop: '160px' }}>
+                  <Row style={{ height: 'auto', paddingTop: '50px' }}>
                     <ul
                       style={{
                         paddingLeft: '0',
@@ -216,7 +246,9 @@ const DetailedResultPage: React.FC = () => {
                     >
                       <h4>Suggested Careers:</h4>
                       <li>{careerResults.career1_1}</li>
+                      {careerResults.reasoning1_1}
                       <li>{careerResults.career1_2}</li>
+                      {careerResults.reasoning1_2}
                       <li>{careerResults.career1_3}</li>
                     </ul>
                   </Row>

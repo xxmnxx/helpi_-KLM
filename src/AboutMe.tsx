@@ -1,7 +1,7 @@
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
-import kate from './about_me_pic.jpg';
+import kate from './Images/about_me_pic.jpg';
 
 
 function AboutMe() {
