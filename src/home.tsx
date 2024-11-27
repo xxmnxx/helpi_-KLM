@@ -5,8 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import basicIcon from './Images/hot-coffee.svg';
 import detailedIcon from './Images/croissant.svg';
-import dancingCoffee from './Images/coffee-lover-hot-coffee.gif';
-import donut from './Images/donut.gif'
+//import dancingCoffee from './Images/coffee-lover-hot-coffee.gif';
+//import donut from './Images/donut.gif'
+import pandaFull from './Images/panda1.png'
+import racoonFull from './Images/racoon1.png'
+
 const saveKeyData = 'MYKEY';
 const prevKey = localStorage.getItem(saveKeyData);
 const initialKey = prevKey ? JSON.parse(prevKey) : '';
@@ -59,28 +62,42 @@ function HomePage() {
       
       {/* Container with the background image as full page */}
       <Container className="home-container">
-  <h2 style={{ fontFamily: 'Palatino', fontSize: '30px' , fontWeight: 'bold' }}>
-    Choose the quiz you want to take!
-  </h2>
+        <h2>
+          Choose how you want to discover your next career!
+        </h2>
+
         <Row>
+
           <Col className="custom-box">
-          <img src= {basicIcon} style={{width: '100px', height: 'auto'}}/>
-            <h3>Make Your Own Coffee!</h3>
-            <p>Take it easy! Make your own coffee using hand-picked ingredients, unique to your interests and skills! Ideal for those looking for a quick assessment to assist in discovering a career that best fits.</p>
-            <img className="dancing-coffee" src={dancingCoffee} alt="loading coffee" />
-            <Button
-              onClick={navigateToBasicQuiz}
-              style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff' }}
-              disabled={!isKeySubmitted}
-            >
-              Start Basic Quiz
-            </Button>
-            
+            <img src= {basicIcon} style={{width: '100px', height: 'auto'}}/>
+            <h3>Take It Easy!</h3>
+            <Row>
+              <Col style={{display: 'flex'}}>
+              <img className='Racoon1' src={racoonFull} alt="Racoon Barista!"/>
+              </Col>
+              <Col>
+                <p> Let our top barista guide you in brewing your career path, using the distinct flavors of your interests and skills to create your perfect coffee blend! 
+                Ideal for those looking for a quick assessment to assist in discovering a career that best fits.</p>
+                <Button
+                onClick={navigateToBasicQuiz}
+                style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff' }}
+                disabled={!isKeySubmitted}>
+                Start Basic Quiz
+                </Button>
+              </Col>
+            </Row>
           </Col>
+
           <Col className="custom-box">
           <img src= {detailedIcon} style={{width: '100px', height: 'auto'}}/>
-            <h3>Make Your Own Pastries!</h3>
-            <p>Get your hands dirty! Bake your own pastries using hand-picked ingredients, unique to your interests and skills! Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.</p>
+            <h3>Get Your Hands Dirty!</h3>
+            <Row>
+              <Col style={{display: 'flex'}}>
+              <img className='Panda1' src={pandaFull} alt="Panda Chef!" />
+              </Col>
+              <Col>
+              <p>Let our master chef whip up career suggestions for you, using the unique ingredients of your interests and skills to craft your own pastries! 
+              Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.</p>
             <Button
               onClick={navigateToDetailedQuiz}
               style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff' }}
@@ -88,9 +105,13 @@ function HomePage() {
             >
               Start Detailed Quiz
             </Button>
-            <img className="donut" src={donut} alt="loading coffee" />
+              </Col>
+            </Row>
+            
+            {//<img className="donut" src={donut} alt="loading coffee" />
 
-          </Col>
+            }</Col>
+
         </Row>
 
         <p style={{ fontFamily: 'Palatino', fontWeight: 'bold', padding: '10px' }}>Please insert your API Key below!</p>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
-
+import pandaHalf from './Images/panda2.png';
 //comment
 const questions: { question: string, options: string[] }[] = [
  //personality questions 
@@ -197,7 +197,8 @@ const DetailedQuiz:React.FC=()=>{
             <div className="progress-fill" style={{ width: `${progress}%` }}>{`${Math.round(progress)}%`}</div>
           </div>
         </div>
-  
+        <img className='racoon-quiz' src={pandaHalf} alt='Racoon!'/>
+
         <Container className="question-container">
           <h2>{questions[currentQuestionIndex].question}</h2>
           <Row>
