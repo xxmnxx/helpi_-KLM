@@ -93,24 +93,22 @@ function HomePage() {
             <h3>Get Your Hands Dirty!</h3>
             <Row>
               <Col style={{display: 'flex'}}>
-              <img className='Panda1' src={pandaFull} alt="Panda Chef!" />
+                <img className='Panda1' src={pandaFull} alt="Panda Chef!" />
               </Col>
               <Col>
-              <p>Let our master chef whip up career suggestions for you, using the unique ingredients of your interests and skills to craft your own pastries! 
-              Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.</p>
-            <Button
-              onClick={navigateToDetailedQuiz}
-              style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff' }}
-              disabled={!isKeySubmitted}
-            >
-              Start Detailed Quiz
-            </Button>
+                <p>Let our master chef whip up career suggestions for you, using the unique ingredients of your interests and skills to craft your own pastries! 
+                Ideal for those committed to investing extra time to gain deeper insights into their ideal career trajectory.</p>
+                <Button
+                onClick={navigateToDetailedQuiz}
+                style={{ backgroundColor: '#053225', borderColor: '#053225', color: '#fff' }}
+                disabled={!isKeySubmitted}>
+                Start Detailed Quiz
+                </Button>
               </Col>
             </Row>
             
-            {//<img className="donut" src={donut} alt="loading coffee" />
 
-            }</Col>
+          </Col>
 
         </Row>
 
