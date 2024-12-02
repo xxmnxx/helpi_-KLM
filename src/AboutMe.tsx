@@ -54,7 +54,8 @@ function AboutMe() {
             <Row>
               <Col md={8}>
                 <h2>Morgan Nutto</h2>
-                <p>Morgan.. edit</p>
+                <p>Morgan Nutto is a Senior at the University of Delaware, studying Computer Science with a minor in Linguistics.
+                  She also hopes to pursue a career in the Artificial Intelligence field after graduation with a focus on Natural Language Processing.</p>
               </Col>
               <Col md={4} style={{ marginRight: 'auto' }}>
                 <img className='about-me-image' src={kate} alt="kate" /> {/*change picture lol*/}

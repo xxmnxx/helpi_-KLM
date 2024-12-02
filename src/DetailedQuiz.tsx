@@ -90,25 +90,17 @@ const questions: { question: string, options: string[] }[] = [
    options: ["Outdoors", "Office", "Remote", "Lab"]
  },
 
-
-
 {
   question: "Which of these motivate you the most in your career ",
   options:["financial stability", "Making a positive impact", "Achieving personal growth", "Gaining Recognition for my work", "Freedom to express creativity"]
 },
  
- 
- 
-
  {
    question: "Which career fields would you prefer? ",
    options: ["Fields that favor logic, structure, working with numbers/data ", "Fields that favor leadership, communication and structure",
       "Fields that favor creativity, self experssion, collabration, and flexible schedules", "Fields that favor hands-on work/physical activity"]
  },
  
- 
-
-
   // Add more questions
 ];
 
