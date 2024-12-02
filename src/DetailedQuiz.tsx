@@ -42,8 +42,8 @@ const questions: { question: string, options: string[] }[] = [
   options: ["Communcating ideas clearly and persuasively", "Working with numbers and data analysis", "fixing or building physical things", "designing or creating something new"]
 },
 {
-  question: "If you were asked to lead a project, what would you focus on",
-  options: ["Making sure the team feels motivated and supported", "Breaking the project intor actionable steps", "Coming up with unique solutions", "Ensuring everything is completed efficiently"]
+  question: "How do you approach solving a complex problem?",
+  options: ["Analyze the problem thoroughly", "Coming up with creative solutions", "Collaborate with others", "Implementing a step-by-step plan"]
 },
 
  //job charateristic questions
@@ -53,20 +53,17 @@ const questions: { question: string, options: string[] }[] = [
     "I can handle stress in waves"]
 },
  {
-  question : "What time do you like to work?",
-  options: ["Morning", "Afternoon", "Night Time"]
+  question : "When do you feel most productive ?",
+  options: ["Morning", "Afternoon", "Evening", "I'm Flexible"]
 },
  {
    question : "I like to work by...",
    options: ["Talking", "Typing", "Writing"]
 },
-// {
-//   question: "How physically demanding do you prefer your job to be?",
-//   options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
-// },
+
 {
   question: "How physically demanding do you prefer your job to be?",
-  options: ["Very; Active Worker (e.g. Construction Worker, Trade Jobs etc) ","Moderate;(e.g. Teacher, Physical Therapist etc) ", "Little; Desk Job (e.g. accountant, Human Resources", ]
+  options: ["Very; e.g. Construction","Moderate; e.g. Teacher", "Little; e.g. Desk Jobs"]
 },
 {
   question: "What type of work schedule do you prefer?",
@@ -80,50 +77,33 @@ const questions: { question: string, options: string[] }[] = [
 
 {
   question:"How important are financial rewards compared to job satisfaction in your career? ",
-  options:["I prefer more financial rewards", "I prefer a balance between financial rewards and job satisfaction",
-    "I prefer job satisfaction"
-  ]
+  options:["I prefer more financial rewards", "I prefer a balance between the two",
+    "I prefer job satisfaction"]
 },
-// {
-//  question: "What sort of work life speaks to your soul ",
-//  options: ["Competitive and high-pressure", "Independent and self-directed", "Collaborative and team-oriented", "Structured and organized"]
-// },
 {
-  question: "What sort of work life speaks to your soul",
-  options: ["Competative fields - i.e. Law", "Independent Fields i.e. Freelancing", "Structured Fields i.e. Corporate Jobs"]
+ question: "What sort of work environment speaks to you?",
+ options: ["Fast-Paced and Dynamic", "Independent and flexible", "Collaborative and team-oriented", "Structured and Predictable"]
 },
+
  {
-   question: "What work environment would you prefer?",
+   question: "What work setting would you prefer?",
    options: ["Outdoors", "Office", "Remote", "Lab"]
  },
 
 
-//  {
-//    question:"What motiviates you the most in your career",
-//    options:["Earning a high salary","Making a positive impact","Achieving personal growth and development","Gaining recognition for my work"]
-//  },
-//combined
-//  {
-//   question: "What aspect of a job is most important to you?",
-//   options:["Creative Freedom", "Work-life Balance",
-//     "Benefits/Security (not included with freelance/contract careers", "Reward/Fulfillment"]
-// },
+
 {
-  question: "Which of these factors motivates you the most in your career ",
-  options:["Earning a high salary and financial stability", "Making a positive impact on people or the world", "Achievving personal growth ad mastering new skills", "Gaiting Recognition and respect for my work", "Having freedom to express creativity and innovation"]
+  question: "Which of these motivate you the most in your career ",
+  options:["financial stability", "Making a positive impact", "Achieving personal growth", "Gaining Recognition for my work", "Freedom to express creativity"]
 },
  
  
- // {
- //   question: "Which of these industries do you find most appealing?",
- //   options: ["Technology and IT", "Heathecare and Wellness",
- //      "Arts and Creative Industries", "Education and Training"]
- // },
+ 
 
  {
-   question: "Which career field do you prefer? ",
-   options: ["STEM & Heathcare - fields that favor logic, analysus, structure, or working with numbers/data ", "Business and Public Servies - field that favors leavership, communication and structured environments",
-      "Creative and Communication - fields that favor creativity, self experssion, collabration, and flexible schedules", "Trades, Hospitality and Recreation - fields that favor hands-on work,physical activity and teamwork"]
+   question: "Which career fields would you prefer? ",
+   options: ["Fields that favor logic, structure, working with numbers/data ", "Fields that favor leadership, communication and structure",
+      "Fields that favor creativity, self experssion, collabration, and flexible schedules", "Fields that favor hands-on work/physical activity"]
  },
  
  
