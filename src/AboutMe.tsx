@@ -2,6 +2,7 @@ import { Button, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
 import kate from './Images/about_me_pic.jpg';
+import leah from './Images/leah.jpg';
 
 
 function AboutMe() {
@@ -35,12 +36,13 @@ function AboutMe() {
             <Container className="about-me-container" style={{ textAlign: "right", marginLeft: "auto" }}>
               <Row>
                 <Col md={4} style={{ marginRight: 'auto' }}>
-                  <img className='about-me-image' src={kate} alt="Leah" /> {/*change picture lol*/}
+                  <img className='about-me-image' src={leah} alt="Leah" /> {/*change picture lol*/}
                 </Col>
                 <Col md={6}>
                   <h2>Leah Marcelli</h2>
                   <p>Leah Marcelli is a senior at the University of Delaware. She currently studies Mathematics with minors in
-                    Computer Science and Statistics. She is very excited to be working on this project to gain experience in software engineering .</p>
+                    Computer Science and Statistics. She is very excited to be working on this project to gain experience in software engineering.
+                    While she does not know what she wants to pursue as a career she is interested in continuing software engineering in her career!</p>
                 </Col>
               </Row>
             </Container>
