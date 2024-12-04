@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './App.css';
 import kate from './Images/about_me_pic.jpg';
 import leah from './Images/leah.jpg';
+import morgan from './Images/morgan.jpg';
+//import background from './Images/background.jpg';
 
 
 function AboutMe() {
@@ -11,7 +13,7 @@ function AboutMe() {
   return (
     <>
       <header style={{ backgroundColor: '#FFECCC' }} />
-      <Container fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
+      <Container className= "about-me-background" fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
         <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
         <h1 style={{ fontFamily: "palatino", textAlign: "center" }}>About Us!</h1>
         <Row>
@@ -58,7 +60,7 @@ function AboutMe() {
                   She also hopes to pursue a career in the Artificial Intelligence field after graduation with a focus on Natural Language Processing.</p>
               </Col>
               <Col md={4} style={{ marginRight: 'auto' }}>
-                <img className='about-me-image' src={kate} alt="kate" /> {/*change picture lol*/}
+                <img className='about-me-image' src={morgan} alt="Morgan" /> 
               </Col>
             </Row>
           </Container>
