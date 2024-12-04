@@ -5,8 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import basicIcon from './Images/hot-coffee.svg';
 import detailedIcon from './Images/croissant.svg';
-//import dancingCoffee from './Images/coffee-lover-hot-coffee.gif';
-//import donut from './Images/donut.gif'
 import pandaFull from './Images/panda1.png'
 import racoonFull from './Images/racoon1.png'
 
@@ -111,16 +109,16 @@ function HomePage() {
           </Col>
 
         </Row>
-
+      <footer>
         <p style={{ fontFamily: 'Palatino', fontWeight: 'bold', padding: '10px' }}>Please insert your API Key below!</p>
 
         <Form>
           <Form.Group style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px' }}>
-            <Form.Control
-              type="password"
-              placeholder="Insert API Key Here"
-              onChange={changeKey}
-            />
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey}
+          />
             <Button
               className="Submit-Button"
               onClick={handleSubmit}
@@ -130,6 +128,8 @@ function HomePage() {
             </Button>
           </Form.Group>
         </Form>
+      </footer>
+        
       </Container>
     </Container>
   );
