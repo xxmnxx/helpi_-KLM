@@ -187,7 +187,7 @@ const BasicResultPage: React.FC = () => {
           <div style={{ textAlign: 'center' }}>
             <img src={loadingBasicGif} alt="Loading..." />
             <p style={{ color: 'black', fontSize: '18px' }}>
-              Baking your career suggestions...
+              Brewing your career suggestions...
             </p>
           </div>
         ) : careerResults ? (
@@ -199,7 +199,7 @@ const BasicResultPage: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              Success, your pastries are done!
+              Success, your coffee has been brewed!
             </h2>
             <h3
               style={{
