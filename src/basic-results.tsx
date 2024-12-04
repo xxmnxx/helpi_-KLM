@@ -151,16 +151,7 @@ const BasicResultPage: React.FC = () => {
     // `navigate` is used, so it must be included in the dependency array
 
     return (
-      <Container
-        fluid style={{
-          margin: 0,
-          width: '100%',
-          minHeight: '100vh',
-          backgroundColor: '#C8D6AF',
-          fontSize: '12px',
-          fontWeight: 'bold',
-        }}
-      >
+      <Container fluid className="quiz-container">
         <header
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
@@ -210,17 +201,17 @@ const BasicResultPage: React.FC = () => {
             >
               Your Suggested Career Paths:
             </h3>
-            <Container style={{ width: '2000px' }}>
+            <Container style={{ width: '92%' }}>
               <Row>
                 <Col className="results-container">
-                  <Row style={{ height: '200px' }}>
+                  <Row style={{ height: '5%' }}>
                     <h3 style={{ textAlign: 'center' }}>Career Field #1</h3>
-                    <div style={{ textAlign: 'center', paddingBottom: '10%' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '10%' }}>
                       <h4>{careerResults.careerfield1}</h4>
                       {careerResults.reasoning1}
                     </div>
                   </Row>
-                  <Row style={{ height: '200px', paddingTop: '160px' }}>
+                  <Row style={{ height: '20%', marginTop: '20%' }}>
                     <ul
                       style={{
                         paddingLeft: '0',

@@ -167,17 +167,7 @@ const DetailedResultPage: React.FC = () => {
         fetchQuizResults();
     }, [navigate]); // `navigate` is used, so it must be included in the dependency array
     return (
-      <Container
-        fluid
-        style={{
-          margin: 0,
-          width: '100%',
-          minHeight: '100vh',
-          backgroundColor: '#C8D6AF',
-          fontSize: '12px',
-          fontWeight: 'bold',
-        }}
-      >
+      <Container fluid className="quiz-container">
         <header
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
