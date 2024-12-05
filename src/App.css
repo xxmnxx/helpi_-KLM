@@ -291,6 +291,8 @@ body {
 .careerResults li {
   font-family: 'moreSugar';
   font-style: regular;
+  font-size: 20px;
+  color:#772e25
 }
 .careerResults ul {
   padding-Left: 0;
@@ -322,6 +324,7 @@ body {
   padding-top: 20px;
   padding-bottom: 10px;
   font-family: 'moreSugar';
+  font-size: 24px;
 }
 
 .career-header {
@@ -368,8 +371,7 @@ body {
   width: auto;
   height: auto;
   background-color: #FFEECC;
-  font-family: "Palatino";
-  font-size: 15px;
+  font-family: "moreSugar";
   border-radius: 5%;
   margin: 2%;
 }

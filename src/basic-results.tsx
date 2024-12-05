@@ -146,7 +146,7 @@ const BasicResultPage: React.FC = () => {
       };
   
       fetchQuizResults();
-    }, []);
+    }, [navigate]);
 
     // `navigate` is used, so it must be included in the dependency array
 
@@ -156,7 +156,7 @@ const BasicResultPage: React.FC = () => {
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
         >
-          <h1 className='potta-one-regular'>
+          <h1>
             Match-a Career Results
           </h1>
           <Button
@@ -188,13 +188,11 @@ const BasicResultPage: React.FC = () => {
               Success! your coffee has been brewed!
             </h2>
             
-            
             <Container className="careerResults">
               <Row>
                 <Col className="results-container">
                   <Row>
-                    <h3>Career Field #1</h3>
-
+                    <h2 className='career-header'>Career Field #1</h2>
                     <div>
                       <h4>{careerResults.careerfield1}</h4>
                       {careerResults.reasoning1}
@@ -212,7 +210,7 @@ const BasicResultPage: React.FC = () => {
                 </Col>
                 <Col className="results-container">
                   <Row>
-                    <h3>Career Field #2</h3>
+                    <h2 className='career-header'>Career Field #2</h2>
 
                     <div>
                       <h4>{careerResults.careerfield2}</h4>
@@ -230,7 +228,7 @@ const BasicResultPage: React.FC = () => {
                 </Col>
                 <Col className="results-container">
                   <Row>
-                    <h3>Career Field #3</h3>
+                    <h2 className='career-header'>Career Field #3</h2>
 
                     <div>
                       <h4>{careerResults.careerfield3}</h4>
@@ -248,6 +246,10 @@ const BasicResultPage: React.FC = () => {
                 </Col>
               </Row>
             </Container>
+            <p style={{
+              fontSize: '35px',
+              padding: '20px'
+            }}> If you want more in depth career suggestions, Let our top chef help you out with our detailed quiz!</p>
           </Container>
         ) : (
           <p>"There was an error generating your career suggestions. Please try again later."</p>
