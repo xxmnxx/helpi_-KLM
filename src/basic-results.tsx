@@ -163,6 +163,7 @@ const BasicResultPage: React.FC = () => {
               fontFamily: 'Palatino',
             }}
           >
+
             Match-a Career Results
           </h1>
           <Button
@@ -201,15 +202,17 @@ const BasicResultPage: React.FC = () => {
             >
             </h3>
             <Container className="careerResults">
-                <Row>
+              <Row>
                 <Col className="results-container">
                   <Row>
-                  <h2 className="career-header" >Career Field #1</h2>
+                    <h3>Career Field #1</h3>
+
                     <div>
                       <h4>{careerResults.careerfield1}</h4>
                       {careerResults.reasoning1}
                     </div>
                   </Row>
+
                   <Row >
                     <ul>
                       <h4>Suggested Careers:</h4>
@@ -220,8 +223,9 @@ const BasicResultPage: React.FC = () => {
                   </Row>
                 </Col>
                 <Col className="results-container">
-                  <Row >
-                    <h3  className="career-header">Career Field #2</h3>
+                  <Row>
+                    <h3>Career Field #2</h3>
+
                     <div>
                       <h4>{careerResults.careerfield2}</h4>
                       {careerResults.reasoning2}
@@ -238,7 +242,8 @@ const BasicResultPage: React.FC = () => {
                 </Col>
                 <Col className="results-container">
                   <Row>
-                    <h3  className="career-header">Career Field #3</h3>
+                    <h3>Career Field #3</h3>
+
                     <div>
                       <h4>{careerResults.careerfield3}</h4>
                       {careerResults.reasoning3}
