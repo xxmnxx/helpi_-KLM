@@ -179,7 +179,7 @@ const DetailedResultPage: React.FC = () => {
               fontFamily: 'Palatino',
             }}
           >
-            Quiz Results
+            Match-a Career Results
           </h1>
           <Button
             onClick={() => navigate('/')}
@@ -215,13 +215,13 @@ const DetailedResultPage: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              Your Suggested Career Paths:
+              
             </h3>
             <Container className="careerResults">
               <Row>
                 <Col className="results-container">
                   <Row>
-                    <h3>Career Field #1:</h3>
+                  <h2 className="career-header">Career Field #1</h2>
                     <div>
                       <h4>={careerResults.careerfield1}=</h4>
                     </div>
