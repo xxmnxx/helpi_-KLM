@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './App.css';
 import kate from './Images/about_me_pic.jpg';
 import leah from './Images/leah.jpg';
+import morgan from './Images/morgan.jpg';
+//import background from './Images/background.jpg';
 
 
 function AboutMe() {
@@ -11,7 +13,7 @@ function AboutMe() {
   return (
     <>
       <header style={{ backgroundColor: '#FFECCC' }} />
-      <Container fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
+      <Container className= "about-me-background" fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
         <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
         <h1 style={{ fontFamily: "palatino", textAlign: "center" }}>About Us!</h1>
         <Row>
@@ -41,8 +43,7 @@ function AboutMe() {
                 <Col md={6}>
                   <h2>Leah Marcelli</h2>
                   <p>Leah Marcelli is a senior at the University of Delaware. She currently studies Mathematics with minors in
-                    Computer Science and Statistics. She is very excited to be working on this project to gain experience in software engineering.
-                    While she does not know what she wants to pursue as a career she is interested in continuing software engineering in her career!</p>
+                    Computer Science and Statistics. She is very excited to be working on this project to gain experience in software engineering.</p>
                 </Col>
               </Row>
             </Container>
@@ -54,10 +55,11 @@ function AboutMe() {
             <Row>
               <Col md={8}>
                 <h2>Morgan Nutto</h2>
-                <p>Morgan.. edit</p>
+                <p>Morgan Nutto is a Senior at the University of Delaware, studying Computer Science with a minor in Linguistics.
+                  She also hopes to pursue a career in the Artificial Intelligence field after graduation with a focus on Natural Language Processing.</p>
               </Col>
               <Col md={4} style={{ marginRight: 'auto' }}>
-                <img className='about-me-image' src={kate} alt="kate" /> {/*change picture lol*/}
+                <img className='about-me-image' src={morgan} alt="Morgan" /> 
               </Col>
             </Row>
           </Container>
