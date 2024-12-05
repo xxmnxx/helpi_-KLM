@@ -97,7 +97,7 @@ const questions: { question: string, options: string[] }[] = [
  {
    question: "Which career fields would you prefer? ",
    options: ["Fields that favor logic, structure, working with numbers/data ", "Fields that favor leadership, communication and structure",
-      "Fields that favor creativity, self experssion, collabration, and flexible schedules", "Fields that favor hands-on work/physical activity"]
+      "Fields that favor creativity, collabration, and flexible schedules", "Fields that favor hands-on work/physical activity"]
  },
  
   // Add more questions
