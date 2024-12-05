@@ -86,7 +86,7 @@ const DetailedResultPage: React.FC = () => {
                       type: "object",
                       properties: {
                           careerfield1: { type: "string", description: "Name of the first career field" },
-                          reasoning1: {type: "string", description: "Brief (3 sentences) reasoning for the career field chosen"},
+                          reasoning1: {type: "string", description: "Brief (2 sentences) reasoning for the career field chosen"},
                           career1_1: { type: "string", description: "First example career in career field 1" },
                           reasoning1_1:{type: "string", description: "Brief reasoning for first example career"},
                           career1_2: { type: "string", description: "Second example career in career field 1" },
@@ -96,7 +96,7 @@ const DetailedResultPage: React.FC = () => {
 
   
                           careerfield2: { type: "string", description: "Name of the second career field" },
-                          reasoning2: {type: "string", description: "Brief (3 sentences) reasoning for the career field chosen"},
+                          reasoning2: {type: "string", description: "Brief (2 sentences) reasoning for the career field chosen"},
                           career2_1: { type: "string", description: "First example career in career field 2" },
                           reasoning2_1:{type: "string", description: "Brief reasoning for first example career"},
                           career2_2: { type: "string", description: "Second example career in career field 2" },
@@ -105,7 +105,7 @@ const DetailedResultPage: React.FC = () => {
                           reasoning2_3:{type: "string", description: "Brief reasoning for third example career"},
 
                           careerfield3: { type: "string", description: "Name of the third career field" },
-                          reasoning3: {type: "string", description: "Breif  (3 sentences) reasoning for the career field chosen"},
+                          reasoning3: {type: "string", description: "Breif  (2 sentences) reasoning for the career field chosen"},
                           career3_1: { type: "string", description: "First example career in career field 3" },
                           reasoning3_1:{type: "string", description: "Brief reasoning for first example career"},
                           career3_2: { type: "string", description: "Second example career in career field 3" },
@@ -172,13 +172,7 @@ const DetailedResultPage: React.FC = () => {
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
         >
-          <h1
-            style={{
-              fontSize: '40px',
-              fontWeight: 'bold',
-              fontFamily: 'Palatino',
-            }}
-          >
+          <h1>
             Match-a Career Results
           </h1>
           <Button
@@ -202,21 +196,14 @@ const DetailedResultPage: React.FC = () => {
             <h2
               style={{
                 fontSize: '30px',
-                fontFamily: 'Palatino',
+                fontFamily: 'moreSugar',
                 textAlign: 'center',
+                paddingTop: '3%'
               }}
             >
               Success, your pastries are done!
             </h2>
-            <h3
-              style={{
-                fontSize: '25px',
-                fontFamily: 'Palatino',
-                textAlign: 'center',
-              }}
-            >
-              
-            </h3>
+            
             <Container className="careerResults">
               <Row>
                 <Col className="results-container">
@@ -224,6 +211,7 @@ const DetailedResultPage: React.FC = () => {
                     <h2  className="career-header">Career Field #1</h2>
                     <div>
                       <h4>={careerResults.careerfield1}=</h4>
+                      {careerResults.reasoning1}
                     </div>
                   </Row>
                   <Row>
@@ -243,6 +231,8 @@ const DetailedResultPage: React.FC = () => {
                     <h3  className="career-header">Career Field #2</h3>
                     <div>
                       <h4>={careerResults.careerfield2}=</h4>
+                      {careerResults.reasoning2}
+
                     </div>
                   </Row>
                   <Row>
@@ -262,6 +252,8 @@ const DetailedResultPage: React.FC = () => {
                     <h3  className="career-header">Career Field #3</h3>
                     <div>
                       <h4>={careerResults.careerfield3}=</h4>
+                      {careerResults.reasoning3}
+
                     </div>
                   </Row>
                   <Row>

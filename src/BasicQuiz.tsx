@@ -28,8 +28,8 @@ const questions: { question: string, options: string[] }[] = [
   options: ["Yes", "Sometimes", "No"]
 },
 {
-  question: "How do you handle stress in the workplace?",
-  options: ["I thrive under pressure", "I prefer a calm environment", 
+  question: "How do you handle stress?",
+  options: ["I thrive under pressure", "I can't handle any stress", 
     "I can handle stress in waves"]
 },
 {
@@ -42,12 +42,12 @@ const questions: { question: string, options: string[] }[] = [
   options: ["High School Diploma", "Bachelor's Degree", "Master's Degree", "PhD"]
 },
 {
-  question: "Which career field do you prefer? ",
-  options: ["STEM & Heathcare", "Business and Public Servies",
-     "Creative and Communication", "Trades, Hospitality and Recreation"]
+  question: "Which career fields would you prefer? ",
+  options: ["Fields that favor logic, structure, working with numbers/data ", "Fields that favor leadership, communication and structure",
+     "Fields that favor creativity, self experssion, collabration, and flexible schedules", "Fields that favor hands-on work/physical activity"]
 },
 {
-  question: "How physically demanding do you prefer your job to be?",
+  question: "How physically demanding would you prefer your job to be?",
   options: ["Very; heavy lifting/constant moving", "Moderate; some physical activity", "Light; mostly sitting or standing", "None; primarily desk work"]
 },
 

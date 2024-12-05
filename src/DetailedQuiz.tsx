@@ -13,8 +13,8 @@ const questions: { question: string, options: string[] }[] = [
   },
   {
     question:"How comfortable are you with public speaking?",
-    options:["Very comfrotable; I prefer presenting my ideas", "Somewhat comfortable; I can do it if needed",
-      "Not Comfortable; I prefer written communication"]
+    options:["Very comfrotable", "Somewhat comfortable",
+      "Not Comfortable"]
   },
   {
     question:"Do you consider yourself a creative person",
@@ -33,7 +33,7 @@ const questions: { question: string, options: string[] }[] = [
     options: ["High School Diploma", "Bachelor's Degree", "Master's Degree", "PhD"]
   },
   {
-    question: "Which best describes you?",
+    question: "Which best describes you in a Team setting?",
     options: ["Manager", "Strategist", "Supporter","Participator"]
   },
 //job field questions 
@@ -48,9 +48,8 @@ const questions: { question: string, options: string[] }[] = [
 
  //job charateristic questions
  {
-  question:"How do you handle stress in the workplace?",
-  options:["I thrive under pressure","I prefer a calm environment",
-    "I can handle stress in waves"]
+  question:"How do you handle stress?",
+  options:["I thrive under pressure","I can handle stress in waves", "I can't handle any stress",]
 },
  {
   question : "When do you feel most productive ?",
@@ -62,11 +61,11 @@ const questions: { question: string, options: string[] }[] = [
 },
 
 {
-  question: "How physically demanding do you prefer your job to be?",
+  question: "How physically demanding would you prefer your job to be?",
   options: ["Very; e.g. Construction","Moderate; e.g. Teacher", "Little; e.g. Desk Jobs"]
 },
 {
-  question: "What type of work schedule do you prefer?",
+  question: "What type of work schedule would you prefer?",
   options: ["A 9-5 routine with weekends off", "Flexible hours that allow me to work when I want",
     "Shift work that includes evenings weekends", "A mix of schedules work and independent projects"]
 },
@@ -91,7 +90,7 @@ const questions: { question: string, options: string[] }[] = [
  },
 
 {
-  question: "Which of these motivate you the most in your career ",
+  question: "Which of these motivate you the most in a potential career ",
   options:["Financial stability", "Making a positive impact", "Achieving personal growth", "Gaining Recognition for my work", "Freedom to express creativity"]
 },
  
