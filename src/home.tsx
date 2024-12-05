@@ -8,6 +8,7 @@ import detailedIcon from './Images/croissant.svg';
 import pandaFull from './Images/panda1.png'
 import racoonFull from './Images/racoon1.png'
 
+
 const saveKeyData = 'MYKEY';
 const prevKey = localStorage.getItem(saveKeyData);
 const initialKey = prevKey ? JSON.parse(prevKey) : '';
@@ -42,10 +43,10 @@ function HomePage() {
 
   return (
     <Container fluid style={{ height: '100vh', margin: 0, padding: 0 }}>
-      <header className="App-Header" style={{ padding: '20px', fontFamily: 'Palatino', fontSize: '30px', fontWeight: 'bold', position: 'relative', zIndex: 10 }}>
+      <header className="App-Header">
         <h1>
-        <span className="match-text">Match-a  </span>
-        <span className="career-text">  Career</span>
+        <span className="match-text">Match-a </span>
+        <span className="career-text">Career</span>
         <div>
         <p style={{ marginTop: '0px' }}></p>
         </div>

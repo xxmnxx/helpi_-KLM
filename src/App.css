@@ -1,3 +1,10 @@
+@font-face { 
+  font-family: 'moreSugar'; 
+  src: url('./Fonts/mSR.ttf') format('truetype'),
+       url('./Fonts/mSE.ttf') format('truetype'),
+       url('./Fonts/mST.ttf') format('truetype');
+       font-weight: normal; font-style: normal; }
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +14,7 @@ body {
   background-position: center;
   display: flex;
   flex-direction: column;
+  font-family: 'moreSugar', sans-serif;
 }
 
 /* Styling for the main container to ensure the content stays on top */
@@ -27,9 +35,9 @@ body {
   overflow: hidden;
 }
 .home-container h2 {
-  font-family: 'Palatino', serif;
+  font-family: 'moreSugar', sans-serif;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: thin;
   margin-bottom: 20px;
   color: #053225;
 }
@@ -89,12 +97,12 @@ body {
 }
 
 .quiz-title {
-  font-family: 'Palatino', serif;
-  font-weight: bold;
+  font-family: 'moreSugar', sans-serif;
+  font-weight: regular;
 }
 
 .quiz-description {
-  font-family: 'Palatino', serif;
+  font-family: 'moreSugar', sans-serif;
 }
 
 .progress-container {
@@ -247,9 +255,9 @@ body {
 }
 .App-Header {
   padding: 20px;
-  font-family: 'Palatino', serif;
+  font-family: 'moreSugar', sans-serif;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: regular;
   position: relative;
   z-index: 10;
   text-align: center; /* Ensures the text inside the header is centered */
@@ -278,32 +286,42 @@ body {
 
 .careerResults {
   width: auto;
+  font-family: 'moreSugar';
 }
 .careerResults li {
-  font-style: bold;
+  font-family: 'moreSugar';
+  font-style: regular;
 }
 .careerResults ul {
   padding-Left: 0;
   list-style-position: inside;
   text-align: center;
+  font-family: 'moreSugar';
+  font-style: bold;
 }
 .careerResults row {
   height: auto;
   padding-top: 50px;
 }
 .careerResults p {
-  font-style: normal;
+  font-family: 'moreSugar';
+  font-style: regular;
 }
 .careerResults div {
   text-align: center;
   padding-bottom: 20px;
+  font-family: 'moreSugar';
+  font-style: thin;
 }
 .careerResults h3 {
   text-align: center;
+  font-family: 'moreSugar';
+  font-style: bold;
 }
 .careerResults h4 {
   padding-top: 20px;
   padding-bottom: 10px;
+  font-family: 'moreSugar';
 }
 
 .career-header {
@@ -363,7 +381,7 @@ body {
   width: 55%;
   height: 25%px;
   background-color: rgba(200, 214, 175, 0.8);
-  font-family: "Palatino";
+  font-family: "moreSugar";
   font-size: 15px;
   border-radius: 5%;
   margin: 30px;
@@ -410,5 +428,6 @@ body {
   outline: none !important;
   box-shadow: none !important;
 }
+
 
 

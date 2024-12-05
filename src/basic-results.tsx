@@ -156,14 +156,7 @@ const BasicResultPage: React.FC = () => {
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
         >
-          <h1
-            style={{
-              fontSize: '40px',
-              fontWeight: 'bold',
-              fontFamily: 'Palatino',
-            }}
-          >
-
+          <h1 className='potta-one-regular'>
             Match-a Career Results
           </h1>
           <Button
@@ -187,20 +180,15 @@ const BasicResultPage: React.FC = () => {
             <h2
               style={{
                 fontSize: '30px',
-                fontFamily: 'Palatino',
+                fontFamily: 'moreSugar',
                 textAlign: 'center',
+                paddingTop: '3%'
               }}
             >
-              Success, your coffee has been brewed!
+              Success! your coffee has been brewed!
             </h2>
-            <h3
-              style={{
-                fontSize: '25px',
-                fontFamily: 'Palatino',
-                textAlign: 'center',
-              }}
-            >
-            </h3>
+            
+            
             <Container className="careerResults">
               <Row>
                 <Col className="results-container">
