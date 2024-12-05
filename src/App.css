@@ -179,8 +179,9 @@ body {
 }
 
 .results-button {
-  display: block;
-  margin: 20px auto 0; /* Centered below the question container */
+  display: block; 
+  margin: 0 auto; 
+  margin-bottom: 2%;
   width: 15%;
   height: 50px;
   background-color: #053225;

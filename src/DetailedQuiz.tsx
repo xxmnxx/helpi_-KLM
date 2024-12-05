@@ -192,10 +192,10 @@ const DetailedQuiz:React.FC=()=>{
           <Button onClick={handlePrevQuestion} variant="primary" disabled={currentQuestionIndex === 0} className="prev-button">Previous Question</Button>
           <Button onClick={handleNextQuestion} variant="primary" disabled={!selectedOption || quizComplete || (currentQuestionIndex === questions.length - 1)} className="next-button">Next Question</Button>
         </div>
-        </Container>
         {visible && quizComplete && selectedOption && (
             <Button onClick={goToDetailedResults} variant="primary" className="results-button">View Results</Button>
           )}
+        </Container>
       </Container>
     );
   };
