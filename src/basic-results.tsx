@@ -204,7 +204,7 @@ const BasicResultPage: React.FC = () => {
                 <Row>
                 <Col className="results-container">
                   <Row>
-                  <h2>Career Field #1</h2>
+                  <h2 className="career-header" >Career Field #1</h2>
                     <div>
                       <h4>{careerResults.careerfield1}</h4>
                       {careerResults.reasoning1}
@@ -221,7 +221,7 @@ const BasicResultPage: React.FC = () => {
                 </Col>
                 <Col className="results-container">
                   <Row >
-                    <h3 >Career Field #2</h3>
+                    <h3  className="career-header">Career Field #2</h3>
                     <div>
                       <h4>{careerResults.careerfield2}</h4>
                       {careerResults.reasoning2}
@@ -238,7 +238,7 @@ const BasicResultPage: React.FC = () => {
                 </Col>
                 <Col className="results-container">
                   <Row>
-                    <h3>Career Field #3</h3>
+                    <h3  className="career-header">Career Field #3</h3>
                     <div>
                       <h4>{careerResults.careerfield3}</h4>
                       {careerResults.reasoning3}
