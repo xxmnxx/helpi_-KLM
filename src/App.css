@@ -275,9 +275,6 @@ body {
   margin-top: 10px;
 }
 
-
-
-
 .careerResults {
   width: auto;
 }
@@ -308,20 +305,38 @@ body {
   padding-bottom: 10px;
 }
 
+.career-header {
+  display: inline-block; 
+  background-color: #FFECCC;
+  padding: 10px 20px; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  text-align: center; 
+  border: 5px solid #a3826f; 
+  border-radius: 30px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  cursor: default; 
+  transition: transform 0.2s ease; 
+  width: 50%;
+}
 
+.career-header:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
 
 
 .results-container {
   border: 4px solid #772e25;
   margin: 10px;
-  padding: 10px;
+  padding: 2%;
   width: auto;
   height: auto;
   background-color: #FFEECC;
   font-family: "Palatino";
   font-size: 15px;
   border-radius: 5%;
-  margin: 30px;
+  margin: 2%;
 }
 
 .about-me-container {

@@ -167,17 +167,7 @@ const DetailedResultPage: React.FC = () => {
         fetchQuizResults();
     }, [navigate]); // `navigate` is used, so it must be included in the dependency array
     return (
-      <Container
-        fluid
-        style={{
-          margin: 0,
-          width: '100%',
-          minHeight: '100vh',
-          backgroundColor: '#C8D6AF',
-          fontSize: '12px',
-          fontWeight: 'bold',
-        }}
-      >
+      <Container fluid className="quiz-container">
         <header
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
@@ -189,7 +179,7 @@ const DetailedResultPage: React.FC = () => {
               fontFamily: 'Palatino',
             }}
           >
-            Quiz Results
+            Match-a Career Results
           </h1>
           <Button
             onClick={() => navigate('/')}
@@ -225,13 +215,13 @@ const DetailedResultPage: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              Your Suggested Career Paths:
+              
             </h3>
             <Container className="careerResults">
               <Row>
                 <Col className="results-container">
                   <Row>
-                    <h3>Career Field #1:</h3>
+                  <h2 className="career-header">Career Field #1</h2>
                     <div>
                       <h4>={careerResults.careerfield1}=</h4>
                     </div>
