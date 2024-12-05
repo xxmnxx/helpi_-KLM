@@ -12,10 +12,10 @@ function AboutMe() {
 
   return (
     <>
-      <header style={{ backgroundColor: '#FFECCC' }} />
-      <Container className= "about-me-background" fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
-        <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
-        <h1 style={{ fontFamily: "palatino", textAlign: "center" }}>About Us!</h1>
+      <header style={{ padding: '20px', textAlign: 'center' }}/>
+      <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
+      <h1 className = 'about-me-header' style={{ fontFamily: "palatino", textAlign: "center", marginBottom: '2%' }}>About Us!</h1>
+      <Container className= "about-me-background" fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '1%' }}>
         <Row>
           <Container className="about-me-container">
             <Row>
@@ -43,8 +43,7 @@ function AboutMe() {
                 <Col md={6}>
                   <h2>Leah Marcelli</h2>
                   <p>Leah Marcelli is a senior at the University of Delaware. She currently studies Mathematics with minors in
-                    Computer Science and Statistics. She is very excited to be working on this project to gain experience in software engineering.
-                    While she does not know what she wants to pursue as a career she is interested in continuing software engineering in her career!</p>
+                    Computer Science and Statistics. She is very excited to be working on this project to gain experience in software engineering.</p>
                 </Col>
               </Row>
             </Container>

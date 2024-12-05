@@ -39,7 +39,7 @@ const questions: { question: string, options: string[] }[] = [
 //job field questions 
 {
   question: "Which of these skills do you feel most confident in?",
-  options: ["Communcating ideas clearly and persuasively", "Working with numbers and data analysis", "fixing or building physical things", "designing or creating something new"]
+  options: ["Communcating ideas clearly and persuasively", "Working with numbers and data analysis", "Fixing or building physical things", "Designing or creating something new"]
 },
 {
   question: "How do you approach solving a complex problem?",
@@ -92,7 +92,7 @@ const questions: { question: string, options: string[] }[] = [
 
 {
   question: "Which of these motivate you the most in your career ",
-  options:["financial stability", "Making a positive impact", "Achieving personal growth", "Gaining Recognition for my work", "Freedom to express creativity"]
+  options:["Financial stability", "Making a positive impact", "Achieving personal growth", "Gaining Recognition for my work", "Freedom to express creativity"]
 },
  
  {
@@ -192,10 +192,10 @@ const DetailedQuiz:React.FC=()=>{
           <Button onClick={handlePrevQuestion} variant="primary" disabled={currentQuestionIndex === 0} className="prev-button">Previous Question</Button>
           <Button onClick={handleNextQuestion} variant="primary" disabled={!selectedOption || quizComplete || (currentQuestionIndex === questions.length - 1)} className="next-button">Next Question</Button>
         </div>
-        </Container>
         {visible && quizComplete && selectedOption && (
             <Button onClick={goToDetailedResults} variant="primary" className="results-button">View Results</Button>
           )}
+        </Container>
       </Container>
     );
   };

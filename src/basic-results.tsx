@@ -151,16 +151,7 @@ const BasicResultPage: React.FC = () => {
     // `navigate` is used, so it must be included in the dependency array
 
     return (
-      <Container
-        fluid style={{
-          margin: 0,
-          width: '100%',
-          minHeight: '100vh',
-          backgroundColor: '#C8D6AF',
-          fontSize: '12px',
-          fontWeight: 'bold',
-        }}
-      >
+      <Container fluid className="quiz-container">
         <header
           className="App-Header"
           style={{ padding: '20px', textAlign: 'center' }}
@@ -172,7 +163,8 @@ const BasicResultPage: React.FC = () => {
               fontFamily: 'Palatino',
             }}
           >
-            Quiz Results
+
+            Match-a Career Results
           </h1>
           <Button
             onClick={() => navigate('/')}
@@ -187,7 +179,7 @@ const BasicResultPage: React.FC = () => {
           <div style={{ textAlign: 'center' }}>
             <img src={loadingBasicGif} alt="Loading..." />
             <p style={{ color: 'black', fontSize: '18px' }}>
-              Baking your career suggestions...
+              Brewing your career suggestions...
             </p>
           </div>
         ) : careerResults ? (
@@ -199,7 +191,7 @@ const BasicResultPage: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              Success, your pastries are done!
+              Success, your coffee has been brewed!
             </h2>
             <h3
               style={{
@@ -208,19 +200,20 @@ const BasicResultPage: React.FC = () => {
                 textAlign: 'center',
               }}
             >
-              Your Suggested Career Paths:
             </h3>
             <Container className="careerResults">
               <Row>
                 <Col className="results-container">
                   <Row>
                     <h3>Career Field #1</h3>
+
                     <div>
                       <h4>{careerResults.careerfield1}</h4>
                       {careerResults.reasoning1}
                     </div>
                   </Row>
-                  <Row>
+
+                  <Row >
                     <ul>
                       <h4>Suggested Careers:</h4>
                       <li>{careerResults.career1_1}</li>
@@ -232,6 +225,7 @@ const BasicResultPage: React.FC = () => {
                 <Col className="results-container">
                   <Row>
                     <h3>Career Field #2</h3>
+
                     <div>
                       <h4>{careerResults.careerfield2}</h4>
                       {careerResults.reasoning2}
@@ -249,6 +243,7 @@ const BasicResultPage: React.FC = () => {
                 <Col className="results-container">
                   <Row>
                     <h3>Career Field #3</h3>
+
                     <div>
                       <h4>{careerResults.careerfield3}</h4>
                       {careerResults.reasoning3}
