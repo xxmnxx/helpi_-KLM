@@ -15,7 +15,7 @@ function AboutMe() {
       <header style={{ backgroundColor: '#FFECCC' }} />
       <Container className= "about-me-background" fluid style={{ backgroundColor: '#FFECCC', minHeight: '100vh', paddingTop: '50px' }}>
         <Button onClick={() => navigate('/')} variant="primary" className="home-button">Go to Home</Button>
-        <h1 style={{ fontFamily: "palatino", textAlign: "center" }}>About Us!</h1>
+        <h1 className = 'about-me-header' style={{ fontFamily: "palatino", textAlign: "center" }}>About Us!</h1>
         <Row>
           <Container className="about-me-container">
             <Row>
