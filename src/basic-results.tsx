@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import loadingBasicGif from './Images/Coffee Cup.gif';
 import OpenAI from 'openai'; // Ensure this library is correctly installed and configured
+import beans from './Images/beans.png';
 
 
 const BasicResultPage: React.FC = () => {
@@ -194,8 +195,9 @@ const BasicResultPage: React.FC = () => {
                 <Col className="results-container">
                   <Row>
                     <h2 className='career-header'>Career Field #1</h2>
+
                     <div>
-                      <h4>{careerResults.careerfield1}</h4>
+                      <h4>={careerResults.careerfield1}=</h4>
                       {careerResults.reasoning1}
                     </div>
                   </Row>
@@ -214,7 +216,7 @@ const BasicResultPage: React.FC = () => {
                     <h2 className='career-header'>Career Field #2</h2>
 
                     <div>
-                      <h4>{careerResults.careerfield2}</h4>
+                      <h4>={careerResults.careerfield2}=</h4>
                       {careerResults.reasoning2}
                     </div>
                   </Row>
@@ -232,7 +234,7 @@ const BasicResultPage: React.FC = () => {
                     <h2 className='career-header'>Career Field #3</h2>
 
                     <div>
-                      <h4>{careerResults.careerfield3}</h4>
+                      <h4>={careerResults.careerfield3}=</h4>
                       {careerResults.reasoning3}
                     </div>
                   </Row>

@@ -71,7 +71,7 @@ function HomePage() {
             <img src= {basicIcon} style={{width: '100px', height: 'auto'}}/>
             <h3>Take It Easy!</h3>
             <Row>
-              <Col style={{display: 'flex'}}>
+              <Col style={{display: 'block'}}>
               <img className='Racoon1' src={racoonFull} alt="Racoon Barista!"/>
               </Col>
               <Col>
@@ -91,7 +91,7 @@ function HomePage() {
           <img src= {detailedIcon} style={{width: '100px', height: 'auto'}}/>
             <h3>Get Your Hands Dirty!</h3>
             <Row>
-              <Col style={{display: 'flex'}}>
+              <Col style={{display: 'block'}}>
                 <img className='Panda1' src={pandaFull} alt="Panda Chef!" />
               </Col>
               <Col>
@@ -111,7 +111,7 @@ function HomePage() {
 
         </Row>
       <footer>
-        <p style={{ fontFamily: 'Palatino', fontWeight: 'bold', padding: '10px' }}>Please insert your API Key below!</p>
+        <p style={{ fontFamily: 'moreSugar', fontWeight: 'bold', padding: '10px', fontSize: '20px' }}>Please insert your API Key below!</p>
 
         <Form>
           <Form.Group style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px' }}>
