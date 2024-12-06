@@ -173,7 +173,8 @@ const DetailedResultPage: React.FC = () => {
           style={{ padding: '20px', textAlign: 'center' }}
         >
           <h1>
-            Match-a Career Results
+            <span style={{color: '#52681D'}}>Match-a </span>
+            <span>Career Results</span>
           </h1>
           <Button
             onClick={() => navigate('/')}

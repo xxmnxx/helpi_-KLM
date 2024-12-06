@@ -1,9 +1,10 @@
 import { Container, Button,Row, Col } from 'react-bootstrap';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import loadingBasicGif from './Images/Coffee Cup.gif';
 import OpenAI from 'openai'; // Ensure this library is correctly installed and configured
+import beans from './Images/beans.png';
 
 
 const BasicResultPage: React.FC = () => {
@@ -157,7 +158,8 @@ const BasicResultPage: React.FC = () => {
           style={{ padding: '20px', textAlign: 'center' }}
         >
           <h1>
-            Match-a Career Results
+            <span style={{color: '#52681D'}}>Match-a </span>
+            <span>Career Results</span>
           </h1>
           <Button
             onClick={() => navigate('/')}
@@ -193,8 +195,9 @@ const BasicResultPage: React.FC = () => {
                 <Col className="results-container">
                   <Row>
                     <h2 className='career-header'>Career Field #1</h2>
+
                     <div>
-                      <h4>{careerResults.careerfield1}</h4>
+                      <h4>={careerResults.careerfield1}=</h4>
                       {careerResults.reasoning1}
                     </div>
                   </Row>
@@ -213,7 +216,7 @@ const BasicResultPage: React.FC = () => {
                     <h2 className='career-header'>Career Field #2</h2>
 
                     <div>
-                      <h4>{careerResults.careerfield2}</h4>
+                      <h4>={careerResults.careerfield2}=</h4>
                       {careerResults.reasoning2}
                     </div>
                   </Row>
@@ -231,7 +234,7 @@ const BasicResultPage: React.FC = () => {
                     <h2 className='career-header'>Career Field #3</h2>
 
                     <div>
-                      <h4>{careerResults.careerfield3}</h4>
+                      <h4>={careerResults.careerfield3}=</h4>
                       {careerResults.reasoning3}
                     </div>
                   </Row>
@@ -245,11 +248,12 @@ const BasicResultPage: React.FC = () => {
                   </Row>
                 </Col>
               </Row>
+              <h2 style={{
+              fontSize: '35px'
+              
+            }}> If you want more in depth career suggestions, Let our top chef help you out with our <Link to="/DetailedQuiz" style={{color:'#52681D'}}>detailed quiz</Link>!</h2>
             </Container>
-            <p style={{
-              fontSize: '35px',
-              padding: '20px'
-            }}> If you want more in depth career suggestions, Let our top chef help you out with our detailed quiz!</p>
+            
           </Container>
         ) : (
           <p>"There was an error generating your career suggestions. Please try again later."</p>
