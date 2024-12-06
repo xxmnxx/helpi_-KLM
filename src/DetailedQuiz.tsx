@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
@@ -155,6 +155,14 @@ const DetailedQuiz:React.FC=()=>{
      const goToDetailedResults = () => {
        navigate('/detailed-results');
      };
+
+     useEffect(() => {
+      if (visible && quizComplete) {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight
+        });
+      }
+     }, [visible, quizComplete]);
 
      const progress = (currentQuestionIndex + (selectedOption ? 1 : 0)) / questions.length * 100;
      return (
