@@ -128,7 +128,7 @@ const BasicQuiz:React.FC=()=>{
          </div>
          
        </div>
-       <img className='panda-quiz' src={racoonHalf} alt='Panda!'/>
+       <img className='racoon-quiz' src={racoonHalf} alt='Panda!'/>
        <Container className="question-container">
          <h2>{questions[currentQuestionIndex].question}</h2>
          <Row>

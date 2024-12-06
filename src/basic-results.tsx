@@ -1,6 +1,6 @@
 import { Container, Button,Row, Col } from 'react-bootstrap';
 import './App.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import loadingBasicGif from './Images/Coffee Cup.gif';
 import OpenAI from 'openai'; // Ensure this library is correctly installed and configured
@@ -157,7 +157,8 @@ const BasicResultPage: React.FC = () => {
           style={{ padding: '20px', textAlign: 'center' }}
         >
           <h1>
-            Match-a Career Results
+            <span style={{color: '#52681D'}}>Match-a </span>
+            <span>Career Results</span>
           </h1>
           <Button
             onClick={() => navigate('/')}
@@ -245,11 +246,12 @@ const BasicResultPage: React.FC = () => {
                   </Row>
                 </Col>
               </Row>
+              <h2 style={{
+              fontSize: '35px'
+              
+            }}> If you want more in depth career suggestions, Let our top chef help you out with our <Link to="/DetailedQuiz" style={{color:'#52681D'}}>detailed quiz</Link>!</h2>
             </Container>
-            <p style={{
-              fontSize: '35px',
-              padding: '20px'
-            }}> If you want more in depth career suggestions, Let our top chef help you out with our detailed quiz!</p>
+            
           </Container>
         ) : (
           <p>"There was an error generating your career suggestions. Please try again later."</p>
