@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import loadingBasicGif from './Images/Coffee Cup.gif';
 import OpenAI from 'openai'; // Ensure this library is correctly installed and configured
-import beans from './Images/beans.png';
 
 
 const BasicResultPage: React.FC = () => {
