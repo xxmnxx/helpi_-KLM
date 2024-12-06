@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
@@ -106,6 +106,13 @@ const BasicQuiz:React.FC=()=>{
       navigate('/basic-results'); // Navigate to Results page
     };
   
+    useEffect(() => {
+      if (visible && quizComplete) {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight
+        });
+      }
+     }, [visible, quizComplete]);
 
 
 
